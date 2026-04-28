@@ -1,7 +1,0 @@
-{
-  "total_packages": 322,
-  "total_chunks": 1,
-  "chunk_size": 2000,
-  "last_etl_run": "2026-04-28T14:58:51Z",
-  "chunk_url_pattern": "data/pypi/{chunk_name}"
-}
