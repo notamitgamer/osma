@@ -1,5 +1,4 @@
 import urllib.request
-import xmlrpc.client
 import json
 import csv
 import os
@@ -7,7 +6,6 @@ import time
 
 OUTPUT_FILE = "data/pypi.csv"
 MAX_PACKAGES = 1000 # Adjust this to get more or less data
-PYPI_RPC_URL = "https://pypi.org/pypi"
 
 def extract_pypi_to_csv():
     os.makedirs("data", exist_ok=True)
@@ -21,11 +19,20 @@ def extract_pypi_to_csv():
         "Description"
     ]
 
-    print("[PyPI] Connecting to XML-RPC to get package list...")
+    print("[PyPI] Fetching package list from Simple API (JSON)...")
     try:
-        client = xmlrpc.client.ServerProxy(PYPI_RPC_URL)
-        # Gets ALL 500k+ package names in one go!
-        all_packages = client.list_packages() 
+        # PyPI deprecated XML-RPC package listing. Using the Simple JSON API instead.
+        req = urllib.request.Request(
+            'https://pypi.org/simple/', 
+            headers={
+                'Accept': 'application/vnd.pypi.simple.v1+json',
+                'User-Agent': 'OSMA-Bulk-Bot'
+            }
+        )
+        with urllib.request.urlopen(req) as response:
+            simple_data = json.loads(response.read().decode())
+            # Extract package names from the JSON array
+            all_packages = [proj["name"] for proj in simple_data.get("projects", [])]
     except Exception as e:
         print(f"[PyPI] Error getting package list: {e}")
         return
