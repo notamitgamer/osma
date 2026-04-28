@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSMA | PyPI Package Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --m3-surface: #fef7ff;
+            --m3-surface-container: #f3edf7;
+            --m3-surface-container-high: #ece6f0;
+            --m3-primary: #6750a4;
+            --m3-on-primary: #ffffff;
+            --m3-primary-container: #eaddff;
+            --m3-on-primary-container: #21005d;
+            --m3-secondary-container: #e8def8;
+            --m3-on-secondary-container: #1d192b;
+            --m3-outline: #79747e;
+            --m3-error: #b3261e;
+        }
+
+        * {
+            /* Force the Google Font and prevent system overrides */
+            font-family: 'Lexend', sans-serif !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .font-mono-safe {
+            font-family: 'Roboto Mono', monospace !important;
+        }
+
+        body {
+            background-color: var(--m3-surface);
+            color: #1c1b1f;
+            margin: 0;
+            padding: 0;
+        }
+
+        .m3-card {
+            background-color: var(--m3-surface-container);
+            border-radius: 24px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .search-container {
+            background-color: var(--m3-surface-container-high);
+            border-radius: 28px;
+            padding: 4px 16px;
+            display: flex;
+            align-items: center;
+            transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+            border: 1px solid transparent;
+        }
+
+        .search-container:focus-within {
+            background-color: #fff;
+            border-color: var(--m3-primary);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .search-input {
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 12px;
+            width: 100%;
+            font-size: 1rem;
+            color: #1d1b20;
+        }
+
+        .m3-table-header {
+            background-color: var(--m3-surface-container-high);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .m3-row {
+            transition: background-color 0.1s ease;
+        }
+
+        .m3-row:hover {
+            background-color: var(--m3-secondary-container);
+        }
+
+        .pagination-btn {
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-weight: 500;
+            letter-spacing: 0.1px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .btn-filled {
+            background-color: var(--m3-primary);
+            color: var(--m3-on-primary);
+        }
+
+        .btn-tonal {
+            background-color: var(--m3-secondary-container);
+            color: var(--m3-on-secondary-container);
+        }
+
+        .loader {
+            border: 3px solid var(--m3-secondary-container);
+            border-top: 3px solid var(--m3-primary);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .empty-state-link {
+            color: var(--m3-primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 12px;
+            padding: 8px 16px;
+            border: 1px solid var(--m3-outline);
+            border-radius: 100px;
+            transition: all 0.2s;
+        }
+
+        .empty-state-link:hover {
+            background-color: var(--m3-primary-container);
+            border-color: var(--m3-primary);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .m3-card { border-radius: 0; border-left: none; border-right: none; }
+        }
+    </style>
+</head>
+<body class="pb-12">
+
+    <div class="max-w-6xl mx-auto px-4 pt-8 md:pt-12">
+        <!-- Header Section -->
+        <header class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-[#6750a4] rounded-xl flex items-center justify-center text-white shadow-lg">
+                    <i class="bi bi-box-seam-fill text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-extrabold tracking-tight text-[#1d1b20]">OSMA <span class="font-light text-gray-400">Explorer</span></h1>
+                    <p class="text-sm text-gray-500 font-medium uppercase tracking-widest mt-0.5">Package Repository Audit</p>
+                </div>
+            </div>
+            
+            <div class="search-container w-full md:w-[400px]">
+                <i class="bi bi-search text-gray-500 ml-2"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search packages or versions..." autocomplete="off">
+            </div>
+        </header>
+
+        <!-- Dynamic Statistics -->
+        <div id="statsBar" class="mb-6 flex flex-wrap items-center gap-3 text-sm">
+            <div class="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-gray-600 shadow-sm">
+                <i class="bi bi-database-fill-check mr-2 text-[#6750a4]"></i>
+                <span id="totalCount">Scanning...</span>
+            </div>
+            <div id="filteredCountWrapper" class="hidden px-4 py-1.5 bg-[#eaddff] text-[#21005d] rounded-full font-semibold animate-pulse">
+                <i class="bi bi-filter-circle-fill mr-2"></i>
+                <span id="filteredCount"></span>
+            </div>
+        </div>
+
+        <!-- Main Data Container -->
+        <div class="m3-card shadow-sm overflow-hidden border border-gray-200 bg-white">
+            <div class="overflow-x-auto max-h-[65vh] relative">
+                <table class="w-full text-left border-collapse">
+                    <thead class="m3-table-header">
+                        <tr>
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-gray-500 border-b border-gray-200 w-20">#</th>
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-gray-500 border-b border-gray-200">Package Identifier</th>
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-gray-500 border-b border-gray-200 text-center">Version</th>
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-gray-500 border-b border-gray-200 text-right">Repository</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody" class="divide-y divide-gray-50">
+                        <!-- Content injected via JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Enhanced Empty State -->
+            <div id="noResults" class="hidden p-16 text-center bg-gray-50/50">
+                <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gray-100 mb-6">
+                    <i class="bi bi-question-circle text-4xl text-gray-300"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800" id="notFoundTitle">No Matches Found</h3>
+                <p class="mt-2 text-gray-500 max-w-md mx-auto leading-relaxed" id="notFoundDesc">
+                    The keyword you searched for is not currently in our local repository index.
+                </p>
+                <div id="externalCheckContainer" class="mt-6">
+                    <!-- Dynamic Link Generated Here -->
+                </div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loaderContainer" class="p-32 flex flex-col items-center justify-center">
+                <div class="loader"></div>
+                <p class="mt-6 text-gray-500 font-medium tracking-wide">Syncing with Remote CSV...</p>
+            </div>
+        </div>
+
+        <!-- Pagination Bar -->
+        <footer class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-6 px-2">
+            <div class="text-sm font-medium text-gray-500" id="pageInfo">
+                Ready to explore
+            </div>
+            <div class="flex items-center gap-3">
+                <button id="prevBtn" class="pagination-btn btn-tonal disabled:opacity-20 disabled:cursor-not-allowed">
+                    <i class="bi bi-arrow-left-short text-xl mr-1"></i> Prev
+                </button>
+                <button id="nextBtn" class="pagination-btn btn-filled disabled:opacity-20 disabled:cursor-not-allowed">
+                    Next <i class="bi bi-arrow-right-short text-xl ml-1"></i>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const CSV_URL = 'https://raw.githubusercontent.com/notamitgamer/osma/refs/heads/main/data/pypi.csv';
+        const ITEMS_PER_PAGE = 200;
+
+        let allData = [];
+        let filteredData = [];
+        let currentPage = 0;
+
+        // UI Components
+        const tableBody = document.getElementById('tableBody');
+        const searchInput = document.getElementById('searchInput');
+        const totalCountSpan = document.getElementById('totalCount');
+        const filteredCount = document.getElementById('filteredCount');
+        const filteredCountWrapper = document.getElementById('filteredCountWrapper');
+        const loaderContainer = document.getElementById('loaderContainer');
+        const pageInfo = document.getElementById('pageInfo');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const noResults = document.getElementById('noResults');
+        const externalCheckContainer = document.getElementById('externalCheckContainer');
+        const notFoundTitle = document.getElementById('notFoundTitle');
+
+        /**
+         * Robust CSV Parser for PyPI names (handles quotes and weird characters)
+         */
+        function parseCSVLine(line) {
+            const result = [];
+            let curValue = "";
+            let inQuotes = false;
+            
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+                if (char === '"') inQuotes = !inQuotes;
+                else if (char === ',' && !inQuotes) {
+                    result.push(curValue.trim());
+                    curValue = "";
+                } else curValue += char;
+            }
+            result.push(curValue.trim());
+            return result;
+        }
+
+        /**
+         * Initialization & Data Fetch
+         */
+        async function loadData() {
+            try {
+                const response = await fetch(CSV_URL);
+                if (!response.ok) throw new Error('Data Source Unavailable');
+                const text = await response.text();
+                
+                const lines = text.split('\n').filter(l => l.trim().length > 0);
+                
+                allData = lines.slice(1).map(line => {
+                    const values = parseCSVLine(line);
+                    return {
+                        id: values[0] || '',
+                        name: values[1] || '',
+                        version: values[2] || '',
+                        link: values[3] || ''
+                    };
+                });
+
+                filteredData = [...allData];
+                loaderContainer.classList.add('hidden');
+                totalCountSpan.textContent = `${allData.length.toLocaleString()} Indexed Packages`;
+                updateDisplay();
+            } catch (error) {
+                console.error(error);
+                loaderContainer.innerHTML = `
+                    <div class="text-[#b3261e] text-center p-8">
+                        <i class="bi bi-cloud-slash text-5xl mb-4 block"></i>
+                        <h4 class="text-xl font-bold">Sync Error</h4>
+                        <p class="text-sm opacity-80 mt-2">Could not reach the GitHub CSV. Check your connection.</p>
+                    </div>
+                `;
+            }
+        }
+
+        /**
+         * Render Table Logic
+         */
+        function renderTable() {
+            const start = currentPage * ITEMS_PER_PAGE;
+            const end = start + ITEMS_PER_PAGE;
+            const pageItems = filteredData.slice(start, end);
+
+            tableBody.innerHTML = '';
+            
+            if (pageItems.length === 0) {
+                const keyword = searchInput.value.trim();
+                noResults.classList.remove('hidden');
+                notFoundTitle.innerHTML = `<span class="text-[#b3261e]">"${keyword}"</span> Not Found`;
+                
+                externalCheckContainer.innerHTML = `
+                    <p class="text-sm text-gray-400 mb-4 italic">Maybe it's not listed in OSMA yet?</p>
+                    <a href="https://pypi.org/search/?q=${encodeURIComponent(keyword)}" target="_blank" class="empty-state-link">
+                        Search PyPI.org for "${keyword}" <i class="bi bi-box-arrow-up-right ml-1"></i>
+                    </a>
+                `;
+            } else {
+                noResults.classList.add('hidden');
+                pageItems.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.className = 'm3-row group';
+                    row.innerHTML = `
+                        <td class="px-6 py-4 text-sm text-gray-400 font-mono-safe">${item.id}</td>
+                        <td class="px-6 py-4">
+                            <div class="font-semibold text-gray-800 text-base">${item.name}</div>
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            <span class="inline-block px-3 py-1 bg-[#e8def8] text-[#1d192b] text-xs rounded-lg font-bold border border-[#d6c7ed]">
+                                ${item.version}
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            <a href="${item.link}" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-[#6750a4] bg-transparent hover:bg-[#f3edf7] px-4 py-2 rounded-full transition-all">
+                                View <i class="bi bi-arrow-up-right-circle-fill opacity-40 group-hover:opacity-100"></i>
+                            </a>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+
+            // Sync Footer UI
+            const actualEnd = Math.min(end, filteredData.length);
+            const actualStart = filteredData.length === 0 ? 0 : start + 1;
+            pageInfo.innerHTML = `Displaying <b class="text-gray-900">${actualStart} - ${actualEnd}</b> of ${filteredData.length.toLocaleString()}`;
+            
+            prevBtn.disabled = currentPage === 0;
+            nextBtn.disabled = end >= filteredData.length;
+        }
+
+        /**
+         * Search Implementation
+         */
+        let searchTimeout;
+        function handleSearch() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                const query = searchInput.value.toLowerCase().trim();
+                
+                filteredData = allData.filter(item => 
+                    item.name.toLowerCase().includes(query) || 
+                    item.version.toLowerCase().includes(query) ||
+                    item.id.toLowerCase().includes(query)
+                );
+
+                currentPage = 0;
+                
+                if (query !== "") {
+                    filteredCountWrapper.classList.remove('hidden');
+                    filteredCount.textContent = `${filteredData.length.toLocaleString()} matches`;
+                } else {
+                    filteredCountWrapper.classList.add('hidden');
+                }
+                
+                renderTable();
+            }, 100);
+        }
+
+        function updateDisplay() {
+            renderTable();
+        }
+
+        // Global Listeners
+        searchInput.addEventListener('input', handleSearch);
+        
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 0) {
+                currentPage--;
+                renderTable();
+                document.querySelector('.overflow-x-auto').scrollTop = 0;
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if ((currentPage + 1) * ITEMS_PER_PAGE < filteredData.length) {
+                currentPage++;
+                renderTable();
+                document.querySelector('.overflow-x-auto').scrollTop = 0;
+            }
+        });
+
+        // Initialize App
+        window.addEventListener('DOMContentLoaded', loadData);
+    </script>
+</body>
+</html>
