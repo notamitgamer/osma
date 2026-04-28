@@ -1,102 +1,93 @@
 import urllib.request
-import urllib.parse
 import json
+import csv
 import os
 import time
 
-STATE_FILE = "state/npm_state.json"
-OUTPUT_FILE = "state/npm_extract.json"
-# Reverted to standard path, lowered limit for safety, using string formatting
-CHANGES_URL = "https://replicate.npmjs.com/_changes?include_docs=true&limit=100&since={}"
+OUTPUT_FILE = "data/npmjs.csv"
+MAX_PACKAGES = 1000  # Adjust this to get more or less data
 
-def ensure_dirs():
-    os.makedirs("state", exist_ok=True)
+# The NPM v1 search API provides excellent bulk metadata
+SEARCH_API = "https://registry.npmjs.org/-/v1/search?text=not:deprecated&size=250&from={}"
 
-def load_state():
-    if os.path.exists(STATE_FILE):
-        with open(STATE_FILE, "r") as f:
-            return json.load(f)
+def extract_npm_to_csv():
+    os.makedirs("data", exist_ok=True)
+    
+    # Define CSV Headers
+    headers = [
+        "Package Name", 
+        "Version", 
+        "Official Link", 
+        "Creator", 
+        "Creator Profile Link", 
+        "Description"
+    ]
+
+    print(f"[NPM] Starting extraction of up to {MAX_PACKAGES} packages...")
+
+    total_fetched = 0
+    offset = 0
+
+    with open(OUTPUT_FILE, mode='w', newline='', encoding='utf-8') as csv_file:
+        writer = csv.writer(csv_file)
+        writer.writerow(headers)
+
+        while total_fetched < MAX_PACKAGES:
+            url = SEARCH_API.format(offset)
+            print(f"[NPM] Fetching offset {offset}...")
             
-    print("[NPM] First run detected. Establishing baseline sequence...")
-    # 'now' tells CouchDB to just give us the latest valid sequence string marker
-    return {"last_seq": "now"}
+            try:
+                req = urllib.request.Request(url, headers={'User-Agent': 'OSMA-Bulk-Bot'})
+                with urllib.request.urlopen(req) as response:
+                    data = json.loads(response.read().decode())
+            except Exception as e:
+                print(f"[NPM] API Error: {e}")
+                time.sleep(5)
+                break # Stop on error
 
-def save_state(seq):
-    with open(STATE_FILE, "w") as f:
-        json.dump({"last_seq": seq}, f)
+            objects = data.get("objects", [])
+            if not objects:
+                break # No more results
 
-def extract():
-    ensure_dirs()
-    state = load_state()
-    last_seq = state.get("last_seq", "now")
-    
-    # URL encode the sequence because CouchDB tokens contain special characters
-    encoded_seq = urllib.parse.quote(str(last_seq))
-    url = CHANGES_URL.format(encoded_seq)
-    
-    print(f"[NPM] Fetching delta updates since seq: {last_seq}...")
-    
-    try:
-        req = urllib.request.Request(url, headers={'User-Agent': 'OSMA-ETL-Bot'})
-        with urllib.request.urlopen(req) as response:
-            data = json.loads(response.read().decode())
-    except Exception as e:
-        print(f"[NPM] Error fetching data: {e}")
-        return
+            for item in objects:
+                if total_fetched >= MAX_PACKAGES:
+                    break
+                    
+                pkg = item.get("package", {})
+                
+                name = pkg.get("name", "")
+                version = pkg.get("version", "")
+                desc = pkg.get("description", "").replace("\n", " ") # Clean newlines
+                
+                official_link = pkg.get("links", {}).get("npm", f"https://www.npmjs.com/package/{name}")
+                
+                # Try to safely extract creator data
+                creator_name = "Unknown"
+                creator_link = "N/A"
+                author = pkg.get("author")
+                
+                if isinstance(author, dict) and "name" in author:
+                    creator_name = author["name"]
+                    creator_link = f"https://www.npmjs.com/~{author.get('username', creator_name.replace(' ', ''))}"
+                elif "publisher" in pkg:
+                    creator_name = pkg["publisher"].get("username", "Unknown")
+                    creator_link = f"https://www.npmjs.com/~{creator_name}"
 
-    results = []
-    new_seq = last_seq
+                writer.writerow([
+                    name,
+                    version,
+                    official_link,
+                    creator_name,
+                    creator_link,
+                    desc
+                ])
+                
+                total_fetched += 1
+                
+            offset += 250
+            time.sleep(0.5) # Be gentle to the API
 
-    for row in data.get("results", []):
-        new_seq = row.get("seq", new_seq)
-        doc = row.get("doc")
-        if not doc or "name" not in doc:
-            continue
-            
-        pkg_name = doc.get("name")
-        latest_version = doc.get("dist-tags", {}).get("latest", "0.0.0")
-        time_data = doc.get("time", {})
-        
-        # Determine author
-        author_name = "Unknown"
-        author_profile = ""
-        if isinstance(doc.get("author"), dict):
-            author_name = doc["author"].get("name", "Unknown")
-        elif isinstance(doc.get("maintainers"), list) and len(doc["maintainers"]) > 0:
-            author_name = doc["maintainers"][0].get("name", "Unknown")
-            author_profile = f"https://www.npmjs.com/~{author_name}"
-
-        # Determine repo URL
-        repo_url = ""
-        repo = doc.get("repository")
-        if isinstance(repo, dict):
-            repo_url = repo.get("url", "")
-        elif isinstance(repo, str):
-            repo_url = repo
-        
-        # Clean git:// and ssh:// prefixes for cleaner UI
-        if repo_url.startswith("git+"):
-            repo_url = repo_url[4:]
-
-        pkg_data = {
-            "ecosystem": "npm",
-            "package_name": pkg_name,
-            "version": latest_version,
-            "author": author_name,
-            "author_profile_url": author_profile,
-            "repo_url": repo_url,
-            "registry_url": f"https://www.npmjs.com/package/{pkg_name}",
-            "deprecated": False, 
-            "first_seen": time_data.get("created", time.strftime('%Y-%m-%dT%H:%M:%SZ')),
-            "last_updated": time_data.get("modified", time.strftime('%Y-%m-%dT%H:%M:%SZ'))
-        }
-        results.append(pkg_data)
-
-    with open(OUTPUT_FILE, "w") as f:
-        json.dump(results, f, indent=2)
-
-    save_state(new_seq)
-    print(f"[NPM] Extracted {len(results)} packages. New seq: {new_seq}")
+    print(f"[NPM] Successfully wrote {total_fetched} packages to {OUTPUT_FILE}")
 
 if __name__ == "__main__":
-    extract()
+    extract_npm_to_csv()
