@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-04-28T14:55:31Z",
+  "generated_at": "2026-04-28T14:58:51Z",
   "ecosystems": {
     "npm": {
       "total_packages": 0,
       "total_chunks": 0,
-      "last_updated": "2026-04-28T14:55:31Z"
+      "last_updated": "2026-04-28T14:58:51Z"
     },
     "pypi": {
-      "total_packages": 0,
-      "total_chunks": 0,
-      "last_updated": "2026-04-28T14:55:31Z"
+      "total_packages": 322,
+      "total_chunks": 1,
+      "last_updated": "2026-04-28T14:58:51Z"
     }
   },
-  "grand_total_packages": 0
+  "grand_total_packages": 322
 }
