@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSMA v5 - Open Source Metadata Aggregator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-brand">
+            <span class="logo-icon">📦</span> OSMA <span class="badge-version">v5</span>
+        </div>
+        <div class="nav-controls">
+            <select id="ecosystemFilter" class="select-box">
+                <option value="npm">NPM Ecosystem</option>
+                <option value="pypi">PyPI Ecosystem</option>
+            </select>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search packages (e.g. react)...">
+        </div>
+        <div class="stats" id="headerStats">
+            Loading stats...
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <div class="table-wrapper">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th width="80">ID</th>
+                        <th width="80">Eco</th>
+                        <th>Package Name</th>
+                        <th width="100">Version</th>
+                        <th>Author</th>
+                        <th width="150">Last Updated</th>
+                        <th width="80">Links</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Data rendered via JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination">
+            <button id="btnLoadMore" class="btn primary">Load More</button>
+            <div id="loader" class="loader hidden">Loading chunk data...</div>
+        </div>
+    </main>
+
+    <!-- Side Panel for Live Details -->
+    <div id="detailPanel" class="side-panel">
+        <div class="panel-header">
+            <h2 id="panelTitle">Package Details</h2>
+            <button id="btnClosePanel" class="btn-close">&times;</button>
+        </div>
+        <div class="panel-content" id="panelContent">
+            <!-- Dynamic Content -->
+        </div>
+    </div>
+    <div id="panelOverlay" class="panel-overlay"></div>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>
