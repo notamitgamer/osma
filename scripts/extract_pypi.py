@@ -26,7 +26,11 @@ def load_state(client):
     # First run: get the current max serial to establish a baseline
     print("[PyPI] First run detected. Fetching latest registry serial...")
     serial = get_latest_serial(client)
-    return {"last_serial": serial}
+    
+    # Step back by 1000 events so the first run actually populates some data
+    baseline = max(0, serial - 1000)
+    print(f"[PyPI] Stepping back to serial {baseline} for initial data load...")
+    return {"last_serial": baseline}
 
 def save_state(serial):
     with open(STATE_FILE, "w") as f:
