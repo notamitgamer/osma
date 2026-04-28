@@ -1,12 +1,13 @@
 import urllib.request
+import urllib.parse
 import json
 import os
 import time
 
 STATE_FILE = "state/npm_state.json"
 OUTPUT_FILE = "state/npm_extract.json"
-# Added /registry/ to the URL paths
-CHANGES_URL = "https://replicate.npmjs.com/registry/_changes?include_docs=true&limit=1000&since={}"
+# Reverted to standard path, lowered limit for safety, using string formatting
+CHANGES_URL = "https://replicate.npmjs.com/_changes?include_docs=true&limit=100&since={}"
 
 def ensure_dirs():
     os.makedirs("state", exist_ok=True)
@@ -16,17 +17,9 @@ def load_state():
         with open(STATE_FILE, "r") as f:
             return json.load(f)
             
-    # On first run, get the current max sequence
-    print("[NPM] First run detected. Fetching latest registry sequence...")
-    try:
-        # Fetching from the actual registry DB root
-        req = urllib.request.Request("https://replicate.npmjs.com/registry", headers={'User-Agent': 'OSMA-ETL-Bot'})
-        with urllib.request.urlopen(req) as response:
-            latest_seq = json.loads(response.read().decode()).get("update_seq", 0)
-            return {"last_seq": latest_seq}
-    except Exception as e:
-        print(f"[NPM] Error fetching latest sequence: {e}")
-        return {"last_seq": 0}
+    print("[NPM] First run detected. Establishing baseline sequence...")
+    # 'now' tells CouchDB to just give us the latest valid sequence string marker
+    return {"last_seq": "now"}
 
 def save_state(seq):
     with open(STATE_FILE, "w") as f:
@@ -35,9 +28,12 @@ def save_state(seq):
 def extract():
     ensure_dirs()
     state = load_state()
-    last_seq = state.get("last_seq", 0)
+    last_seq = state.get("last_seq", "now")
     
-    url = CHANGES_URL.format(last_seq)
+    # URL encode the sequence because CouchDB tokens contain special characters
+    encoded_seq = urllib.parse.quote(str(last_seq))
+    url = CHANGES_URL.format(encoded_seq)
+    
     print(f"[NPM] Fetching delta updates since seq: {last_seq}...")
     
     try:
