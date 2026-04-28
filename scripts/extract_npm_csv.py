@@ -7,8 +7,8 @@ import time
 OUTPUT_FILE = "data/npmjs.csv"
 MAX_PACKAGES = 1000  # Adjust this to get more or less data
 
-# The NPM v1 search API provides excellent bulk metadata
-SEARCH_API = "https://registry.npmjs.org/-/v1/search?text=not:deprecated&size=250&from={}"
+# Changed 'not:deprecated' to 'javascript' to guarantee tens of thousands of results
+SEARCH_API = "https://registry.npmjs.org/-/v1/search?text=javascript&size=250&from={}"
 
 def extract_npm_to_csv():
     os.makedirs("data", exist_ok=True)
@@ -47,6 +47,7 @@ def extract_npm_to_csv():
 
             objects = data.get("objects", [])
             if not objects:
+                print("[NPM] No more results found.")
                 break # No more results
 
             for item in objects:
