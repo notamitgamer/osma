@@ -5,8 +5,8 @@ import time
 
 STATE_FILE = "state/npm_state.json"
 OUTPUT_FILE = "state/npm_extract.json"
-# Using the public NPM registry changes feed
-CHANGES_URL = "https://replicate.npmjs.com/_changes?include_docs=true&limit=1000&since={}"
+# Added /registry/ to the URL paths
+CHANGES_URL = "https://replicate.npmjs.com/registry/_changes?include_docs=true&limit=1000&since={}"
 
 def ensure_dirs():
     os.makedirs("state", exist_ok=True)
@@ -16,10 +16,11 @@ def load_state():
         with open(STATE_FILE, "r") as f:
             return json.load(f)
             
-    # On first run, get the current max sequence so we track new packages from today
+    # On first run, get the current max sequence
     print("[NPM] First run detected. Fetching latest registry sequence...")
     try:
-        req = urllib.request.Request("https://replicate.npmjs.com/", headers={'User-Agent': 'OSMA-ETL-Bot'})
+        # Fetching from the actual registry DB root
+        req = urllib.request.Request("https://replicate.npmjs.com/registry", headers={'User-Agent': 'OSMA-ETL-Bot'})
         with urllib.request.urlopen(req) as response:
             latest_seq = json.loads(response.read().decode()).get("update_seq", 0)
             return {"last_seq": latest_seq}
@@ -89,7 +90,7 @@ def extract():
             "author_profile_url": author_profile,
             "repo_url": repo_url,
             "registry_url": f"https://www.npmjs.com/package/{pkg_name}",
-            "deprecated": False, # Basic assumption, would need deep check inside versions
+            "deprecated": False, 
             "first_seen": time_data.get("created", time.strftime('%Y-%m-%dT%H:%M:%SZ')),
             "last_updated": time_data.get("modified", time.strftime('%Y-%m-%dT%H:%M:%SZ'))
         }
