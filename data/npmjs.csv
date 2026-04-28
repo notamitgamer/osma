@@ -1,2 +1,1001 @@
 Package Name,Version,Official Link,Creator,Creator Profile Link,Description
-gitbook-plugin-npmsearchlist,2.0.0,https://www.npmjs.com/package/gitbook-plugin-npmsearchlist,eliperelman,https://www.npmjs.com/~eliperelman,Embed a list of NPM search results
+serialize-javascript,7.0.5,https://www.npmjs.com/package/serialize-javascript,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Serialize JavaScript to a superset of JSON that includes regular expressions and functions.
+javascript-obfuscator,5.4.2,https://www.npmjs.com/package/javascript-obfuscator,sanex3339,https://www.npmjs.com/~sanex3339,JavaScript obfuscator
+@lezer/javascript,1.5.4,https://www.npmjs.com/package/@lezer/javascript,marijn,https://www.npmjs.com/~marijn,lezer-based JavaScript grammar
+@codemirror/lang-javascript,6.2.5,https://www.npmjs.com/package/@codemirror/lang-javascript,marijn,https://www.npmjs.com/~marijn,JavaScript language support for the CodeMirror code editor
+@javascript-obfuscator/escodegen,2.4.1,https://www.npmjs.com/package/@javascript-obfuscator/escodegen,sanex3339,https://www.npmjs.com/~sanex3339,`escodegen` fork for `javascript-obfuscator`
+tree-sitter-javascript,0.25.0,https://www.npmjs.com/package/tree-sitter-javascript,maxbrunsfeld,https://www.npmjs.com/~maxbrunsfeld,JavaScript grammar for tree-sitter
+sa-sdk-javascript,1.27.11,https://www.npmjs.com/package/sa-sdk-javascript,riyue,https://www.npmjs.com/~riyue,official sensorsdata javascript sdk
+js-tokens,10.0.0,https://www.npmjs.com/package/js-tokens,lydell,https://www.npmjs.com/~lydell,Tiny JavaScript tokenizer.
+@babel/parser,7.29.2,https://www.npmjs.com/package/@babel/parser,GitHub Actions,https://www.npmjs.com/~GitHub Actions,A JavaScript parser
+javascript-natural-sort,0.7.1,https://www.npmjs.com/package/javascript-natural-sort,kylehousley,https://www.npmjs.com/~kylehousley,Natural Sort algorithm for Javascript - Version 0.7 - Released under MIT license
+@eslint/js,10.0.1,https://www.npmjs.com/package/@eslint/js,eslintbot,https://www.npmjs.com/~eslintbot,ESLint JavaScript language implementation
+minimatch,10.2.5,https://www.npmjs.com/package/minimatch,isaacs,https://www.npmjs.com/~isaacs,a glob matcher in javascript
+jest-cli,30.3.0,https://www.npmjs.com/package/jest-cli,cpojer,https://www.npmjs.com/~cpojer,Delightful JavaScript Testing.
+jest,30.3.0,https://www.npmjs.com/package/jest,cpojer,https://www.npmjs.com/~cpojer,Delightful JavaScript Testing.
+@types/serialize-javascript,5.0.4,https://www.npmjs.com/package/@types/serialize-javascript,types,https://www.npmjs.com/~types,TypeScript definitions for serialize-javascript
+ejs,5.0.2,https://www.npmjs.com/package/ejs,mde,https://www.npmjs.com/~mde,Embedded JavaScript templates
+pretty-format,30.3.0,https://www.npmjs.com/package/pretty-format,cpojer,https://www.npmjs.com/~cpojer,Stringify any JavaScript value.
+sprintf-js,1.1.3,https://www.npmjs.com/package/sprintf-js,alexei,https://www.npmjs.com/~alexei,JavaScript sprintf implementation
+three,0.184.0,https://www.npmjs.com/package/three,mrdoob,https://www.npmjs.com/~mrdoob,JavaScript 3D library
+teleport-javascript,1.0.0,https://www.npmjs.com/package/teleport-javascript,codenirvana,https://www.npmjs.com/~codenirvana,"A super light and fast JavaScript object (de)serialization that includes date, bigint, regex, etc."
+verror,1.10.1,https://www.npmjs.com/package/verror,bahamat,https://www.npmjs.com/~bahamat,richer JavaScript errors
+@sinonjs/fake-timers,15.3.2,https://www.npmjs.com/package/@sinonjs/fake-timers,fatso83,https://www.npmjs.com/~fatso83,Fake JavaScript timers
+@imagekit/javascript,5.3.0,https://www.npmjs.com/package/@imagekit/javascript,imagekit-developer,https://www.npmjs.com/~imagekit-developer,ImageKit Javascript SDK
+@supabase/supabase-js,2.105.1,https://www.npmjs.com/package/@supabase/supabase-js,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Isomorphic Javascript SDK for Supabase
+rxjs,7.8.2,https://www.npmjs.com/package/rxjs,blesh,https://www.npmjs.com/~blesh,Reactive Extensions for modern JavaScript
+diff,9.0.0,https://www.npmjs.com/package/diff,explodingcabbage,https://www.npmjs.com/~explodingcabbage,A JavaScript text diff implementation.
+html2canvas,1.4.1,https://www.npmjs.com/package/html2canvas,niklasvh,https://www.npmjs.com/~niklasvh,Screenshots with JavaScript
+@flatfile/javascript,1.5.7,https://www.npmjs.com/package/@flatfile/javascript,bangarang,https://www.npmjs.com/~bangarang,Flatfile embedded with vanilla javascript.
+eslint,10.2.1,https://www.npmjs.com/package/eslint,eslintbot,https://www.npmjs.com/~eslintbot,An AST-based pattern checker for JavaScript.
+@jupyterlab/javascript-extension,4.5.6,https://www.npmjs.com/package/@jupyterlab/javascript-extension,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JupyterLab - Javascript Renderer
+globals,17.5.0,https://www.npmjs.com/package/globals,sindresorhus,https://www.npmjs.com/~sindresorhus,Global identifiers from different JavaScript environments
+@kameleoon/javascript-sdk,4.21.0,https://www.npmjs.com/package/@kameleoon/javascript-sdk,kameleoon-sdk,https://www.npmjs.com/~kameleoon-sdk,Kameleoon JavaScript SDK
+typescript,6.0.3,https://www.npmjs.com/package/typescript,typescript-bot,https://www.npmjs.com/~typescript-bot,TypeScript is a language for application scale JavaScript development
+@azure/abort-controller,2.1.2,https://www.npmjs.com/package/@azure/abort-controller,microsoft1es,https://www.npmjs.com/~microsoft1es,Microsoft Azure SDK for JavaScript - Aborter
+lago-javascript-client,1.46.0,https://www.npmjs.com/package/lago-javascript-client,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Lago JavaScript API Client
+bare-stream,2.13.1,https://www.npmjs.com/package/bare-stream,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Streaming data for JavaScript
+@types/smartystreets-javascript-sdk,5.1.0,https://www.npmjs.com/package/@types/smartystreets-javascript-sdk,types,https://www.npmjs.com/~types,TypeScript definitions for smartystreets-javascript-sdk
+uglify-js,3.19.3,https://www.npmjs.com/package/uglify-js,alexlamsl,https://www.npmjs.com/~alexlamsl,"JavaScript parser, mangler/compressor and beautifier toolkit"
+bare-events,2.8.2,https://www.npmjs.com/package/bare-events,kasperisager,https://www.npmjs.com/~kasperisager,Event emitters for JavaScript
+coffeescript,2.7.0,https://www.npmjs.com/package/coffeescript,geoffreybooth,https://www.npmjs.com/~geoffreybooth,Unfancy JavaScript
+babylon,6.18.0,https://www.npmjs.com/package/babylon,hzoo,https://www.npmjs.com/~hzoo,A JavaScript parser
+stats.js,0.17.0,https://www.npmjs.com/package/stats.js,mrdoob,https://www.npmjs.com/~mrdoob,JavaScript Performance Monitor
+@azure/logger,1.3.0,https://www.npmjs.com/package/@azure/logger,microsoft1es,https://www.npmjs.com/~microsoft1es,Microsoft Azure SDK for JavaScript - Logger
+@tootallnate/quickjs-emscripten,0.23.0,https://www.npmjs.com/package/@tootallnate/quickjs-emscripten,tootallnate,https://www.npmjs.com/~tootallnate,"Javascript/Typescript bindings for QuickJS, a modern Javascript interpreter, compiled to WebAssembly."
+jsprim,2.0.2,https://www.npmjs.com/package/jsprim,bahamat,https://www.npmjs.com/~bahamat,utilities for primitive JavaScript types
+ews-javascript-api,0.15.3,https://www.npmjs.com/package/ews-javascript-api,gautamsi,https://www.npmjs.com/~gautamsi,EWS Managed api in JavaScript
+@jest/core,30.3.0,https://www.npmjs.com/package/@jest/core,cpojer,https://www.npmjs.com/~cpojer,Delightful JavaScript Testing.
+jest-watcher,30.3.0,https://www.npmjs.com/package/jest-watcher,cpojer,https://www.npmjs.com/~cpojer,Delightful JavaScript Testing.
+@putout/processor-javascript,5.0.0,https://www.npmjs.com/package/@putout/processor-javascript,coderaiser,https://www.npmjs.com/~coderaiser,🐊Putout processor for javascript
+mime-types,3.0.2,https://www.npmjs.com/package/mime-types,ulisesgascon,https://www.npmjs.com/~ulisesgascon,The ultimate javascript content-type utility.
+cloudevents,10.0.0,https://www.npmjs.com/package/cloudevents,lholmquist,https://www.npmjs.com/~lholmquist,CloudEvents SDK for JavaScript
+@atomicfi/transact-javascript,3.0.11,https://www.npmjs.com/package/@atomicfi/transact-javascript,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Atomic Transact Javascript SDK.
+esbuild,0.28.0,https://www.npmjs.com/package/esbuild,GitHub Actions,https://www.npmjs.com/~GitHub Actions,An extremely fast JavaScript and CSS bundler and minifier.
+jquery,4.0.0,https://www.npmjs.com/package/jquery,timmywil,https://www.npmjs.com/~timmywil,JavaScript library for DOM operations
+date-fns,4.1.0,https://www.npmjs.com/package/date-fns,kossnocorp,https://www.npmjs.com/~kossnocorp,Modern JavaScript date utility library
+@algolia/recommend,5.51.0,https://www.npmjs.com/package/@algolia/recommend,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript client for recommend
+pacote,21.5.0,https://www.npmjs.com/package/pacote,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript package downloader
+tmpl,1.0.5,https://www.npmjs.com/package/tmpl,daaku,https://www.npmjs.com/~daaku,JavaScript micro templates.
+@hint/parser-javascript,3.1.25,https://www.npmjs.com/package/@hint/parser-javascript,vidorteg,https://www.npmjs.com/~vidorteg,webhint parser needed to analyze JavaScript files
+redis-parser,3.0.0,https://www.npmjs.com/package/redis-parser,bridgear,https://www.npmjs.com/~bridgear,Javascript Redis protocol (RESP) parser
+@forgerock/javascript-sdk,4.9.0,https://www.npmjs.com/package/@forgerock/javascript-sdk,GitHub Actions,https://www.npmjs.com/~GitHub Actions,ForgeRock JavaScript SDK
+protobufjs,8.0.3,https://www.npmjs.com/package/protobufjs,dcode,https://www.npmjs.com/~dcode,Protocol Buffers for JavaScript (& TypeScript).
+motion,12.38.0,https://www.npmjs.com/package/motion,popmotion,https://www.npmjs.com/~popmotion,An animation library for JavaScript and React.
+vite-plugin-javascript-obfuscator,3.1.0,https://www.npmjs.com/package/vite-plugin-javascript-obfuscator,elmeet,https://www.npmjs.com/~elmeet,A Vite Plugin for javascript-obfuscator
+ast-types-flow,0.0.8,https://www.npmjs.com/package/ast-types-flow,kyldvs,https://www.npmjs.com/~kyldvs,Flow types for the Javascript AST
+recma-parse,1.0.0,https://www.npmjs.com/package/recma-parse,wooorm,https://www.npmjs.com/~wooorm,recma plugin to parse JavaScript
+recma-stringify,1.0.0,https://www.npmjs.com/package/recma-stringify,wooorm,https://www.npmjs.com/~wooorm,recma plugin to serialize JavaScript
+@algolia/ingestion,1.51.0,https://www.npmjs.com/package/@algolia/ingestion,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript client for ingestion
+@algolia/monitoring,1.51.0,https://www.npmjs.com/package/@algolia/monitoring,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript client for monitoring
+xxhashjs,0.2.2,https://www.npmjs.com/package/xxhashjs,pierrec,https://www.npmjs.com/~pierrec,xxHash in Javascript
+bare-path,3.0.0,https://www.npmjs.com/package/bare-path,kasperisager,https://www.npmjs.com/~kasperisager,Path manipulation library for JavaScript
+decimal.js,10.6.0,https://www.npmjs.com/package/decimal.js,mikemcl,https://www.npmjs.com/~mikemcl,An arbitrary-precision Decimal type for JavaScript.
+jsep,1.4.0,https://www.npmjs.com/package/jsep,smekkie,https://www.npmjs.com/~smekkie,a tiny JavaScript expression parser
+@sentry/core,10.50.0,https://www.npmjs.com/package/@sentry/core,sentry-bot,https://www.npmjs.com/~sentry-bot,Base implementation for all Sentry JavaScript SDKs
+npm,11.13.0,https://www.npmjs.com/package/npm,owlstronaut,https://www.npmjs.com/~owlstronaut,a package manager for JavaScript
+regexp-tree,0.1.27,https://www.npmjs.com/package/regexp-tree,dmitrysoshnikov,https://www.npmjs.com/~dmitrysoshnikov,Regular Expressions parser in JavaScript
+@sentry/types,10.50.0,https://www.npmjs.com/package/@sentry/types,sentry-bot,https://www.npmjs.com/~sentry-bot,Types for all Sentry JavaScript SDKs
+ext,1.7.0,https://www.npmjs.com/package/ext,medikoo,https://www.npmjs.com/~medikoo,JavaScript utilities with respect to emerging standard
+@algolia/abtesting,1.17.0,https://www.npmjs.com/package/@algolia/abtesting,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript client for abtesting
+jspdf,4.2.1,https://www.npmjs.com/package/jspdf,mrjameshall,https://www.npmjs.com/~mrjameshall,PDF Document creation from JavaScript
+sass,1.99.0,https://www.npmjs.com/package/sass,GitHub Actions,https://www.npmjs.com/~GitHub Actions,A pure JavaScript implementation of Sass.
+@sentry/utils,8.55.2,https://www.npmjs.com/package/@sentry/utils,sentry-bot,https://www.npmjs.com/~sentry-bot,Utilities for all Sentry JavaScript SDKs
+onnxruntime-common,1.24.3,https://www.npmjs.com/package/onnxruntime-common,onnxruntime,https://www.npmjs.com/~onnxruntime,ONNXRuntime JavaScript API library
+@algolia/client-analytics,5.51.0,https://www.npmjs.com/package/@algolia/client-analytics,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript client for client-analytics
+js2xmlparser,5.0.0,https://www.npmjs.com/package/js2xmlparser,michaelkourlas,https://www.npmjs.com/~michaelkourlas,Parses JavaScript objects into XML
+@algolia/client-personalization,5.51.0,https://www.npmjs.com/package/@algolia/client-personalization,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript client for client-personalization
+standard,17.1.2,https://www.npmjs.com/package/standard,voxpelli,https://www.npmjs.com/~voxpelli,JavaScript Standard Style
+jmespath,0.16.0,https://www.npmjs.com/package/jmespath,jamesls,https://www.npmjs.com/~jamesls,JMESPath implementation in javascript
+framer-motion,12.38.0,https://www.npmjs.com/package/framer-motion,popmotion,https://www.npmjs.com/~popmotion,A simple and powerful JavaScript animation library
+zone.js,0.16.1,https://www.npmjs.com/package/zone.js,google-wombot,https://www.npmjs.com/~google-wombot,Zones for JavaScript
+@algolia/client-search,5.51.0,https://www.npmjs.com/package/@algolia/client-search,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript client for client-search
+workerd,1.20260426.1,https://www.npmjs.com/package/workerd,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"👷 workerd, Cloudflare's JavaScript/Wasm Runtime"
+cropperjs,2.1.1,https://www.npmjs.com/package/cropperjs,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript image cropper.
+rehype-minify-javascript-url,5.0.1,https://www.npmjs.com/package/rehype-minify-javascript-url,wooorm,https://www.npmjs.com/~wooorm,rehype plugin to minify JavaScript URLs
+@solana/web3.js,1.98.4,https://www.npmjs.com/package/@solana/web3.js,solana-devs,https://www.npmjs.com/~solana-devs,Solana Javascript API
+pptxgenjs,4.0.1,https://www.npmjs.com/package/pptxgenjs,brentely,https://www.npmjs.com/~brentely,Create JavaScript PowerPoint Presentations
+@google/generative-ai,0.24.1,https://www.npmjs.com/package/@google/generative-ai,google-wombot,https://www.npmjs.com/~google-wombot,Google AI JavaScript SDK
+@algolia/client-abtesting,5.51.0,https://www.npmjs.com/package/@algolia/client-abtesting,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript client for client-abtesting
+launchdarkly-js-client-sdk,3.9.1,https://www.npmjs.com/package/launchdarkly-js-client-sdk,GitHub Actions,https://www.npmjs.com/~GitHub Actions,LaunchDarkly SDK for JavaScript
+@azure/storage-blob,12.31.0,https://www.npmjs.com/package/@azure/storage-blob,microsoft1es,https://www.npmjs.com/~microsoft1es,Microsoft Azure Storage SDK for JavaScript - Blob
+fast-safe-stringify,2.1.1,https://www.npmjs.com/package/fast-safe-stringify,matteo.collina,https://www.npmjs.com/~matteo.collina,Safely and quickly serialize JavaScript objects
+mustache,4.2.0,https://www.npmjs.com/package/mustache,flipp,https://www.npmjs.com/~flipp,Logic-less {{mustache}} templates with JavaScript
+@algolia/client-insights,5.51.0,https://www.npmjs.com/package/@algolia/client-insights,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript client for client-insights
+eslint-config-standard,17.1.0,https://www.npmjs.com/package/eslint-config-standard,voxpelli,https://www.npmjs.com/~voxpelli,JavaScript Standard Style - ESLint Shareable Config
+bn.js,5.2.3,https://www.npmjs.com/package/bn.js,fanatid,https://www.npmjs.com/~fanatid,Big number implementation in pure javascript
+@base44/sdk,0.8.26,https://www.npmjs.com/package/@base44/sdk,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript SDK for Base44 API
+@dagrejs/dagre,3.0.0,https://www.npmjs.com/package/@dagrejs/dagre,davidnewell,https://www.npmjs.com/~davidnewell,Graph layout for JavaScript
+highcharts,12.6.0,https://www.npmjs.com/package/highcharts,torsteinhonsi,https://www.npmjs.com/~torsteinhonsi,JavaScript charting framework
+oxlint,1.62.0,https://www.npmjs.com/package/oxlint,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+canvg,4.0.3,https://www.npmjs.com/package/canvg,gabelerner,https://www.npmjs.com/~gabelerner,JavaScript SVG parser and renderer on Canvas.
+regjsparser,0.13.1,https://www.npmjs.com/package/regjsparser,jviereck,https://www.npmjs.com/~jviereck,Parsing the JavaScript's RegExp in JavaScript.
+iconv-lite,0.7.2,https://www.npmjs.com/package/iconv-lite,bsebas,https://www.npmjs.com/~bsebas,Convert character encodings in pure javascript.
+fast-diff,1.3.0,https://www.npmjs.com/package/fast-diff,luin,https://www.npmjs.com/~luin,Fast Javascript text diff
+terser,5.46.2,https://www.npmjs.com/package/terser,fabiosantoscode,https://www.npmjs.com/~fabiosantoscode,"JavaScript parser, mangler/compressor and beautifier toolkit for ES6+"
+webidl-conversions,8.0.1,https://www.npmjs.com/package/webidl-conversions,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Implements the WebIDL algorithms for converting to and from JavaScript values
+jake,12.9.7,https://www.npmjs.com/package/jake,mde,https://www.npmjs.com/~mde,"JavaScript build tool, similar to Make or Rake"
+@esbuild/linux-x64,0.28.0,https://www.npmjs.com/package/@esbuild/linux-x64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The Linux 64-bit binary for esbuild, a JavaScript bundler."
+lit-html,3.3.2,https://www.npmjs.com/package/lit-html,GitHub Actions,https://www.npmjs.com/~GitHub Actions,HTML templates literals in JavaScript
+dagre,0.8.5,https://www.npmjs.com/package/dagre,lutzroeder,https://www.npmjs.com/~lutzroeder,Graph layout for JavaScript
+js-cookie,3.0.5,https://www.npmjs.com/package/js-cookie,carhartl,https://www.npmjs.com/~carhartl,"A simple, lightweight JavaScript API for handling cookies"
+@sentry-internal/browser-utils,10.50.0,https://www.npmjs.com/package/@sentry-internal/browser-utils,sentry-bot,https://www.npmjs.com/~sentry-bot,Browser Utilities for all Sentry JavaScript SDKs
+@daypilot/daypilot-lite-javascript,5.6.0,https://www.npmjs.com/package/@daypilot/daypilot-lite-javascript,daypilot,https://www.npmjs.com/~daypilot,DayPilot Lite for JavaScript
+hast-util-is-javascript,3.0.1,https://www.npmjs.com/package/hast-util-is-javascript,wooorm,https://www.npmjs.com/~wooorm,hast utility to check if an element is a JavaScript script
+sift,17.1.3,https://www.npmjs.com/package/sift,crcn,https://www.npmjs.com/~crcn,MongoDB query filtering in JavaScript
+karma,6.4.4,https://www.npmjs.com/package/karma,karmarunnerbot,https://www.npmjs.com/~karmarunnerbot,Spectacular Test Runner for JavaScript.
+bare-url,2.4.2,https://www.npmjs.com/package/bare-url,GitHub Actions,https://www.npmjs.com/~GitHub Actions,WHATWG URL implementation for JavaScript
+redux,5.0.1,https://www.npmjs.com/package/redux,phryneas,https://www.npmjs.com/~phryneas,Predictable state container for JavaScript apps
+google-protobuf,4.0.2,https://www.npmjs.com/package/google-protobuf,dibenede,https://www.npmjs.com/~dibenede,Protocol Buffers for JavaScript
+crypto-js,4.2.0,https://www.npmjs.com/package/crypto-js,evanvosberg,https://www.npmjs.com/~evanvosberg,JavaScript library of crypto standards.
+xml2js,0.6.2,https://www.npmjs.com/package/xml2js,leonidas,https://www.npmjs.com/~leonidas,Simple XML to JavaScript object converter.
+bin-links,6.0.0,https://www.npmjs.com/package/bin-links,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript package binary linker
+espree,11.2.0,https://www.npmjs.com/package/espree,GitHub Actions,https://www.npmjs.com/~GitHub Actions,An Esprima-compatible JavaScript parser built on Acorn
+big-integer,1.6.52,https://www.npmjs.com/package/big-integer,peterolson,https://www.npmjs.com/~peterolson,An arbitrary length integer library for Javascript
+@renovatebot/pep440,4.2.2,https://www.npmjs.com/package/@renovatebot/pep440,GitHub Actions,https://www.npmjs.com/~GitHub Actions,PEP440 implementation in JavaScript
+oxfmt,0.47.0,https://www.npmjs.com/package/oxfmt,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Formatter for the JavaScript Oxidation Compiler
+apexcharts,5.10.6,https://www.npmjs.com/package/apexcharts,GitHub Actions,https://www.npmjs.com/~GitHub Actions,A JavaScript Chart Library
+@babel/helper-globals,7.28.0,https://www.npmjs.com/package/@babel/helper-globals,nicolo-ribaudo,https://www.npmjs.com/~nicolo-ribaudo,A collection of JavaScript globals for Babel internal usage
+js-file-download,0.4.12,https://www.npmjs.com/package/js-file-download,kennethjiang,https://www.npmjs.com/~kennethjiang,Javascript function that triggers browser to save javascript-generated content to a file
+avsc,5.7.9,https://www.npmjs.com/package/avsc,mtth,https://www.npmjs.com/~mtth,Avro for JavaScript
+antlr4,4.13.2,https://www.npmjs.com/package/antlr4,parrt,https://www.npmjs.com/~parrt,JavaScript runtime for ANTLR4
+yaml,2.8.3,https://www.npmjs.com/package/yaml,eemeli,https://www.npmjs.com/~eemeli,JavaScript parser and stringifier for YAML
+cuint,0.2.2,https://www.npmjs.com/package/cuint,pierrec,https://www.npmjs.com/~pierrec,Unsigned integers for Javascript
+glob,13.0.6,https://www.npmjs.com/package/glob,isaacs,https://www.npmjs.com/~isaacs,the most correct and second fastest glob implementation in JavaScript
+hermes-parser,0.36.0,https://www.npmjs.com/package/hermes-parser,hermes-team,https://www.npmjs.com/~hermes-team,A JavaScript parser built from the Hermes engine
+imask,7.6.1,https://www.npmjs.com/package/imask,unmanner,https://www.npmjs.com/~unmanner,vanilla javascript input mask
+shimmer,1.2.1,https://www.npmjs.com/package/shimmer,othiym23,https://www.npmjs.com/~othiym23,Safe(r) monkeypatching for JavaScript.
+@algolia/client-query-suggestions,5.51.0,https://www.npmjs.com/package/@algolia/client-query-suggestions,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript client for client-query-suggestions
+jsdom,29.1.0,https://www.npmjs.com/package/jsdom,GitHub Actions,https://www.npmjs.com/~GitHub Actions,A JavaScript implementation of many web standards
+jpeg-js,0.4.4,https://www.npmjs.com/package/jpeg-js,patrickhulce,https://www.npmjs.com/~patrickhulce,A pure javascript JPEG encoder and decoder
+type,2.7.3,https://www.npmjs.com/package/type,medikoo,https://www.npmjs.com/~medikoo,Runtime validation and processing of JavaScript types
+history,5.3.0,https://www.npmjs.com/package/history,mjackson,https://www.npmjs.com/~mjackson,Manage session history with JavaScript
+@apollo/protobufjs,1.2.7,https://www.npmjs.com/package/@apollo/protobufjs,glasser,https://www.npmjs.com/~glasser,Protocol Buffers for JavaScript (& TypeScript).
+pako,2.1.0,https://www.npmjs.com/package/pako,vitaly,https://www.npmjs.com/~vitaly,"zlib port to javascript - fast, modularized, with browser support"
+@wry/equality,0.5.7,https://www.npmjs.com/package/@wry/equality,benjamn,https://www.npmjs.com/~benjamn,Structural equality checking for JavaScript values
+style-to-js,1.1.21,https://www.npmjs.com/package/style-to-js,remarkablemark,https://www.npmjs.com/~remarkablemark,Parses CSS inline style to JavaScript object (camelCased).
+oniguruma-to-es,4.3.6,https://www.npmjs.com/package/oniguruma-to-es,slevithan,https://www.npmjs.com/~slevithan,Convert Oniguruma patterns to native JavaScript RegExp
+call-bound,1.0.4,https://www.npmjs.com/package/call-bound,ljharb,https://www.npmjs.com/~ljharb,"Robust call-bound JavaScript intrinsics, using `call-bind` and `get-intrinsic`."
+tweetnacl,1.0.3,https://www.npmjs.com/package/tweetnacl,dchest,https://www.npmjs.com/~dchest,Port of TweetNaCl cryptographic library to JavaScript
+pdf-lib,1.17.1,https://www.npmjs.com/package/pdf-lib,hopding,https://www.npmjs.com/~hopding,Create and modify PDF files with JavaScript
+flatpickr,4.6.13,https://www.npmjs.com/package/flatpickr,chmln,https://www.npmjs.com/~chmln,"A lightweight, powerful javascript datetime picker"
+@elastic/app-search-javascript,8.13.0,https://www.npmjs.com/package/@elastic/app-search-javascript,joshmock,https://www.npmjs.com/~joshmock,Javascript client for the Elastic App Search Api
+serialize-to-js,3.1.2,https://www.npmjs.com/package/serialize-to-js,commenthol,https://www.npmjs.com/~commenthol,serialize objects to javascript
+decimal.js-light,2.5.1,https://www.npmjs.com/package/decimal.js-light,mikemcl,https://www.npmjs.com/~mikemcl,An arbitrary-precision Decimal type for JavaScript.
+format,0.2.2,https://www.npmjs.com/package/format,sjs,https://www.npmjs.com/~sjs,"printf, sprintf, and vsprintf for JavaScript"
+unwasm,0.5.3,https://www.npmjs.com/package/unwasm,pi0,https://www.npmjs.com/~pi0,WebAssembly tools for JavaScript
+@cspell/dict-typescript,3.2.3,https://www.npmjs.com/package/@cspell/dict-typescript,jason-dent,https://www.npmjs.com/~jason-dent,TypeScript and JavaScript dictionary for cspell.
+sha.js,2.4.12,https://www.npmjs.com/package/sha.js,ljharb,https://www.npmjs.com/~ljharb,Streamable SHA hashes in pure javascript
+@octokit/auth-app,8.2.0,https://www.npmjs.com/package/@octokit/auth-app,GitHub Actions,https://www.npmjs.com/~GitHub Actions,GitHub App authentication for JavaScript
+@babel/highlight,7.25.9,https://www.npmjs.com/package/@babel/highlight,nicolo-ribaudo,https://www.npmjs.com/~nicolo-ribaudo,Syntax highlight JavaScript strings for output in terminals.
+html-minifier-terser,7.2.0,https://www.npmjs.com/package/html-minifier-terser,sibiraj-s,https://www.npmjs.com/~sibiraj-s,"Highly configurable, well-tested, JavaScript-based HTML minifier."
+ordercloud-javascript-sdk,12.0.0,https://www.npmjs.com/package/ordercloud-javascript-sdk,erincdustin,https://www.npmjs.com/~erincdustin,The offical Javascript SDK for the Ordercloud ecommerce API
+@constructor-io/constructorio-client-javascript,2.78.0,https://www.npmjs.com/package/@constructor-io/constructorio-client-javascript,esezen,https://www.npmjs.com/~esezen,Constructor.io JavaScript client
+tuf-js,5.0.1,https://www.npmjs.com/package/tuf-js,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript implementation of The Update Framework (TUF)
+unescape-js,1.1.4,https://www.npmjs.com/package/unescape-js,iamakulov,https://www.npmjs.com/~iamakulov,Unescape JavaScript special characters
+ollama,0.6.3,https://www.npmjs.com/package/ollama,bruce-ollama,https://www.npmjs.com/~bruce-ollama,Ollama Javascript library
+jscodeshift,17.3.0,https://www.npmjs.com/package/jscodeshift,danbuild,https://www.npmjs.com/~danbuild,A toolkit for JavaScript codemods
+@asgardeo/javascript,0.19.1,https://www.npmjs.com/package/@asgardeo/javascript,wso2-org,https://www.npmjs.com/~wso2-org,Framework agnostic JavaScript SDK for Asgardeo.
+sinon,21.1.2,https://www.npmjs.com/package/sinon,fatso83,https://www.npmjs.com/~fatso83,"JavaScript test spies, stubs and mocks."
+pocketbase,0.26.8,https://www.npmjs.com/package/pocketbase,gani.georgiev,https://www.npmjs.com/~gani.georgiev,PocketBase JavaScript SDK
+@splitsoftware/splitio-commons,2.12.0,https://www.npmjs.com/package/@splitsoftware/splitio-commons,ezamora.split,https://www.npmjs.com/~ezamora.split,Split JavaScript SDK common components
+levn,0.4.1,https://www.npmjs.com/package/levn,gkz,https://www.npmjs.com/~gkz,"Light ECMAScript (JavaScript) Value Notation - human written, concise, typed, flexible"
+style-to-object,1.0.14,https://www.npmjs.com/package/style-to-object,remarkablemark,https://www.npmjs.com/~remarkablemark,Parse CSS inline style to JavaScript object.
+photoswipe,5.4.4,https://www.npmjs.com/package/photoswipe,dimsemenov,https://www.npmjs.com/~dimsemenov,JavaScript gallery
+@msgpack/msgpack,3.1.3,https://www.npmjs.com/package/@msgpack/msgpack,gfx,https://www.npmjs.com/~gfx,MessagePack for ECMA-262/JavaScript/TypeScript
+openid-client,6.8.4,https://www.npmjs.com/package/openid-client,GitHub Actions,https://www.npmjs.com/~GitHub Actions,OAuth 2 / OpenID Connect Client API for JavaScript Runtimes
+animejs,4.3.6,https://www.npmjs.com/package/animejs,juliangarnier,https://www.npmjs.com/~juliangarnier,JavaScript animation engine
+acorn-globals,7.0.1,https://www.npmjs.com/package/acorn-globals,acorn-globals-bot,https://www.npmjs.com/~acorn-globals-bot,Detect global variables in JavaScript using acorn
+@notabene/javascript-sdk,2.16.0,https://www.npmjs.com/package/@notabene/javascript-sdk,ralphking_nb,https://www.npmjs.com/~ralphking_nb,JavaScript SDK for Notabene
+typical,7.3.0,https://www.npmjs.com/package/typical,75lb,https://www.npmjs.com/~75lb,"Isomorphic, functional type-checking for Javascript"
+@form8ion/javascript-core,12.4.0,https://www.npmjs.com/package/@form8ion/javascript-core,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"core logic for form8ion tools related to JavaScript, like javascript-scaffolder and lift-javascript"
+resolve-pathname,3.0.0,https://www.npmjs.com/package/resolve-pathname,mjackson,https://www.npmjs.com/~mjackson,Resolve URL pathnames using JavaScript
+grunt,1.6.2,https://www.npmjs.com/package/grunt,krinkle,https://www.npmjs.com/~krinkle,The JavaScript Task Runner
+hls.js,1.6.16,https://www.npmjs.com/package/hls.js,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript HLS client using MediaSourceExtension
+react,19.2.5,https://www.npmjs.com/package/react,react-bot,https://www.npmjs.com/~react-bot,React is a JavaScript library for building user interfaces.
+@openfeature/server-sdk,1.21.0,https://www.npmjs.com/package/@openfeature/server-sdk,GitHub Actions,https://www.npmjs.com/~GitHub Actions,OpenFeature SDK for JavaScript
+js-types,4.0.0,https://www.npmjs.com/package/js-types,sindresorhus,https://www.npmjs.com/~sindresorhus,List of JavaScript types
+hyphen,1.14.1,https://www.npmjs.com/package/hyphen,ytiurin,https://www.npmjs.com/~ytiurin,Text hyphenation in Javascript.
+jsdoc,4.0.5,https://www.npmjs.com/package/jsdoc,hegemonic,https://www.npmjs.com/~hegemonic,An API documentation generator for JavaScript.
+launchdarkly-js-sdk-common,5.8.0,https://www.npmjs.com/package/launchdarkly-js-sdk-common,launchdarkly,https://www.npmjs.com/~launchdarkly,LaunchDarkly SDK for JavaScript - common code
+tesseract.js-core,6.1.2,https://www.npmjs.com/package/tesseract.js-core,balearica,https://www.npmjs.com/~balearica,Tesseract C++ API in Pure Javascript
+tsyringe,4.10.0,https://www.npmjs.com/package/tsyringe,xapphire13,https://www.npmjs.com/~xapphire13,Lightweight dependency injection container for JavaScript/TypeScript
+@hackler/javascript-sdk,11.55.2,https://www.npmjs.com/package/@hackler/javascript-sdk,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript SDK For Hackle
+metro,0.84.3,https://www.npmjs.com/package/metro,GitHub Actions,https://www.npmjs.com/~GitHub Actions,🚇 The JavaScript bundler for React Native.
+typed-function,4.2.2,https://www.npmjs.com/package/typed-function,josdejong,https://www.npmjs.com/~josdejong,Type checking for JavaScript functions
+universal-cookie,8.1.0,https://www.npmjs.com/package/universal-cookie,exon,https://www.npmjs.com/~exon,Universal cookies for JavaScript
+gulp-javascript-obfuscator,1.1.6,https://www.npmjs.com/package/gulp-javascript-obfuscator,wain-pc,https://www.npmjs.com/~wain-pc,Gulp plugin for javascript-obfuscator Node.JS package
+toidentifier,1.0.1,https://www.npmjs.com/package/toidentifier,dougwilson,https://www.npmjs.com/~dougwilson,Convert a string of words to a JavaScript identifier
+value-equal,1.0.1,https://www.npmjs.com/package/value-equal,mjackson,https://www.npmjs.com/~mjackson,Are these two JavaScript values equal?
+fuzzysort,3.1.0,https://www.npmjs.com/package/fuzzysort,farzher,https://www.npmjs.com/~farzher,Fast SublimeText-like fuzzy search for JavaScript
+md5.js,1.3.5,https://www.npmjs.com/package/md5.js,cwmma,https://www.npmjs.com/~cwmma,node style md5 on pure JavaScript
+@js-joda/core,6.0.1,https://www.npmjs.com/package/@js-joda/core,pithu,https://www.npmjs.com/~pithu,a date and time library for javascript
+node-int64,0.4.0,https://www.npmjs.com/package/node-int64,broofa,https://www.npmjs.com/~broofa,Support for representing 64-bit integers in JavaScript
+enzyme,3.11.0,https://www.npmjs.com/package/enzyme,ljharb,https://www.npmjs.com/~ljharb,JavaScript Testing utilities for React
+safe-stable-stringify,2.5.0,https://www.npmjs.com/package/safe-stable-stringify,bridgear,https://www.npmjs.com/~bridgear,Deterministic and safely JSON.stringify to quickly serialize JavaScript objects
+@solana/functional,6.8.0,https://www.npmjs.com/package/@solana/functional,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Functional JavaScript helpers
+@emnapi/wasi-threads,1.2.1,https://www.npmjs.com/package/@emnapi/wasi-threads,GitHub Actions,https://www.npmjs.com/~GitHub Actions,WASI threads proposal implementation in JavaScript
+compressorjs,1.3.0,https://www.npmjs.com/package/compressorjs,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript image compressor.
+simple-eval,2.0.0,https://www.npmjs.com/package/simple-eval,p0lip,https://www.npmjs.com/~p0lip,Simple JavaScript expression evaluator
+js-string-escape,1.0.1,https://www.npmjs.com/package/js-string-escape,joliss,https://www.npmjs.com/~joliss,Escape strings for use as JavaScript string literals
+@seontechnologies/seon-javascript-sdk,6.10.8,https://www.npmjs.com/package/@seontechnologies/seon-javascript-sdk,GitHub Actions,https://www.npmjs.com/~GitHub Actions,SEON JavaScript SDK for collecting session and device data
+@absmartly/javascript-sdk,1.13.4,https://www.npmjs.com/package/@absmartly/javascript-sdk,caltheabtester,https://www.npmjs.com/~caltheabtester,A/B Smartly Javascript SDK
+strip-literal,3.1.0,https://www.npmjs.com/package/strip-literal,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Strip comments and string literals from JavaScript code
+@rudderstack/analytics-js,3.31.0,https://www.npmjs.com/package/@rudderstack/analytics-js,GitHub Actions,https://www.npmjs.com/~GitHub Actions,RudderStack JavaScript SDK
+to-valid-identifier,1.0.0,https://www.npmjs.com/package/to-valid-identifier,sindresorhus,https://www.npmjs.com/~sindresorhus,Convert a string to a valid JavaScript identifier
+jstat,1.9.6,https://www.npmjs.com/package/jstat,trev.norris,https://www.npmjs.com/~trev.norris,Statistical Library for JavaScript
+@launchdarkly/js-sdk-common,2.24.2,https://www.npmjs.com/package/@launchdarkly/js-sdk-common,GitHub Actions,https://www.npmjs.com/~GitHub Actions,LaunchDarkly SDK for JavaScript - common code
+web3,4.16.0,https://www.npmjs.com/package/web3,luu-alex,https://www.npmjs.com/~luu-alex,Ethereum JavaScript API
+wordwrapjs,5.1.1,https://www.npmjs.com/package/wordwrapjs,75lb,https://www.npmjs.com/~75lb,Word-wrapping for javascript.
+@dynatrace/rum-javascript-sdk,1.337.7,https://www.npmjs.com/package/@dynatrace/rum-javascript-sdk,kamtschatka,https://www.npmjs.com/~kamtschatka,JavaScript API for Real User Monitoring (RUM)
+bmp-js,0.1.0,https://www.npmjs.com/package/bmp-js,shaozilee,https://www.npmjs.com/~shaozilee,A pure javascript BMP encoder and decoder
+@solana/kit,6.8.0,https://www.npmjs.com/package/@solana/kit,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Solana Javascript API
+ramda,0.32.0,https://www.npmjs.com/package/ramda,kedashoe,https://www.npmjs.com/~kedashoe,A practical functional library for JavaScript programmers.
+sax,1.6.0,https://www.npmjs.com/package/sax,isaacs,https://www.npmjs.com/~isaacs,An evented streaming XML parser in JavaScript
+js-git,0.7.8,https://www.npmjs.com/package/js-git,creationix,https://www.npmjs.com/~creationix,Git Implemented in JavaScript
+@azure/storage-common,12.3.0,https://www.npmjs.com/package/@azure/storage-common,microsoft1es,https://www.npmjs.com/~microsoft1es,Azure Storage Common Client Library for JavaScript
+apg-lite,1.0.5,https://www.npmjs.com/package/apg-lite,ldthomas,https://www.npmjs.com/~ldthomas,lightweight JavaScript APG parser
+smartystreets-javascript-sdk-utils,1.2.9,https://www.npmjs.com/package/smartystreets-javascript-sdk-utils,rebekaherikson,https://www.npmjs.com/~rebekaherikson,Utils library to use with the Smarty Javascript SDK
+markerjs2,2.32.7,https://www.npmjs.com/package/markerjs2,ailon,https://www.npmjs.com/~ailon,JavaScript image annotation
+dd-trace,5.98.0,https://www.npmjs.com/package/dd-trace,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Datadog APM tracing client for JavaScript
+babel-extract-comments,1.0.0,https://www.npmjs.com/package/babel-extract-comments,jonschlinkert,https://www.npmjs.com/~jonschlinkert,Uses babel (babylon) to extract JavaScript code comments from a JavaScript string or file.
+@ecies/ciphers,0.2.6,https://www.npmjs.com/package/@ecies/ciphers,kigawas,https://www.npmjs.com/~kigawas,Node/Pure JavaScript symmetric ciphers adapter
+@arborium/javascript,2.16.0,https://www.npmjs.com/package/@arborium/javascript,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"Syntax highlighting for JavaScript, powered by WebAssembly"
+reserved-identifiers,1.2.0,https://www.npmjs.com/package/reserved-identifiers,sindresorhus,https://www.npmjs.com/~sindresorhus,Provides a list of reserved identifiers for JavaScript
+tesseract.js,7.0.0,https://www.npmjs.com/package/tesseract.js,balearica,https://www.npmjs.com/~balearica,Pure Javascript Multilingual OCR
+@lingui/core,6.0.0,https://www.npmjs.com/package/@lingui/core,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Internationalization (i18n) tools for JavaScript
+rehype-remove-script-type-javascript,4.0.1,https://www.npmjs.com/package/rehype-remove-script-type-javascript,wooorm,https://www.npmjs.com/~wooorm,rehype plugin to remove `type` and `language` on JavaScript scripts
+saxes,6.0.0,https://www.npmjs.com/package/saxes,lddubeau,https://www.npmjs.com/~lddubeau,An evented streaming XML parser in JavaScript
+mixpanel-browser,2.78.0,https://www.npmjs.com/package/mixpanel-browser,jakub.grz,https://www.npmjs.com/~jakub.grz,The official Mixpanel JavaScript browser client library
+jshint,2.13.6,https://www.npmjs.com/package/jshint,jugglinmike,https://www.npmjs.com/~jugglinmike,Static analysis tool for JavaScript
+base32.js,0.1.0,https://www.npmjs.com/package/base32.js,mikepb,https://www.npmjs.com/~mikepb,Base 32 encodings for JavaScript
+eslint-plugin-promise,7.3.0,https://www.npmjs.com/package/eslint-plugin-promise,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Enforce best practices for JavaScript promises
+jasmine-core,6.2.0,https://www.npmjs.com/package/jasmine-core,sgravrock,https://www.npmjs.com/~sgravrock,Simple JavaScript testing framework for browsers and node.js
+pprof-format,2.2.1,https://www.npmjs.com/package/pprof-format,datadog,https://www.npmjs.com/~datadog,Pure JavaScript pprof encoder and decoder
+qr.js,0.0.0,https://www.npmjs.com/package/qr.js,shtylman,https://www.npmjs.com/~shtylman,qrcode encoding in javascript
+polished,4.3.1,https://www.npmjs.com/package/polished,bhough,https://www.npmjs.com/~bhough,A lightweight toolset for writing styles in Javascript.
+javascript-stringify,2.1.0,https://www.npmjs.com/package/javascript-stringify,blakeembrey,https://www.npmjs.com/~blakeembrey,Stringify is to `eval` as `JSON.stringify` is to `JSON.parse`
+js-tiktoken,1.0.21,https://www.npmjs.com/package/js-tiktoken,davidduong,https://www.npmjs.com/~davidduong,JavaScript port of tiktoken
+rou3,0.8.1,https://www.npmjs.com/package/rou3,pi0,https://www.npmjs.com/~pi0,Lightweight and fast router for JavaScript.
+enzyme-adapter-react-16,1.15.8,https://www.npmjs.com/package/enzyme-adapter-react-16,ljharb,https://www.npmjs.com/~ljharb,JavaScript Testing utilities for React
+sodium-javascript,0.8.0,https://www.npmjs.com/package/sodium-javascript,chm-diederichs,https://www.npmjs.com/~chm-diederichs,WIP - a pure javascript version of sodium-native
+enquire.js,2.1.6,https://www.npmjs.com/package/enquire.js,wickynilliams,https://www.npmjs.com/~wickynilliams,Awesome Media Queries in JavaScript
+@esbuild/linux-arm,0.28.0,https://www.npmjs.com/package/@esbuild/linux-arm,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The Linux ARM binary for esbuild, a JavaScript bundler."
+json3,3.3.3,https://www.npmjs.com/package/json3,kitcambridge,https://www.npmjs.com/~kitcambridge,A JSON polyfill for older JavaScript platforms.
+strapi-sdk-javascript,0.3.3,https://www.npmjs.com/package/strapi-sdk-javascript,lauriejim,https://www.npmjs.com/~lauriejim,The official Strapi SDK for JavaScript
+@octokit/auth-oauth-app,9.0.3,https://www.npmjs.com/package/@octokit/auth-oauth-app,octokitbot,https://www.npmjs.com/~octokitbot,GitHub OAuth App authentication for JavaScript
+pyodide,0.29.3,https://www.npmjs.com/package/pyodide,ryanking13,https://www.npmjs.com/~ryanking13,The Pyodide JavaScript package
+memoizerific,1.11.3,https://www.npmjs.com/package/memoizerific,thinkloop,https://www.npmjs.com/~thinkloop,"Fast, small, efficient JavaScript memoization lib to memoize JS functions"
+enzyme-adapter-utils,1.14.2,https://www.npmjs.com/package/enzyme-adapter-utils,ljharb,https://www.npmjs.com/~ljharb,JavaScript Testing utilities for React
+@microsoft/applicationinsights-core-js,3.4.1,https://www.npmjs.com/package/@microsoft/applicationinsights-core-js,microsoft1es,https://www.npmjs.com/~microsoft1es,Microsoft Application Insights Core Javascript SDK
+install,0.13.0,https://www.npmjs.com/package/install,benjamn,https://www.npmjs.com/~benjamn,Minimal JavaScript module loader
+seedrandom,3.0.5,https://www.npmjs.com/package/seedrandom,davidbau,https://www.npmjs.com/~davidbau,Seeded random number generator for Javascript.
+web-vitals,5.2.0,https://www.npmjs.com/package/web-vitals,tunetheweb,https://www.npmjs.com/~tunetheweb,Easily measure performance metrics in JavaScript
+chroma-js,3.2.0,https://www.npmjs.com/package/chroma-js,gka,https://www.npmjs.com/~gka,JavaScript library for color conversions
+@hint/hint-no-vulnerable-javascript-libraries,2.12.22,https://www.npmjs.com/package/@hint/hint-no-vulnerable-javascript-libraries,vidorteg,https://www.npmjs.com/~vidorteg,hint that that checks using Snyk for vulnerable JavaScript libraries
+@cometchat/calls-sdk-javascript,4.2.5,https://www.npmjs.com/package/@cometchat/calls-sdk-javascript,honey-cometchat,https://www.npmjs.com/~honey-cometchat,Cometchat's Javascript SDK for In-app Calling.
+escape-latex,1.2.0,https://www.npmjs.com/package/escape-latex,dangmai,https://www.npmjs.com/~dangmai,Escape LaTeX special characters with Javascript
+flow-parser,0.311.0,https://www.npmjs.com/package/flow-parser,flowtype,https://www.npmjs.com/~flowtype,JavaScript parser written in OCaml. Produces ESTree AST
+@types/kd-tree-javascript,1.0.3,https://www.npmjs.com/package/@types/kd-tree-javascript,types,https://www.npmjs.com/~types,TypeScript definitions for kd-tree-javascript
+@probe.gl/env,4.1.1,https://www.npmjs.com/package/@probe.gl/env,pessimistress,https://www.npmjs.com/~pessimistress,JavaScript environment detection for browser and Node
+matrix-js-sdk,41.4.0,https://www.npmjs.com/package/matrix-js-sdk,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Matrix Client-Server SDK for Javascript
+lottie-web,5.13.0,https://www.npmjs.com/package/lottie-web,bwils,https://www.npmjs.com/~bwils,After Effects plugin for exporting animations to SVG + JavaScript or canvas + JavaScript
+pg,8.20.0,https://www.npmjs.com/package/pg,brianc,https://www.npmjs.com/~brianc,PostgreSQL client - pure javascript & libpq with the same API
+junitxml-to-javascript,1.1.4,https://www.npmjs.com/package/junitxml-to-javascript,ladariha,https://www.npmjs.com/~ladariha,Pluggable jUnit XML reports parser to JavaScript objects
+jspdf-autotable,5.0.7,https://www.npmjs.com/package/jspdf-autotable,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Generate pdf tables with javascript (jsPDF plugin)
+@harnessio/ff-javascript-client-sdk,1.32.0,https://www.npmjs.com/package/@harnessio/ff-javascript-client-sdk,mayankvermaharness,https://www.npmjs.com/~mayankvermaharness,Basic library for integrating CF into javascript applications.
+@instana/instrumentation-confluent-kafka-javascript,1.0.1,https://www.npmjs.com/package/@instana/instrumentation-confluent-kafka-javascript,kirrg001,https://www.npmjs.com/~kirrg001,OpenTelemetry instrumentation for `@confluentinc/kafka-javascript` messaging client for Apache Kafka
+@jsonjoy.com/codegen,18.15.0,https://www.npmjs.com/package/@jsonjoy.com/codegen,streamich,https://www.npmjs.com/~streamich,"No-dependencies, low-level, high-performance JIT code generation package for JavaScript"
+@esbuild/win32-x64,0.28.0,https://www.npmjs.com/package/@esbuild/win32-x64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The Windows 64-bit binary for esbuild, a JavaScript bundler."
+impit,0.13.1,https://www.npmjs.com/package/impit,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Impit for JavaScript
+oauth4webapi,3.8.6,https://www.npmjs.com/package/oauth4webapi,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Low-Level OAuth 2 / OpenID Connect Client API for JavaScript Runtimes
+@elastic/apm-rum,5.17.4,https://www.npmjs.com/package/@elastic/apm-rum,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Elastic APM JavaScript agent
+@cloudflare/workerd-linux-64,1.20260426.1,https://www.npmjs.com/package/@cloudflare/workerd-linux-64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"👷 workerd for Linux 64-bit, Cloudflare's JavaScript/Wasm Runtime"
+ipaddr.js,2.3.0,https://www.npmjs.com/package/ipaddr.js,whitequark,https://www.npmjs.com/~whitequark,A library for manipulating IPv4 and IPv6 addresses in JavaScript.
+bidi-js,1.0.3,https://www.npmjs.com/package/bidi-js,lojjic,https://www.npmjs.com/~lojjic,A JavaScript implementation of the Unicode Bidirectional Algorithm
+@solana-program/token,0.13.0,https://www.npmjs.com/package/@solana-program/token,joncinque,https://www.npmjs.com/~joncinque,JavaScript client for the Token program
+es5-shim,4.6.7,https://www.npmjs.com/package/es5-shim,ljharb,https://www.npmjs.com/~ljharb,ECMAScript 5 compatibility shims for legacy JavaScript engines
+@pm2/js-api,0.8.0,https://www.npmjs.com/package/@pm2/js-api,tknew,https://www.npmjs.com/~tknew,PM2.io API Client for Javascript
+jora,1.0.0-beta.15,https://www.npmjs.com/package/jora,lahmatiy,https://www.npmjs.com/~lahmatiy,JavaScript object query engine
+fast-check,4.7.0,https://www.npmjs.com/package/fast-check,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Property based testing framework for JavaScript (like QuickCheck)
+collection-utils,1.0.1,https://www.npmjs.com/package/collection-utils,mark.probst,https://www.npmjs.com/~mark.probst,Utility functions for Javascript collections
+@biomejs/js-api,4.0.0,https://www.npmjs.com/package/@biomejs/js-api,ematipico,https://www.npmjs.com/~ematipico,JavaScript APIs for the Biome package
+underscore.string,3.3.6,https://www.npmjs.com/package/underscore.string,esamatti,https://www.npmjs.com/~esamatti,String manipulation extensions for Underscore.js javascript library.
+@microsoft/applicationinsights-channel-js,3.4.1,https://www.npmjs.com/package/@microsoft/applicationinsights-channel-js,microsoft1es,https://www.npmjs.com/~microsoft1es,Microsoft Application Insights JavaScript SDK Channel
+@probe.gl/log,4.1.1,https://www.npmjs.com/package/@probe.gl/log,pessimistress,https://www.npmjs.com/~pessimistress,JavaScript debug logging for browser and Node
+rolldown,1.0.0-rc.17,https://www.npmjs.com/package/rolldown,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Fast JavaScript/TypeScript bundler in Rust with Rollup-compatible API.
+jsforce,3.10.14,https://www.npmjs.com/package/jsforce,salesforce-releases,https://www.npmjs.com/~salesforce-releases,Salesforce API Library for JavaScript
+bitcoinjs-lib,7.0.1,https://www.npmjs.com/package/bitcoinjs-lib,junderw,https://www.npmjs.com/~junderw,Client-side Bitcoin JavaScript library
+@solana-program/system,0.12.0,https://www.npmjs.com/package/@solana-program/system,joncinque,https://www.npmjs.com/~joncinque,JavaScript client for the System program
+@solana/errors,6.8.0,https://www.npmjs.com/package/@solana/errors,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"Throw, identify, and decode Solana JavaScript errors"
+grunt-javascript-obfuscator,1.2.0,https://www.npmjs.com/package/grunt-javascript-obfuscator,tomasz.oponowicz,https://www.npmjs.com/~tomasz.oponowicz,Obfuscates JavaScript files using amazing javascript-obfuscator.
+bser,2.1.1,https://www.npmjs.com/package/bser,wez,https://www.npmjs.com/~wez,JavaScript implementation of the BSER Binary Serialization
+inline-style-prefixer,7.0.1,https://www.npmjs.com/package/inline-style-prefixer,rofrischmann,https://www.npmjs.com/~rofrischmann,Run-time Autoprefixer for JavaScript style objects
+@twilio/voice-sdk,2.18.2,https://www.npmjs.com/package/@twilio/voice-sdk,CircleCI,https://www.npmjs.com/~CircleCI,Twilio's JavaScript Voice SDK
+knitwork,1.3.0,https://www.npmjs.com/package/knitwork,danielroe,https://www.npmjs.com/~danielroe,Utilities to generate JavaScript code.
+@microsoft/applicationinsights-common,3.4.1,https://www.npmjs.com/package/@microsoft/applicationinsights-common,microsoft1es,https://www.npmjs.com/~microsoft1es,Microsoft Application Insights Common JavaScript Library
+@percy/sdk-utils,1.31.12,https://www.npmjs.com/package/@percy/sdk-utils,percy-admin,https://www.npmjs.com/~percy-admin,Common JavaScript SDK utils
+amazon-cognito-identity-js,6.3.16,https://www.npmjs.com/package/amazon-cognito-identity-js,aws-amplify-ops,https://www.npmjs.com/~aws-amplify-ops,Amazon Cognito Identity Provider JavaScript SDK
+shallow-clone,3.0.1,https://www.npmjs.com/package/shallow-clone,jonschlinkert,https://www.npmjs.com/~jonschlinkert,Creates a shallow clone of any JavaScript value.
+lokijs,1.5.12,https://www.npmjs.com/package/lokijs,techfort,https://www.npmjs.com/~techfort,Fast document oriented javascript in-memory database
+@esbuild/netbsd-x64,0.28.0,https://www.npmjs.com/package/@esbuild/netbsd-x64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The NetBSD AMD64 binary for esbuild, a JavaScript bundler."
+storyblok-js-client,7.3.0,https://www.npmjs.com/package/storyblok-js-client,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Universal JavaScript SDK for Storyblok's API
+obliterator,2.0.5,https://www.npmjs.com/package/obliterator,yomguithereal,https://www.npmjs.com/~yomguithereal,Higher order iterator library for JavaScript/TypeScript.
+xdate,0.8.3,https://www.npmjs.com/package/xdate,arshaw,https://www.npmjs.com/~arshaw,A Modern JavaScript Date Library
+jimp,1.6.1,https://www.npmjs.com/package/jimp,alisowski,https://www.npmjs.com/~alisowski,An image processing library written entirely in JavaScript.
+universal-user-agent,7.0.3,https://www.npmjs.com/package/universal-user-agent,gr2m,https://www.npmjs.com/~gr2m,Get a user agent string across all JavaScript Runtime Environments
+javascript-color-gradient,2.5.0,https://www.npmjs.com/package/javascript-color-gradient,adrinlol,https://www.npmjs.com/~adrinlol,"javascript-color-gradient is a lightweight JavaScript library, used to generate an array of color gradients by providing start and finish colors, as well as the required number of midpoints. "
+nanoclone,1.0.2,https://www.npmjs.com/package/nanoclone,kelin2025,https://www.npmjs.com/~kelin2025,300B to deep clone JavaScript objects
+@esbuild/darwin-x64,0.28.0,https://www.npmjs.com/package/@esbuild/darwin-x64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The macOS 64-bit binary for esbuild, a JavaScript bundler."
+is,3.3.2,https://www.npmjs.com/package/is,ljharb,https://www.npmjs.com/~ljharb,the definitive JavaScript type testing library
+@esbuild/openbsd-x64,0.28.0,https://www.npmjs.com/package/@esbuild/openbsd-x64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The OpenBSD 64-bit binary for esbuild, a JavaScript bundler."
+tinyqueue,3.0.0,https://www.npmjs.com/package/tinyqueue,mourner,https://www.npmjs.com/~mourner,The smallest and simplest JavaScript priority queue
+astring,1.9.0,https://www.npmjs.com/package/astring,davidbonnet,https://www.npmjs.com/~davidbonnet,JavaScript code generator from an ESTree-compliant AST.
+@esbuild/linux-arm64,0.28.0,https://www.npmjs.com/package/@esbuild/linux-arm64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The Linux ARM 64-bit binary for esbuild, a JavaScript bundler."
+fzf,0.5.2,https://www.npmjs.com/package/fzf,ajitid,https://www.npmjs.com/~ajitid,Do fuzzy matching using FZF algorithm in JavaScript
+@esbuild/sunos-x64,0.28.0,https://www.npmjs.com/package/@esbuild/sunos-x64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The illumos 64-bit binary for esbuild, a JavaScript bundler."
+viewerjs,1.11.7,https://www.npmjs.com/package/viewerjs,chenfengyuan,https://www.npmjs.com/~chenfengyuan,JavaScript image viewer.
+java-parser,3.0.1,https://www.npmjs.com/package/java-parser,jtkiesel,https://www.npmjs.com/~jtkiesel,Java Parser in JavaScript
+@oxlint/binding-linux-x64-gnu,1.62.0,https://www.npmjs.com/package/@oxlint/binding-linux-x64-gnu,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+estree-util-value-to-estree,3.5.0,https://www.npmjs.com/package/estree-util-value-to-estree,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Convert a JavaScript value to an estree expression
+@oxfmt/binding-linux-x64-gnu,0.47.0,https://www.npmjs.com/package/@oxfmt/binding-linux-x64-gnu,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Formatter for the JavaScript Oxidation Compiler
+@esbuild/freebsd-x64,0.28.0,https://www.npmjs.com/package/@esbuild/freebsd-x64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The FreeBSD 64-bit binary for esbuild, a JavaScript bundler."
+d3-time-format,4.1.0,https://www.npmjs.com/package/d3-time-format,mbostock,https://www.npmjs.com/~mbostock,A JavaScript time formatter and parser inspired by strftime and strptime.
+@exercism/eslint-config-javascript,0.8.1,https://www.npmjs.com/package/@exercism/eslint-config-javascript,sleeplessbyte,https://www.npmjs.com/~sleeplessbyte,ESLint configuration for the JavaScript track on Exercism
+@esbuild/win32-ia32,0.28.0,https://www.npmjs.com/package/@esbuild/win32-ia32,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The Windows 32-bit binary for esbuild, a JavaScript bundler."
+multicast-dns,7.2.5,https://www.npmjs.com/package/multicast-dns,mafintosh,https://www.npmjs.com/~mafintosh,Low level multicast-dns implementation in pure javascript
+@launchdarkly/js-server-sdk-common,2.18.5,https://www.npmjs.com/package/@launchdarkly/js-server-sdk-common,GitHub Actions,https://www.npmjs.com/~GitHub Actions,LaunchDarkly Server SDK for JavaScript - common code
+@livelike/javascript,1.4.1-alpha.0,https://www.npmjs.com/package/@livelike/javascript,naveennayyar007,https://www.npmjs.com/~naveennayyar007,LiveLike Javascript package
+quickselect,3.0.0,https://www.npmjs.com/package/quickselect,mourner,https://www.npmjs.com/~mourner,A tiny and fast selection algorithm in JavaScript.
+xml-js,1.6.11,https://www.npmjs.com/package/xml-js,nashwaan,https://www.npmjs.com/~nashwaan,A convertor between XML text and Javascript object / JSON text.
+@octokit/auth-oauth-device,8.0.3,https://www.npmjs.com/package/@octokit/auth-oauth-device,octokitbot,https://www.npmjs.com/~octokitbot,GitHub OAuth Device authentication strategy for JavaScript
+html-minifier,4.0.0,https://www.npmjs.com/package/html-minifier,alexlamsl,https://www.npmjs.com/~alexlamsl,"Highly configurable, well-tested, JavaScript-based HTML minifier."
+essentials,1.2.0,https://www.npmjs.com/package/essentials,medikoo,https://www.npmjs.com/~medikoo,Essential initialization for every JavaScript process
+@bugsnag/browser,8.9.0,https://www.npmjs.com/package/@bugsnag/browser,sb-priyankap,https://www.npmjs.com/~sb-priyankap,Bugsnag error reporter for browser JavaScript
+@jsforce/jsforce-node,3.10.14,https://www.npmjs.com/package/@jsforce/jsforce-node,salesforce-releases,https://www.npmjs.com/~salesforce-releases,Salesforce API Library for JavaScript
+validate.js,0.13.1,https://www.npmjs.com/package/validate.js,ansman,https://www.npmjs.com/~ansman,Declarative validations for JavaScript
+jdenticon,3.3.0,https://www.npmjs.com/package/jdenticon,dmester,https://www.npmjs.com/~dmester,Javascript identicon generator
+@snowplow/tracker-core,4.8.0,https://www.npmjs.com/package/@snowplow/tracker-core,snowplow-analytics,https://www.npmjs.com/~snowplow-analytics,Core functionality for Snowplow JavaScript trackers
+@vercel/blob,2.3.3,https://www.npmjs.com/package/@vercel/blob,vercel-release-bot,https://www.npmjs.com/~vercel-release-bot,The Vercel Blob JavaScript API client
+@azure/storage-queue,12.29.0,https://www.npmjs.com/package/@azure/storage-queue,microsoft1es,https://www.npmjs.com/~microsoft1es,Microsoft Azure Storage SDK for JavaScript - Queue
+encoding-japanese,2.2.0,https://www.npmjs.com/package/encoding-japanese,polygonplanet,https://www.npmjs.com/~polygonplanet,Convert and detect character encoding in JavaScript
+node-xmllint,1.0.0,https://www.npmjs.com/package/node-xmllint,tib-tib,https://www.npmjs.com/~tib-tib,```javascript
+vega-util,2.1.0,https://www.npmjs.com/package/vega-util,lhermann,https://www.npmjs.com/~lhermann,JavaScript utilities for Vega.
+kd-tree-javascript,1.0.3,https://www.npmjs.com/package/kd-tree-javascript,greennot,https://www.npmjs.com/~greennot,A basic but super fast JavaScript implementation of the k-dimensional tree data structure.
+is-expression,4.0.0,https://www.npmjs.com/package/is-expression,forbeslindesay,https://www.npmjs.com/~forbeslindesay,Check if a string is a valid JavaScript expression
+js-library-detector,6.7.0,https://www.npmjs.com/package/js-library-detector,housseindjirdeh,https://www.npmjs.com/~housseindjirdeh,Detects the JavaScript libraries running on a page
+@esbuild/linux-ia32,0.28.0,https://www.npmjs.com/package/@esbuild/linux-ia32,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The Linux 32-bit binary for esbuild, a JavaScript bundler."
+@teppeis/multimaps,3.0.0,https://www.npmjs.com/package/@teppeis/multimaps,teppeis,https://www.npmjs.com/~teppeis,Multimap classes for TypeScript and JavaScript
+@microsoft/applicationinsights-shims,3.0.1,https://www.npmjs.com/package/@microsoft/applicationinsights-shims,msftapplicationinsights,https://www.npmjs.com/~msftapplicationinsights,Microsoft Application Insights JavaScript SDK - Shim functions
+livekit-client,2.18.7,https://www.npmjs.com/package/livekit-client,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript/TypeScript client SDK for LiveKit
+@microsoft/applicationinsights-web,3.4.1,https://www.npmjs.com/package/@microsoft/applicationinsights-web,microsoft1es,https://www.npmjs.com/~microsoft1es,Microsoft Application Insights JavaScript SDK - Web
+identifier-regex,1.0.1,https://www.npmjs.com/package/identifier-regex,sindresorhus,https://www.npmjs.com/~sindresorhus,Regular expression for matching JavaScript identifiers
+@vis.gl/react-google-maps,1.8.3,https://www.npmjs.com/package/@vis.gl/react-google-maps,GitHub Actions,https://www.npmjs.com/~GitHub Actions,React components and hooks for the Google Maps JavaScript API
+extract-zip,2.0.1,https://www.npmjs.com/package/extract-zip,malept,https://www.npmjs.com/~malept,unzip a zip file into a directory using 100% javascript
+@crowdin/crowdin-api-client,1.55.1,https://www.npmjs.com/package/@crowdin/crowdin-api-client,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript library for Crowdin API
+hast-util-to-estree,3.1.3,https://www.npmjs.com/package/hast-util-to-estree,wooorm,https://www.npmjs.com/~wooorm,hast utility to transform to estree (JavaScript AST) JSX
+mnemonist,0.40.3,https://www.npmjs.com/package/mnemonist,yomguithereal,https://www.npmjs.com/~yomguithereal,Curated collection of data structures for the JavaScript/TypeScript.
+nearley,2.20.1,https://www.npmjs.com/package/nearley,hardmath123,https://www.npmjs.com/~hardmath123,"Simple, fast, powerful parser toolkit for JavaScript."
+eslint-config-standard-jsx,11.0.0,https://www.npmjs.com/package/eslint-config-standard-jsx,voxpelli,https://www.npmjs.com/~voxpelli,JavaScript Standard Style JSX support - ESLint Shareable Config
+@esbuild/darwin-arm64,0.28.0,https://www.npmjs.com/package/@esbuild/darwin-arm64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The macOS ARM 64-bit binary for esbuild, a JavaScript bundler."
+@contentstack/utils,1.9.1,https://www.npmjs.com/package/@contentstack/utils,cloudaccounts,https://www.npmjs.com/~cloudaccounts,Contentstack utilities for Javascript
+intl-tel-input,28.0.2,https://www.npmjs.com/package/intl-tel-input,GitHub Actions,https://www.npmjs.com/~GitHub Actions,A JavaScript plugin for entering and validating international telephone numbers
+mutexify,1.4.0,https://www.npmjs.com/package/mutexify,mafintosh,https://www.npmjs.com/~mafintosh,mutex lock for javascript
+png-js,2.0.0,https://www.npmjs.com/package/png-js,diegomura,https://www.npmjs.com/~diegomura,A PNG decoder in JavaScript
+dot,1.1.3,https://www.npmjs.com/package/dot,esp,https://www.npmjs.com/~esp,Concise and fast javascript templating compatible with nodejs and other javascript environments
+@exercism/babel-preset-javascript,0.7.0,https://www.npmjs.com/package/@exercism/babel-preset-javascript,sleeplessbyte,https://www.npmjs.com/~sleeplessbyte,Babel preset configuration for the JavaScript track on Exercism
+@cucumber/cucumber,12.8.2,https://www.npmjs.com/package/@cucumber/cucumber,GitHub Actions,https://www.npmjs.com/~GitHub Actions,The official JavaScript implementation of Cucumber.
+@js-sdsl/ordered-map,4.4.2,https://www.npmjs.com/package/@js-sdsl/ordered-map,yaozilong,https://www.npmjs.com/~yaozilong,javascript standard data structure library which benchmark against C++ STL
+strftime,0.10.3,https://www.npmjs.com/package/strftime,sjs,https://www.npmjs.com/~sjs,strftime for JavaScript
+@solana/buffer-layout,4.0.1,https://www.npmjs.com/package/@solana/buffer-layout,steveluscher,https://www.npmjs.com/~steveluscher,Translation between JavaScript values and Buffers
+@azure/service-bus,7.9.5,https://www.npmjs.com/package/@azure/service-bus,microsoft1es,https://www.npmjs.com/~microsoft1es,Azure Service Bus SDK for JavaScript
+@boldreports/javascript-reporting-controls,13.1.29,https://www.npmjs.com/package/@boldreports/javascript-reporting-controls,bold-reports,https://www.npmjs.com/~bold-reports,The Bold Reports by Syncfusion controls for JavaScript contains ReportViewer and ReportDesigner HTML5 and JavaScript reporting controls for enterprise web development
+uuidv7,1.2.1,https://www.npmjs.com/package/uuidv7,liosk,https://www.npmjs.com/~liosk,A JavaScript implementation of UUID version 7
+tosource,2.0.0-alpha.3,https://www.npmjs.com/package/tosource,marcello,https://www.npmjs.com/~marcello,toSource converts JavaScript objects back to source
+leaflet,1.9.4,https://www.npmjs.com/package/leaflet,mourner,https://www.npmjs.com/~mourner,JavaScript library for mobile-friendly interactive maps
+libphonenumber-js,1.12.42,https://www.npmjs.com/package/libphonenumber-js,catamphetamine,https://www.npmjs.com/~catamphetamine,A simpler (and smaller) rewrite of Google Android's libphonenumber library in javascript
+socketcluster-client,20.0.1,https://www.npmjs.com/package/socketcluster-client,topcloudsystems,https://www.npmjs.com/~topcloudsystems,SocketCluster JavaScript client
+@oxlint/binding-linux-x64-musl,1.62.0,https://www.npmjs.com/package/@oxlint/binding-linux-x64-musl,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+@solana/promises,6.8.0,https://www.npmjs.com/package/@solana/promises,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Helpers for using JavaScript promises
+esbuild-wasm,0.28.0,https://www.npmjs.com/package/esbuild-wasm,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The cross-platform WebAssembly binary for esbuild, a JavaScript bundler."
+amplify-frontend-javascript,3.7.6,https://www.npmjs.com/package/amplify-frontend-javascript,aws-amplify-ops,https://www.npmjs.com/~aws-amplify-ops,amplify-cli front-end plugin for JavaScript projects
+@esbuild/android-arm64,0.28.0,https://www.npmjs.com/package/@esbuild/android-arm64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The Android ARM 64-bit binary for esbuild, a JavaScript bundler."
+esast-util-from-js,2.0.1,https://www.npmjs.com/package/esast-util-from-js,wooorm,https://www.npmjs.com/~wooorm,estree (and esast) utility to parse from JavaScript
+@microsoft/applicationinsights-analytics-js,3.4.1,https://www.npmjs.com/package/@microsoft/applicationinsights-analytics-js,microsoft1es,https://www.npmjs.com/~microsoft1es,Microsoft Application Insights JavaScript SDK - Web Analytics
+density-clustering,1.3.0,https://www.npmjs.com/package/density-clustering,lukaszkrawczyk,https://www.npmjs.com/~lukaszkrawczyk,Density Based Clustering in JavaScript
+@egjs/hammerjs,2.0.17,https://www.npmjs.com/package/@egjs/hammerjs,woodneck,https://www.npmjs.com/~woodneck,A javascript library for multi-touch gestures
+@types/javascript-natural-sort,0.7.0,https://www.npmjs.com/package/@types/javascript-natural-sort,types,https://www.npmjs.com/~types,TypeScript definitions for javascript-natural-sort
+@open-wc/dedupe-mixin,2.0.1,https://www.npmjs.com/package/@open-wc/dedupe-mixin,modern-web,https://www.npmjs.com/~modern-web,Dedupe JavaScript Class Mixins
+@esbuild/win32-arm64,0.28.0,https://www.npmjs.com/package/@esbuild/win32-arm64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The Windows ARM 64-bit binary for esbuild, a JavaScript bundler."
+libhoney,4.3.1,https://www.npmjs.com/package/libhoney,honeycombci,https://www.npmjs.com/~honeycombci, Honeycomb.io Javascript library
+peggy,5.1.0,https://www.npmjs.com/package/peggy,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Parser generator for JavaScript
+regenerate,1.4.2,https://www.npmjs.com/package/regenerate,mathias,https://www.npmjs.com/~mathias,Generate JavaScript-compatible regular expressions based on a given set of Unicode symbols or code points.
+curve25519-js,0.0.4,https://www.npmjs.com/package/curve25519-js,harveyconnor,https://www.npmjs.com/~harveyconnor,Javascript implementation of Curve25519
+object-sizeof,2.6.5,https://www.npmjs.com/package/object-sizeof,miktam,https://www.npmjs.com/~miktam,Sizeof of a JavaScript object in Bytes
+date-fns-jalali,4.1.0-0,https://www.npmjs.com/package/date-fns-jalali,smmoosavi,https://www.npmjs.com/~smmoosavi,Modern JavaScript date utility library for jalali calendar
+typesense,3.0.6,https://www.npmjs.com/package/typesense,tharropoulos,https://www.npmjs.com/~tharropoulos,Javascript Library for Typesense
+@asyncapi/parser,3.6.0,https://www.npmjs.com/package/@asyncapi/parser,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript AsyncAPI parser.
+@tracetail/js,2.3.11,https://www.npmjs.com/package/@tracetail/js,tracetail-publisher,https://www.npmjs.com/~tracetail-publisher,TraceTail JavaScript SDK for browser fingerprinting
+@esbuild/freebsd-arm64,0.28.0,https://www.npmjs.com/package/@esbuild/freebsd-arm64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The FreeBSD ARM 64-bit binary for esbuild, a JavaScript bundler."
+dpop,2.1.1,https://www.npmjs.com/package/dpop,panva,https://www.npmjs.com/~panva,DPoP (RFC9449) for JavaScript Runtimes
+estree-util-is-identifier-name,3.0.0,https://www.npmjs.com/package/estree-util-is-identifier-name,wooorm,https://www.npmjs.com/~wooorm,Check if something can be an ecmascript (javascript) identifier name
+velocity-animate,1.5.2,https://www.npmjs.com/package/velocity-animate,rycochet,https://www.npmjs.com/~rycochet,Accelerated JavaScript animation.
+@solana/assertions,6.8.0,https://www.npmjs.com/package/@solana/assertions,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Helpers for asserting that a JavaScript environment supports certain features necessary for the operation of the Solana JavaScript SDK
+neo4j-driver,6.0.1,https://www.npmjs.com/package/neo4j-driver,neo4j-organization,https://www.npmjs.com/~neo4j-organization,The official Neo4j driver for Javascript
+@esbuild/linux-loong64,0.28.0,https://www.npmjs.com/package/@esbuild/linux-loong64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The Linux LoongArch 64-bit binary for esbuild, a JavaScript bundler."
+js-confuser,2.0.1,https://www.npmjs.com/package/js-confuser,michaelxf,https://www.npmjs.com/~michaelxf,JavaScript Obfuscation Tool.
+@sendbird/chat,4.22.1,https://www.npmjs.com/package/@sendbird/chat,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Sendbird SDK for JavaScript
+yaml-types,0.4.0,https://www.npmjs.com/package/yaml-types,eemeli,https://www.npmjs.com/~eemeli,Useful JavaScript types for YAML
+node-forge,1.4.0,https://www.npmjs.com/package/node-forge,davidlehn,https://www.npmjs.com/~davidlehn,"JavaScript implementations of network transports, cryptography, ciphers, PKI, message digests, and various utilities."
+@honeybadger-io/core,6.7.2,https://www.npmjs.com/package/@honeybadger-io/core,joshuap,https://www.npmjs.com/~joshuap,JavaScript error notifier for Honeybadger.io
+typpy,2.4.0,https://www.npmjs.com/package/typpy,ionicabizau,https://www.npmjs.com/~ionicabizau,A better typeof for JavaScript.
+bit-twiddle,1.0.2,https://www.npmjs.com/package/bit-twiddle,mikolalysenko,https://www.npmjs.com/~mikolalysenko,Bit twiddling hacks for JavaScript
+testem,3.20.0,https://www.npmjs.com/package/testem,johanneswuerbach,https://www.npmjs.com/~johanneswuerbach,Test'em 'scripts! Javascript Unit testing made easy.
+pbf,4.0.1,https://www.npmjs.com/package/pbf,mapbox-npm-02,https://www.npmjs.com/~mapbox-npm-02,"a low-level, lightweight protocol buffers implementation in JavaScript"
+gl-matrix,3.4.4,https://www.npmjs.com/package/gl-matrix,toji,https://www.npmjs.com/~toji,Javascript Matrix and Vector library for High Performance WebGL apps
+@coinbase/wallet-sdk,4.3.7,https://www.npmjs.com/package/@coinbase/wallet-sdk,coinbase-npm,https://www.npmjs.com/~coinbase-npm,Coinbase Wallet JavaScript SDK
+deepmerge,4.3.1,https://www.npmjs.com/package/deepmerge,tehshrike,https://www.npmjs.com/~tehshrike,A library for deep (recursive) merging of Javascript objects
+swarm-js,0.1.42,https://www.npmjs.com/package/swarm-js,maiavictor,https://www.npmjs.com/~maiavictor,Swarm tools for JavaScript.
+gulp-babel,8.0.0,https://www.npmjs.com/package/gulp-babel,loganfsmyth,https://www.npmjs.com/~loganfsmyth,"Use next generation JavaScript, today"
+super-three,0.181.0,https://www.npmjs.com/package/super-three,dmarcos,https://www.npmjs.com/~dmarcos,JavaScript 3D library
+@aws-amplify/amplify-frontend-javascript,3.10.25,https://www.npmjs.com/package/@aws-amplify/amplify-frontend-javascript,aws-amplify-ops,https://www.npmjs.com/~aws-amplify-ops,amplify-cli front-end plugin for JavaScript projects
+qr-scanner,1.4.2,https://www.npmjs.com/package/qr-scanner,danimoh,https://www.npmjs.com/~danimoh,A javascript QR scanner library
+super-animejs,3.1.0,https://www.npmjs.com/package/super-animejs,ngokevin,https://www.npmjs.com/~ngokevin,JavaScript animation engine
+@types/javascript-color-gradient,2.4.2,https://www.npmjs.com/package/@types/javascript-color-gradient,types,https://www.npmjs.com/~types,TypeScript definitions for javascript-color-gradient
+raphael,2.3.0,https://www.npmjs.com/package/raphael,talabes,https://www.npmjs.com/~talabes,JavaScript Vector Library
+apify-client,2.23.0,https://www.npmjs.com/package/apify-client,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Apify API client for JavaScript
+microsoft-cognitiveservices-speech-sdk,1.49.0,https://www.npmjs.com/package/microsoft-cognitiveservices-speech-sdk,microsoft1es,https://www.npmjs.com/~microsoft1es,Microsoft Cognitive Services Speech SDK for JavaScript
+graphql-tag,2.12.6,https://www.npmjs.com/package/graphql-tag,apollo-bot,https://www.npmjs.com/~apollo-bot,A JavaScript template literal tag that parses GraphQL queries
+pdfmake,0.3.7,https://www.npmjs.com/package/pdfmake,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Client/server side PDF printing in pure JavaScript
+@directus/sdk,21.2.2,https://www.npmjs.com/package/@directus/sdk,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Directus JavaScript SDK
+@posthog/types,1.372.3,https://www.npmjs.com/package/@posthog/types,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Type definitions for the PostHog JavaScript SDK
+graphemer,1.4.0,https://www.npmjs.com/package/graphemer,mattpauldavies,https://www.npmjs.com/~mattpauldavies,A JavaScript library that breaks strings into their individual user-perceived characters (including emojis!)
+amplitude-js,8.21.10,https://www.npmjs.com/package/amplitude-js,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Javascript library for Amplitude Analytics
+tcomb,3.2.29,https://www.npmjs.com/package/tcomb,gcanti,https://www.npmjs.com/~gcanti,Type checking and DDD for JavaScript
+estree-util-to-js,2.0.0,https://www.npmjs.com/package/estree-util-to-js,wooorm,https://www.npmjs.com/~wooorm,estree (and esast) utility to serialize to JavaScript
+ses,2.0.0,https://www.npmjs.com/package/ses,mhofman,https://www.npmjs.com/~mhofman,Hardened JavaScript for Fearless Cooperation
+make-plural,8.1.0,https://www.npmjs.com/package/make-plural,eemeli,https://www.npmjs.com/~eemeli,Unicode CLDR pluralization rules as JavaScript functions
+contentstack,3.27.0,https://www.npmjs.com/package/contentstack,cloudaccounts,https://www.npmjs.com/~cloudaccounts,Contentstack Javascript SDK
+@tavily/core,0.7.3,https://www.npmjs.com/package/@tavily/core,tomer-yaacoby,https://www.npmjs.com/~tomer-yaacoby,Official JavaScript library for Tavily.
+protocol-buffers-schema,3.6.1,https://www.npmjs.com/package/protocol-buffers-schema,mafintosh,https://www.npmjs.com/~mafintosh,No nonsense protocol buffers schema parser written in Javascript
+bonjour,3.5.1,https://www.npmjs.com/package/bonjour,watson,https://www.npmjs.com/~watson,A Bonjour/Zeroconf implementation in pure JavaScript
+@metaplex-foundation/mpl-token-metadata,3.4.0,https://www.npmjs.com/package/@metaplex-foundation/mpl-token-metadata,svc01-metaplex,https://www.npmjs.com/~svc01-metaplex,JavaScript client for Token Metadata
+glightbox,3.3.1,https://www.npmjs.com/package/glightbox,biati,https://www.npmjs.com/~biati,Pure Javascript lightbox
+tcomb-validation,3.4.1,https://www.npmjs.com/package/tcomb-validation,gcanti,https://www.npmjs.com/~gcanti,General purpose validation library for JavaScript
+@azure/monitor-opentelemetry-exporter,1.0.0-beta.32,https://www.npmjs.com/package/@azure/monitor-opentelemetry-exporter,microsoft1es,https://www.npmjs.com/~microsoft1es,Application Insights exporter for the OpenTelemetry JavaScript (Node.js) SDK
+tdigest,0.1.2,https://www.npmjs.com/package/tdigest,welch,https://www.npmjs.com/~welch,javascript implementation of Dunning's T-Digest for streaming quantile approximation
+power-assert,1.6.1,https://www.npmjs.com/package/power-assert,twada,https://www.npmjs.com/~twada,Power Assert in JavaScript
+@esbuild/openbsd-arm64,0.28.0,https://www.npmjs.com/package/@esbuild/openbsd-arm64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The OpenBSD ARM 64-bit binary for esbuild, a JavaScript bundler."
+jss,10.10.0,https://www.npmjs.com/package/jss,kof,https://www.npmjs.com/~kof,A lib for generating Style Sheets with JavaScript.
+map-or-similar,1.5.0,https://www.npmjs.com/package/map-or-similar,thinkloop,https://www.npmjs.com/~thinkloop,A JavaScript (JS) Map or Similar object polyfill if Map is not available.
+@trysound/sax,0.2.0,https://www.npmjs.com/package/@trysound/sax,trysound,https://www.npmjs.com/~trysound,An evented streaming XML parser in JavaScript
+@joint/core,4.2.4,https://www.npmjs.com/package/@joint/core,joint_admin,https://www.npmjs.com/~joint_admin,JavaScript diagramming library
+vue,3.5.33,https://www.npmjs.com/package/vue,GitHub Actions,https://www.npmjs.com/~GitHub Actions,The progressive JavaScript framework for building modern web UI.
+scope-analyzer,2.1.2,https://www.npmjs.com/package/scope-analyzer,goto-bus-stop,https://www.npmjs.com/~goto-bus-stop,simple scope analysis for javascript ASTs
+msrcrypto,1.5.8,https://www.npmjs.com/package/msrcrypto,kevlened,https://www.npmjs.com/~kevlened,MSR JavaScript Cryptography Library
+@pact-foundation/pact,16.3.0,https://www.npmjs.com/package/@pact-foundation/pact,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Pact for all things Javascript
+react-refresh,0.18.0,https://www.npmjs.com/package/react-refresh,react-bot,https://www.npmjs.com/~react-bot,React is a JavaScript library for building user interfaces.
+json2mq,0.2.0,https://www.npmjs.com/package/json2mq,akiran,https://www.npmjs.com/~akiran,Generate media query string from JSON or javascript object
+fast-png,8.0.0,https://www.npmjs.com/package/fast-png,cheminfo-bot,https://www.npmjs.com/~cheminfo-bot,PNG image decoder and encoder written entirely in JavaScript
+obj-props,2.0.0,https://www.npmjs.com/package/obj-props,dustinspecker,https://www.npmjs.com/~dustinspecker,List of properties for JavaScript objects
+jszip,3.10.1,https://www.npmjs.com/package/jszip,stuk,https://www.npmjs.com/~stuk,"Create, read and edit .zip files with JavaScript http://stuartk.com/jszip"
+msgpack-lite,0.1.26,https://www.npmjs.com/package/msgpack-lite,kawanet,https://www.npmjs.com/~kawanet,Fast Pure JavaScript MessagePack Encoder and Decoder
+@elevenlabs/client,1.3.1,https://www.npmjs.com/package/@elevenlabs/client,GitHub Actions,https://www.npmjs.com/~GitHub Actions,ElevenLabs JavaScript Client Library
+@solana-program/token-2022,0.9.0,https://www.npmjs.com/package/@solana-program/token-2022,joncinque,https://www.npmjs.com/~joncinque,JavaScript client for the Token 2022 program
+@oxfmt/binding-linux-x64-musl,0.47.0,https://www.npmjs.com/package/@oxfmt/binding-linux-x64-musl,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Formatter for the JavaScript Oxidation Compiler
+parse,8.6.0,https://www.npmjs.com/package/parse,parseadmin,https://www.npmjs.com/~parseadmin,Parse JavaScript SDK
+with,7.0.2,https://www.npmjs.com/package/with,with-bot,https://www.npmjs.com/~with-bot,Compile time `with` for strict mode JavaScript
+grunt-contrib-uglify,5.2.2,https://www.npmjs.com/package/grunt-contrib-uglify,vladikoff,https://www.npmjs.com/~vladikoff,Minify JavaScript files with UglifyJS
+@getstoryteller/storyteller-sdk-javascript,10.13.2,https://www.npmjs.com/package/@getstoryteller/storyteller-sdk-javascript,fraserb99,https://www.npmjs.com/~fraserb99,Javascript SDK for Storyteller
+@esbuild/linux-riscv64,0.28.0,https://www.npmjs.com/package/@esbuild/linux-riscv64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The Linux RISC-V 64-bit binary for esbuild, a JavaScript bundler."
+@esbuild/netbsd-arm64,0.28.0,https://www.npmjs.com/package/@esbuild/netbsd-arm64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The NetBSD ARM 64-bit binary for esbuild, a JavaScript bundler."
+@solana-program/compute-budget,0.15.0,https://www.npmjs.com/package/@solana-program/compute-budget,joncinque,https://www.npmjs.com/~joncinque,JavaScript client for the Compute Budget program
+logrocket,12.1.1,https://www.npmjs.com/package/logrocket,logrocket-npm,https://www.npmjs.com/~logrocket-npm,JavaScript SDK for [LogRocket](https://logrocket.com/)
+iterall,1.3.0,https://www.npmjs.com/package/iterall,leebyron,https://www.npmjs.com/~leebyron,Minimal zero-dependency utilities for using JavaScript Iterables in all environments.
+scriptjs,2.5.9,https://www.npmjs.com/package/scriptjs,ded,https://www.npmjs.com/~ded,Asyncronous JavaScript loader and dependency manager
+@heap/heap-javascript-bridge-support,0.6.0,https://www.npmjs.com/package/@heap/heap-javascript-bridge-support,brian-heap,https://www.npmjs.com/~brian-heap,Heap bridge helper for implementing JavaScript sdks on native platforms.
+xmldoc,2.0.3,https://www.npmjs.com/package/xmldoc,nfarina,https://www.npmjs.com/~nfarina,A lightweight XML Document class for JavaScript.
+html2canvas-pro,2.0.2,https://www.npmjs.com/package/html2canvas-pro,yorickshan,https://www.npmjs.com/~yorickshan,Screenshots with JavaScript. Next generation!
+@hawk.so/javascript,3.2.21,https://www.npmjs.com/package/@hawk.so/javascript,codex-team,https://www.npmjs.com/~codex-team,JavaScript errors tracking for Hawk.so
+dpdm,4.0.1,https://www.npmjs.com/package/dpdm,acrazing,https://www.npmjs.com/~acrazing,Analyze circular dependencies in your JavaScript/TypeScript projects.
+rttc,10.0.1,https://www.npmjs.com/package/rttc,rachaelshaw,https://www.npmjs.com/~rachaelshaw,Runtime type-checking for JavaScript.
+extend-shallow,3.0.2,https://www.npmjs.com/package/extend-shallow,phated,https://www.npmjs.com/~phated,Extend an object with the properties of additional objects. node.js/javascript util.
+base62,2.0.2,https://www.npmjs.com/package/base62,andrewnez,https://www.npmjs.com/~andrewnez,JavaScript Base62 encode/decoder
+class-utils,0.3.6,https://www.npmjs.com/package/class-utils,jonschlinkert,https://www.npmjs.com/~jonschlinkert,Utils for working with JavaScript classes and prototype methods.
+esbuild-linux-64,0.15.18,https://www.npmjs.com/package/esbuild-linux-64,evanw,https://www.npmjs.com/~evanw,"The Linux 64-bit binary for esbuild, a JavaScript bundler."
+@supabase/phoenix,0.4.1,https://www.npmjs.com/package/@supabase/phoenix,GitHub Actions,https://www.npmjs.com/~GitHub Actions,The official JavaScript client for the Phoenix web framework.
+onnx-proto,8.0.1,https://www.npmjs.com/package/onnx-proto,chaosmail,https://www.npmjs.com/~chaosmail,Onnx Protobuf definition for JavaScript
+pegjs,0.10.0,https://www.npmjs.com/package/pegjs,dmajda,https://www.npmjs.com/~dmajda,Parser generator for JavaScript
+@amplitude/types,1.10.2,https://www.npmjs.com/package/@amplitude/types,sdk.dev,https://www.npmjs.com/~sdk.dev,Types for all Amplitude JavaScript SDKs
+heap-js,2.7.1,https://www.npmjs.com/package/heap-js,ignlg,https://www.npmjs.com/~ignlg,"Efficient Binary heap (priority queue, binary tree) data structure for JavaScript / TypeScript. Includes JavaScript methods, Python's heapq module methods, and Java's PriorityQueue methods."
+@aws-sdk/client-s3,3.1038.0,https://www.npmjs.com/package/@aws-sdk/client-s3,aws-sdk-bot,https://www.npmjs.com/~aws-sdk-bot,"AWS SDK for JavaScript S3 Client for Node.js, Browser and React Native"
+modal,0.7.4,https://www.npmjs.com/package/modal,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Modal SDK for JavaScript/TypeScript
+@esbuild/aix-ppc64,0.28.0,https://www.npmjs.com/package/@esbuild/aix-ppc64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The IBM AIX PowerPC 64-bit binary for esbuild, a JavaScript bundler."
+@fingerprintjs/fingerprintjs-pro,3.12.9,https://www.npmjs.com/package/@fingerprintjs/fingerprintjs-pro,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Fingerprint JavaScript agent
+@adora-so/adora-js,0.1.94,https://www.npmjs.com/package/@adora-so/adora-js,george-adora,https://www.npmjs.com/~george-adora,Adora JavaScript SDK
+@openrewrite/rewrite,8.81.0,https://www.npmjs.com/package/@openrewrite/rewrite,zieka,https://www.npmjs.com/~zieka,OpenRewrite JavaScript.
+postcss-functions,4.0.2,https://www.npmjs.com/package/postcss-functions,andyjansson,https://www.npmjs.com/~andyjansson,PostCSS plugin for exposing JavaScript functions
+youch,4.1.1,https://www.npmjs.com/package/youch,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Pretty print JavaScript errors on the Web and the Terminal
+merge-deep,3.0.3,https://www.npmjs.com/package/merge-deep,doowb,https://www.npmjs.com/~doowb,Recursively merge values in a javascript object.
+o3,1.0.3,https://www.npmjs.com/package/o3,inf3rno,https://www.npmjs.com/~inf3rno,o3 - Javascript Class Framework
+javascript-playgrounds,1.2.8,https://www.npmjs.com/package/javascript-playgrounds,dabbott,https://www.npmjs.com/~dabbott,Interactive JavaScript sandbox
+rsocket-flowable,0.0.29-alpha.0,https://www.npmjs.com/package/rsocket-flowable,viglucci,https://www.npmjs.com/~viglucci,ReactiveStreams for JavaScript
+@tensorflow/tfjs-backend-cpu,4.22.0,https://www.npmjs.com/package/@tensorflow/tfjs-backend-cpu,delhibabu,https://www.npmjs.com/~delhibabu,Vanilla JavaScript backend for TensorFlow.js
+bwip-js,4.10.1,https://www.npmjs.com/package/bwip-js,bwip-js,https://www.npmjs.com/~bwip-js,JavaScript barcode generator supporting over 100 types and standards.
+ffjavascript,0.3.1,https://www.npmjs.com/package/ffjavascript,obrezhniev,https://www.npmjs.com/~obrezhniev,Finite Field Library in Javascript
+styleq,0.2.1,https://www.npmjs.com/package/styleq,necolas,https://www.npmjs.com/~necolas,A quick JavaScript runtime for Atomic CSS compilers.
+@descope/core-js-sdk,2.59.1,https://www.npmjs.com/package/@descope/core-js-sdk,omercnet,https://www.npmjs.com/~omercnet,Descope JavaScript core SDK
+@wojtekmaj/enzyme-adapter-react-17,0.8.0,https://www.npmjs.com/package/@wojtekmaj/enzyme-adapter-react-17,wojtekmaj,https://www.npmjs.com/~wojtekmaj,JavaScript Testing utilities for React
+is-identifier,1.0.1,https://www.npmjs.com/package/is-identifier,sindresorhus,https://www.npmjs.com/~sindresorhus,Check if a string is a valid JavaScript identifier
+dijkstrajs,1.0.3,https://www.npmjs.com/package/dijkstrajs,tcort,https://www.npmjs.com/~tcort,A simple JavaScript implementation of Dijkstra's single-source shortest-paths algorithm.
+@form8ion/javascript,15.8.3,https://www.npmjs.com/package/@form8ion/javascript,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript language plugin for the @form8ion toolset
+webpack-obfuscator,3.6.1,https://www.npmjs.com/package/webpack-obfuscator,sanex3339,https://www.npmjs.com/~sanex3339,javascript-obfuscator plugin for Webpack@5
+v8n,1.5.1,https://www.npmjs.com/package/v8n,bruno02221,https://www.npmjs.com/~bruno02221,Dead simple fluent JavaScript validation library
+micromatch,4.0.8,https://www.npmjs.com/package/micromatch,doowb,https://www.npmjs.com/~doowb,Glob matching for javascript/node.js. A replacement and faster alternative to minimatch and multimatch.
+rudder-sdk-js,2.52.11,https://www.npmjs.com/package/rudder-sdk-js,GitHub Actions,https://www.npmjs.com/~GitHub Actions,RudderStack JavaScript SDK
+concordance,5.0.4,https://www.npmjs.com/package/concordance,novemberborn,https://www.npmjs.com/~novemberborn,"Compare, format, diff and serialize any JavaScript value"
+seek-bzip,2.0.0,https://www.npmjs.com/package/seek-bzip,cscott,https://www.npmjs.com/~cscott,a pure-JavaScript Node.JS module for random-access decoding bzip2 data
+memory-fs,0.5.0,https://www.npmjs.com/package/memory-fs,sokra,https://www.npmjs.com/~sokra,A simple in-memory filesystem. Holds data in a javascript object.
+sjcl,1.0.9,https://www.npmjs.com/package/sjcl,nilos,https://www.npmjs.com/~nilos,Stanford Javascript Crypto Library
+blake3-wasm,3.0.0,https://www.npmjs.com/package/blake3-wasm,connor.peet,https://www.npmjs.com/~connor.peet,BLAKE3 hashing for JavaScript: WebAssembly bindings only
+parse-srcset,1.0.2,https://www.npmjs.com/package/parse-srcset,albell,https://www.npmjs.com/~albell,A spec-conformant JavaScript parser for the HTML5 srcset attribute
+@esbuild/linux-mips64el,0.28.0,https://www.npmjs.com/package/@esbuild/linux-mips64el,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The Linux MIPS 64-bit Little Endian binary for esbuild, a JavaScript bundler."
+@types/javascript-state-machine,2.4.6,https://www.npmjs.com/package/@types/javascript-state-machine,types,https://www.npmjs.com/~types,TypeScript definitions for javascript-state-machine
+isomorphic.js,0.2.5,https://www.npmjs.com/package/isomorphic.js,dmonad,https://www.npmjs.com/~dmonad,"Isomorphic JavaScript helper functions (performance, crpyto, ..)"
+@amplitude/experiment-core,0.13.0,https://www.npmjs.com/package/@amplitude/experiment-core,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Amplitude Experiment evaluation JavaScript implementation.
+object-hash,3.0.0,https://www.npmjs.com/package/object-hash,addaleax,https://www.npmjs.com/~addaleax,Generate hashes from javascript objects in node and the browser.
+firebase,12.12.1,https://www.npmjs.com/package/firebase,google-wombot,https://www.npmjs.com/~google-wombot,Firebase JavaScript library for web and Node.js
+speedometer,1.1.0,https://www.npmjs.com/package/speedometer,mafintosh,https://www.npmjs.com/~mafintosh,simple speed measurement in javascript
+graphology,0.26.0,https://www.npmjs.com/package/graphology,yomguithereal,https://www.npmjs.com/~yomguithereal,A robust and multipurpose Graph object for JavaScript.
+solid-js,1.9.12,https://www.npmjs.com/package/solid-js,ryansolid,https://www.npmjs.com/~ryansolid,A declarative JavaScript library for building user interfaces.
+culori,4.0.2,https://www.npmjs.com/package/culori,danburzo,https://www.npmjs.com/~danburzo,A general-purpose color library for JavaScript
+@solana-program/stake,0.6.0,https://www.npmjs.com/package/@solana-program/stake,joncinque,https://www.npmjs.com/~joncinque,JavaScript client for the Stake program
+didi,11.0.0,https://www.npmjs.com/package/didi,nikku,https://www.npmjs.com/~nikku,Dependency Injection for JavaScript
+ag-charts-community,13.2.1,https://www.npmjs.com/package/ag-charts-community,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Advanced Charting / Charts supporting Javascript / Typescript / React / Angular / Vue
+@antfu/utils,9.3.0,https://www.npmjs.com/package/@antfu/utils,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Opinionated collection of common JavaScript / TypeScript utils by @antfu
+common-js-file-extensions,1.0.4,https://www.npmjs.com/package/common-js-file-extensions,luislobo,https://www.npmjs.com/~luislobo,Common JavaScript File Extensions
+syncpack,14.3.1,https://www.npmjs.com/package/syncpack,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Consistent dependency versions in large JavaScript Monorepos
+@tensorflow/tfjs-converter,4.22.0,https://www.npmjs.com/package/@tensorflow/tfjs-converter,delhibabu,https://www.npmjs.com/~delhibabu,Tensorflow model converter for javascript
+@nyariv/sandboxjs,0.9.5,https://www.npmjs.com/package/@nyariv/sandboxjs,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Javascript sandboxing library.
+gifuct-js,2.1.2,https://www.npmjs.com/package/gifuct-js,matt-syntropy,https://www.npmjs.com/~matt-syntropy,Easy to use efficient .GIF parsing in javascript
+tabulator-tables,6.4.0,https://www.npmjs.com/package/tabulator-tables,olifolkerd,https://www.npmjs.com/~olifolkerd,Interactive table generation JavaScript library
+@esbuild/linux-ppc64,0.28.0,https://www.npmjs.com/package/@esbuild/linux-ppc64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The Linux PowerPC 64-bit Little Endian binary for esbuild, a JavaScript bundler."
+@cypress/webpack-preprocessor,7.1.0,https://www.npmjs.com/package/@cypress/webpack-preprocessor,cypress-npm-publisher,https://www.npmjs.com/~cypress-npm-publisher,Cypress preprocessor for bundling JavaScript via webpack
+@testmo/testmo-api,2.5.0,https://www.npmjs.com/package/@testmo/testmo-api,abhandari-25,https://www.npmjs.com/~abhandari-25,Testmo REST API JavaScript binding
+fundebug-javascript,2.8.8,https://www.npmjs.com/package/fundebug-javascript,fundebug,https://www.npmjs.com/~fundebug,monitor errors of javascript application
+@wojtekmaj/enzyme-adapter-utils,0.2.0,https://www.npmjs.com/package/@wojtekmaj/enzyme-adapter-utils,wojtekmaj,https://www.npmjs.com/~wojtekmaj,JavaScript Testing utilities for React
+@bugsnag/js,8.9.0,https://www.npmjs.com/package/@bugsnag/js,sb-priyankap,https://www.npmjs.com/~sb-priyankap,"Universal Javascript error reporting. Automatically detect JavaScript errors in the browser and Node.js, with plugins for React, Vue, Angular, Express, Restify and Koa."
+nanotar,0.3.0,https://www.npmjs.com/package/nanotar,pi0,https://www.npmjs.com/~pi0,Tiny and fast Tar utils for any JavaScript runtime!
+qrcode-generator,2.0.4,https://www.npmjs.com/package/qrcode-generator,kazuhikoarase,https://www.npmjs.com/~kazuhikoarase,QR Code Generator implementation in JavaScript.
+ag-grid-community,35.2.1,https://www.npmjs.com/package/ag-grid-community,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Advanced Data Grid / Data Table supporting Javascript / Typescript / React / Angular / Vue
+@lemonsqueezy/lemonsqueezy.js,4.0.0,https://www.npmjs.com/package/@lemonsqueezy/lemonsqueezy.js,brankoconjic,https://www.npmjs.com/~brankoconjic,The official Lemon Squeezy JavaScript SDK.
+numeric,1.2.6,https://www.npmjs.com/package/numeric,Unknown,N/A,Numerical analysis in javascript
+@fastly/js-compute,3.41.1,https://www.npmjs.com/package/@fastly/js-compute,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript SDK and CLI for building JavaScript applications on [Fastly Compute](https://www.fastly.com/products/edge-compute/serverless).
+@auth0/auth0-auth-js,1.6.0,https://www.npmjs.com/package/@auth0/auth0-auth-js,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Auth0 Authentication Client for JavaScript runtimes.
+eslint-config-semistandard,17.0.0,https://www.npmjs.com/package/eslint-config-semistandard,voxpelli,https://www.npmjs.com/~voxpelli,JavaScript Semistandard Style - ESLint Shareable Config
+unenv,1.10.0,https://www.npmjs.com/package/unenv,pi0,https://www.npmjs.com/~pi0,"`unenv` is a framework-agnostic system that allows converting JavaScript code to be platform agnostic and work in any environment including Browsers, Workers, Node.js, or JavaScript runtime."
+javascript-astar,0.4.1,https://www.npmjs.com/package/javascript-astar,bgrins,https://www.npmjs.com/~bgrins,astar search algorithm in JavaScript
+remeda,2.34.0,https://www.npmjs.com/package/remeda,GitHub Actions,https://www.npmjs.com/~GitHub Actions,A utility library for JavaScript and Typescript.
+kinvey-js-sdk,8.0.0,https://www.npmjs.com/package/kinvey-js-sdk,tsakata1,https://www.npmjs.com/~tsakata1,Kinvey JavaScript SDK for JavaScript applications.
+smartapi-javascript,1.0.27,https://www.npmjs.com/package/smartapi-javascript,ab-smartapi,https://www.npmjs.com/~ab-smartapi,"```bash npm i smartapi-javascript ```"
+microcms-js-sdk,3.4.0,https://www.npmjs.com/package/microcms-js-sdk,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript SDK Client for microCMS.
+apg-js,4.4.0,https://www.npmjs.com/package/apg-js,ldthomas,https://www.npmjs.com/~ldthomas,"JavaScript APG, an ABNF Parser Generator"
+howler,2.2.4,https://www.npmjs.com/package/howler,goldfire,https://www.npmjs.com/~goldfire,Javascript audio library for the modern web.
+d3-cloud,1.2.9,https://www.npmjs.com/package/d3-cloud,jasondavies,https://www.npmjs.com/~jasondavies,Generate word clouds in JavaScript.
+@solana/options,6.8.0,https://www.npmjs.com/package/@solana/options,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Managing and serializing Rust-like Option types in JavaScript
+environment,1.1.0,https://www.npmjs.com/package/environment,sindresorhus,https://www.npmjs.com/~sindresorhus,"Check which JavaScript environment your code is running in at runtime: browser, Node.js, Bun, etc"
+avro-js,1.12.1,https://www.npmjs.com/package/avro-js,opwvhk,https://www.npmjs.com/~opwvhk,JavaScript Avro implementation
+@fal-ai/client,1.10.0,https://www.npmjs.com/package/@fal-ai/client,GitHub Actions,https://www.npmjs.com/~GitHub Actions,The fal.ai client for JavaScript and TypeScript
+@petamoriken/float16,3.9.3,https://www.npmjs.com/package/@petamoriken/float16,GitHub Actions,https://www.npmjs.com/~GitHub Actions,IEEE 754 half-precision floating-point for JavaScript
+mutative,1.3.0,https://www.npmjs.com/package/mutative,unadlib,https://www.npmjs.com/~unadlib,A JavaScript library for efficient immutable updates
+@azure/storage-file-share,12.30.0,https://www.npmjs.com/package/@azure/storage-file-share,microsoft1es,https://www.npmjs.com/~microsoft1es,Microsoft Azure Storage SDK for JavaScript - File
+replicator,1.0.5,https://www.npmjs.com/package/replicator,belym.a.2105,https://www.npmjs.com/~belym.a.2105,Advanced JavaScript objects serialization.
+@descope/web-js-sdk,1.48.1,https://www.npmjs.com/package/@descope/web-js-sdk,omercnet,https://www.npmjs.com/~omercnet,Descope JavaScript web SDK
+@pnpm/ramda,0.28.1,https://www.npmjs.com/package/@pnpm/ramda,zkochan,https://www.npmjs.com/~zkochan,A practical functional library for JavaScript programmers.
+tv4,1.3.0,https://www.npmjs.com/package/tv4,geraintluff,https://www.npmjs.com/~geraintluff,A public domain JSON Schema validator for JavaScript
+checkpoint-client,1.1.33,https://www.npmjs.com/package/checkpoint-client,prismabot,https://www.npmjs.com/~prismabot,javascript checkpoint client
+probe.gl,3.6.0,https://www.npmjs.com/package/probe.gl,ibgreen,https://www.npmjs.com/~ibgreen,JavaScript console instrumentation for browser and Node
+@aws-sdk/client-sso,3.1038.0,https://www.npmjs.com/package/@aws-sdk/client-sso,aws-sdk-bot,https://www.npmjs.com/~aws-sdk-bot,"AWS SDK for JavaScript Sso Client for Node.js, Browser and React Native"
+simple-keyboard,3.8.136,https://www.npmjs.com/package/simple-keyboard,GitHub Actions,https://www.npmjs.com/~GitHub Actions,On-screen Javascript Virtual Keyboard
+@rollup/plugin-swc,0.4.0,https://www.npmjs.com/package/@rollup/plugin-swc,shellscape,https://www.npmjs.com/~shellscape,Transpile JavaScript/TypeScript code with swc.
+@axiomhq/js,1.6.0,https://www.npmjs.com/package/@axiomhq/js,GitHub Actions,https://www.npmjs.com/~GitHub Actions,The official javascript bindings for the Axiom API
+@trezor/utxo-lib,2.5.0,https://www.npmjs.com/package/@trezor/utxo-lib,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Client-side Bitcoin-like JavaScript library
+humanize,0.0.9,https://www.npmjs.com/package/humanize,taijin,https://www.npmjs.com/~taijin,Javascript string formatter for human readability
+node-bitmap,0.0.1,https://www.npmjs.com/package/node-bitmap,nowelium,https://www.npmjs.com/~nowelium,pure javascript Bitmap library
+javascript-autocomplete,1.0.5,https://www.npmjs.com/package/javascript-autocomplete,rascarlito,https://www.npmjs.com/~rascarlito,Pixabay JavaScript-autoComplete
+hyparquet,1.25.6,https://www.npmjs.com/package/hyparquet,platypii,https://www.npmjs.com/~platypii,Parquet file parser for JavaScript
+@openfga/sdk,0.9.5,https://www.npmjs.com/package/@openfga/sdk,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript and Node.js SDK for OpenFGA
+nwmatcher,1.4.4,https://www.npmjs.com/package/nwmatcher,diego,https://www.npmjs.com/~diego,A CSS3-compliant JavaScript selector engine.
+vite-plugin-commonjs,0.10.4,https://www.npmjs.com/package/vite-plugin-commonjs,caoxie,https://www.npmjs.com/~caoxie,A pure JavaScript implementation of CommonJs
+rx,4.1.0,https://www.npmjs.com/package/rx,mattpodwysocki,https://www.npmjs.com/~mattpodwysocki,Library for composing asynchronous and event-based operations in JavaScript
+capability,0.2.5,https://www.npmjs.com/package/capability,inf3rno,https://www.npmjs.com/~inf3rno,capability.js - javascript environment capability detection
+quickchart-js,3.1.3,https://www.npmjs.com/package/quickchart-js,ianw,https://www.npmjs.com/~ianw,Javascript client for QuickChart.io
+airtable,0.12.2,https://www.npmjs.com/package/airtable,nabeelairtable,https://www.npmjs.com/~nabeelairtable,The official Airtable JavaScript library.
+signalr,2.4.3,https://www.npmjs.com/package/signalr,brecon,https://www.npmjs.com/~brecon,Microsoft ASP.NET SignalR JavaScript Client
+plotly.js,3.5.0,https://www.npmjs.com/package/plotly.js,packages-team-plotly,https://www.npmjs.com/~packages-team-plotly,The open source javascript graphing library that powers plotly
+onnxruntime-web,1.24.3,https://www.npmjs.com/package/onnxruntime-web,onnxruntime,https://www.npmjs.com/~onnxruntime,A Javascript library for running ONNX models on browsers
+replicate,1.4.0,https://www.npmjs.com/package/replicate,aron,https://www.npmjs.com/~aron,JavaScript client for Replicate
+zlibjs,0.3.1,https://www.npmjs.com/package/zlibjs,imaya,https://www.npmjs.com/~imaya,"zlib, gzip and zip implementation in JavaScript"
+@ngageoint/grid-js,2.1.0,https://www.npmjs.com/package/@ngageoint/grid-js,kgilland,https://www.npmjs.com/~kgilland,Grid Javascript
+twilio-video,2.34.0,https://www.npmjs.com/package/twilio-video,twilio-video-npm,https://www.npmjs.com/~twilio-video-npm,Twilio Video JavaScript Library
+delaunator,5.1.0,https://www.npmjs.com/package/delaunator,mourner,https://www.npmjs.com/~mourner,An incredibly fast JavaScript library for Delaunay triangulation of 2D points
+error-polyfill,0.1.3,https://www.npmjs.com/package/error-polyfill,inf3rno,https://www.npmjs.com/~inf3rno,Javascript Error Polyfill
+bun-types,1.3.13,https://www.npmjs.com/package/bun-types,jarred,https://www.npmjs.com/~jarred,"Type definitions and documentation for Bun, an incredibly fast JavaScript runtime"
+@stytch/vanilla-js,6.0.7,https://www.npmjs.com/package/@stytch/vanilla-js,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Stytch's official Javascript Client Library
+ecpair,3.0.1,https://www.npmjs.com/package/ecpair,jl.landabaso,https://www.npmjs.com/~jl.landabaso,Client-side Bitcoin JavaScript library ECPair
+@bitgo-forks/bitcoinjs-lib,7.0.0-rc.7,https://www.npmjs.com/package/@bitgo-forks/bitcoinjs-lib,ericcrosson-bitgo,https://www.npmjs.com/~ericcrosson-bitgo,Client-side Bitcoin JavaScript library
+buildkite-test-collector,1.9.5,https://www.npmjs.com/package/buildkite-test-collector,nprizal,https://www.npmjs.com/~nprizal,Buildkite Test Engine collectors for JavaScript test frameworks
+velocityjs,2.1.5,https://www.npmjs.com/package/velocityjs,shepherdwind,https://www.npmjs.com/~shepherdwind,Velocity Template Language(VTL) for JavaScript
+@amplitude/utils,1.10.2,https://www.npmjs.com/package/@amplitude/utils,sdk.dev,https://www.npmjs.com/~sdk.dev,Utility functions for the Amplitude JavaScript SDK
+@evidence-dev/source-javascript,0.0.3,https://www.npmjs.com/package/@evidence-dev/source-javascript,mcrascal,https://www.npmjs.com/~mcrascal,This is a JavaScript source for Evidence. It allows you to run arbitrary JavaScript code as a data source. It's a quick way to get data into Evidence without having to create a new connector.
+tinymce,8.4.0,https://www.npmjs.com/package/tinymce,tinymce,https://www.npmjs.com/~tinymce,Web based JavaScript HTML WYSIWYG editor control.
+deps-regex,0.2.0,https://www.npmjs.com/package/deps-regex,mathieudutour,https://www.npmjs.com/~mathieudutour,Regular expression for matching javascript require/import statements.
+unload,2.4.1,https://www.npmjs.com/package/unload,pubkey,https://www.npmjs.com/~pubkey,Execute code when the js-process exits. On all javascript-environments
+over,0.0.5,https://www.npmjs.com/package/over,Unknown,N/A,JavaScript function overloading framework.
+algoliasearch,5.51.0,https://www.npmjs.com/package/algoliasearch,GitHub Actions,https://www.npmjs.com/~GitHub Actions,A fully-featured and blazing-fast JavaScript API client to interact with Algolia API.
+buffer-layout,1.2.2,https://www.npmjs.com/package/buffer-layout,pabigot,https://www.npmjs.com/~pabigot,Translation between JavaScript values and Buffers
+sip.js,0.21.2,https://www.npmjs.com/package/sip.js,john-e-riordan,https://www.npmjs.com/~john-e-riordan,A SIP library for JavaScript
+@googlemaps/js-api-loader,2.0.2,https://www.npmjs.com/package/@googlemaps/js-api-loader,google-wombot,https://www.npmjs.com/~google-wombot,Wrapper for the loading of Google Maps JavaScript API script in the browser
+@ngageoint/mgrs-js,1.0.0,https://www.npmjs.com/package/@ngageoint/mgrs-js,kgilland,https://www.npmjs.com/~kgilland,MGRS Javascript
+loglevel,1.9.2,https://www.npmjs.com/package/loglevel,pimterry,https://www.npmjs.com/~pimterry,"Minimal lightweight logging for JavaScript, adding reliable log level methods to any available console.log methods"
+@fidm/x509,1.2.1,https://www.npmjs.com/package/@fidm/x509,zensh,https://www.npmjs.com/~zensh,Pure JavaScript X509 certificate tools for Node.js
+@ibm/telemetry-js,1.11.0,https://www.npmjs.com/package/@ibm/telemetry-js,carbon-design-system,https://www.npmjs.com/~carbon-design-system,JavaScript telemetry tooling for open/inner source projects
+injection-js,2.6.1,https://www.npmjs.com/package/injection-js,mgechev,https://www.npmjs.com/~mgechev,Dependency Injection library for JavaScript and TypeScript
+spark-md5,3.0.2,https://www.npmjs.com/package/spark-md5,satazor,https://www.npmjs.com/~satazor,Lightning fast normal and incremental md5 for javascript
+modern-tar,0.7.6,https://www.npmjs.com/package/modern-tar,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Zero dependency streaming tar parser and writer for JavaScript.
+@shikijs/engine-javascript,4.0.2,https://www.npmjs.com/package/@shikijs/engine-javascript,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Engine for Shiki using JavaScript's native RegExp
+@esbuild/linux-s390x,0.28.0,https://www.npmjs.com/package/@esbuild/linux-s390x,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The Linux IBM Z 64-bit Big Endian binary for esbuild, a JavaScript bundler."
+@urbit/nockjs,1.6.0,https://www.npmjs.com/package/@urbit/nockjs,nocsyx-lassul,https://www.npmjs.com/~nocsyx-lassul,Javascript urbit runtime
+@oxlint/binding-darwin-arm64,1.62.0,https://www.npmjs.com/package/@oxlint/binding-darwin-arm64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+chrono-node,2.9.0,https://www.npmjs.com/package/chrono-node,wanasit,https://www.npmjs.com/~wanasit,A natural language date parser in Javascript
+@oxfmt/binding-linux-arm64-gnu,0.47.0,https://www.npmjs.com/package/@oxfmt/binding-linux-arm64-gnu,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Formatter for the JavaScript Oxidation Compiler
+punycode,2.3.1,https://www.npmjs.com/package/punycode,google-wombot,https://www.npmjs.com/~google-wombot,"A robust Punycode converter that fully complies to RFC 3492 and RFC 5891, and works on nearly all JavaScript platforms."
+gremlin,3.8.1,https://www.npmjs.com/package/gremlin,xiazcy,https://www.npmjs.com/~xiazcy,JavaScript Gremlin Language Variant
+impit-linux-x64-gnu,0.13.1,https://www.npmjs.com/package/impit-linux-x64-gnu,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Impit for JavaScript
+@poppinss/dumper,0.7.0,https://www.npmjs.com/package/@poppinss/dumper,virk,https://www.npmjs.com/~virk,Pretty print JavaScript data types in the terminal and the browser
+rete,2.0.6,https://www.npmjs.com/package/rete,ni55an,https://www.npmjs.com/~ni55an,JavaScript framework
+snappyjs,0.7.0,https://www.npmjs.com/package/snappyjs,zhipengjia,https://www.npmjs.com/~zhipengjia,JavaScript implementation of Google's Snappy compression library
+radix3,1.1.2,https://www.npmjs.com/package/radix3,pi0,https://www.npmjs.com/~pi0,Lightweight and fast router for JavaScript based on Radix Tree
+@ngageoint/color-js,2.1.0,https://www.npmjs.com/package/@ngageoint/color-js,kgilland,https://www.npmjs.com/~kgilland,Color Javascript
+agora-rtm-sdk,2.2.4,https://www.npmjs.com/package/agora-rtm-sdk,jocelyn_0,https://www.npmjs.com/~jocelyn_0,JavaScript SDK for Agora RTM
+datatables.net,2.3.8,https://www.npmjs.com/package/datatables.net,datatables,https://www.npmjs.com/~datatables,DataTables - The Javascript table library
+@oxlint/binding-linux-arm64-gnu,1.62.0,https://www.npmjs.com/package/@oxlint/binding-linux-arm64-gnu,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+grunt-babel,8.0.0,https://www.npmjs.com/package/grunt-babel,loganfsmyth,https://www.npmjs.com/~loganfsmyth,"Use next generation JavaScript, today"
+js-sdsl,4.4.2,https://www.npmjs.com/package/js-sdsl,yaozilong,https://www.npmjs.com/~yaozilong,javascript standard data structure library which benchmark against C++ STL
+sherif,1.11.1,https://www.npmjs.com/package/sherif,quiibz,https://www.npmjs.com/~quiibz,"Opinionated, zero-config linter for TypeScript & JavaScript monorepos"
+node-fetch-native,1.6.7,https://www.npmjs.com/package/node-fetch-native,pi0,https://www.npmjs.com/~pi0,better fetch for Node.js. Works on any JavaScript runtime!
+jstz,2.1.1,https://www.npmjs.com/package/jstz,iansinnott,https://www.npmjs.com/~iansinnott,Timezone detection for JavaScript
+image-meta,0.2.2,https://www.npmjs.com/package/image-meta,pi0,https://www.npmjs.com/~pi0,Detect image type and size using pure javascript
+@plotly/d3,3.8.2,https://www.npmjs.com/package/@plotly/d3,archmoj,https://www.npmjs.com/~archmoj,A JavaScript visualization library for HTML and SVG.
+@bytecodealliance/jco,1.19.0,https://www.npmjs.com/package/@bytecodealliance/jco,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript tooling for working with WebAssembly Components
+@cantoo/pdf-lib,2.6.5,https://www.npmjs.com/package/@cantoo/pdf-lib,sharcoux,https://www.npmjs.com/~sharcoux,Create and modify PDF files with JavaScript
+require-addon,1.2.0,https://www.npmjs.com/package/require-addon,kasperisager,https://www.npmjs.com/~kasperisager,Import native addons across JavaScript runtimes
+kuromoji,0.1.2,https://www.npmjs.com/package/kuromoji,takuyaa,https://www.npmjs.com/~takuyaa,JavaScript implementation of Japanese morphological analyzer
+@tensorflow/tfjs-data,4.22.0,https://www.npmjs.com/package/@tensorflow/tfjs-data,delhibabu,https://www.npmjs.com/~delhibabu,TensorFlow Data API in JavaScript
+@xml-tools/parser,1.0.11,https://www.npmjs.com/package/@xml-tools/parser,oss_rima_bot,https://www.npmjs.com/~oss_rima_bot,XML Parser Implemented in JavaScript
+utf8,3.0.0,https://www.npmjs.com/package/utf8,mathias,https://www.npmjs.com/~mathias,A well-tested UTF-8 encoder/decoder written in JavaScript.
+uri-js,4.4.1,https://www.npmjs.com/package/uri-js,garycourt,https://www.npmjs.com/~garycourt,"An RFC 3986/3987 compliant, scheme extendable URI/IRI parsing/validating/resolving library for JavaScript."
+@logtail/tools,0.5.8,https://www.npmjs.com/package/@logtail/tools,logtail,https://www.npmjs.com/~logtail,Better Stack JavaScript logging tools (formerly Logtail)
+zeparser,0.0.7,https://www.npmjs.com/package/zeparser,felixge,https://www.npmjs.com/~felixge,My JavaScript parser
+fibers,5.0.3,https://www.npmjs.com/package/fibers,laverdet,https://www.npmjs.com/~laverdet,Cooperative multi-tasking for Javascript
+@mendable/firecrawl-js,4.20.0,https://www.npmjs.com/package/@mendable/firecrawl-js,hello_sideguide,https://www.npmjs.com/~hello_sideguide,JavaScript SDK for Firecrawl API
+turbo,2.9.6,https://www.npmjs.com/package/turbo,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Turborepo is a high-performance build system for JavaScript and TypeScript codebases.
+voca,1.4.1,https://www.npmjs.com/package/voca,panzerdp,https://www.npmjs.com/~panzerdp,The ultimate JavaScript string library
+geotiff,3.0.5,https://www.npmjs.com/package/geotiff,constantinius,https://www.npmjs.com/~constantinius,GeoTIFF image decoding in JavaScript
+wolfy87-eventemitter,5.2.9,https://www.npmjs.com/package/wolfy87-eventemitter,olical,https://www.npmjs.com/~olical,Event based JavaScript for the browser
+mp4box,2.3.0,https://www.npmjs.com/package/mp4box,denizatgpac,https://www.npmjs.com/~denizatgpac,JavaScript version of GPAC's MP4Box tool
+attr-accept,2.2.5,https://www.npmjs.com/package/attr-accept,rolandjitsu,https://www.npmjs.com/~rolandjitsu,"JavaScript implementation of the ""accept"" attribute for HTML5 <input type=""file"">"
+@novu/js,3.16.0,https://www.npmjs.com/package/@novu/js,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Novu JavaScript SDK for <Inbox />
+sherif-linux-x64,1.11.1,https://www.npmjs.com/package/sherif-linux-x64,quiibz,https://www.npmjs.com/~quiibz,"Opinionated, zero-config linter for TypeScript & JavaScript monorepos"
+ag-charts-types,13.2.1,https://www.npmjs.com/package/ag-charts-types,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Advanced Charting / Charts supporting Javascript / Typescript / React / Angular / Vue
+cst,0.4.10,https://www.npmjs.com/package/cst,markelog,https://www.npmjs.com/~markelog,JavaScript CST Implementation
+flatqueue,3.0.0,https://www.npmjs.com/package/flatqueue,mourner,https://www.npmjs.com/~mourner,The smallest and simplest JavaScript priority queue
+vega-time,3.1.0,https://www.npmjs.com/package/vega-time,lhermann,https://www.npmjs.com/~lhermann,JavaScript date/time utilities for Vega.
+@splitsoftware/splitio-browserjs,1.7.0,https://www.npmjs.com/package/@splitsoftware/splitio-browserjs,ezamora.split,https://www.npmjs.com/~ezamora.split,Split SDK for JavaScript on Browser
+stimulus,3.2.2,https://www.npmjs.com/package/stimulus,dhh,https://www.npmjs.com/~dhh,Stimulus JavaScript framework
+fmix,1.0.0,https://www.npmjs.com/package/fmix,linusu,https://www.npmjs.com/~linusu,MurmurHash3 x86 finalization mix implemented in JavaScript.
+constantinople,4.0.1,https://www.npmjs.com/package/constantinople,forbeslindesay,https://www.npmjs.com/~forbeslindesay,Determine whether a JavaScript expression evaluates to a constant
+downloadjs,1.4.7,https://www.npmjs.com/package/downloadjs,rndme,https://www.npmjs.com/~rndme,file downloading using client-side javascript
+mime-lite,1.0.3,https://www.npmjs.com/package/mime-lite,asaianudeep,https://www.npmjs.com/~asaianudeep,Standard mime types for JavaScript
+@chamaeleonidae/chmln,1.0.1,https://www.npmjs.com/package/@chamaeleonidae/chmln,bnorton,https://www.npmjs.com/~bnorton,The official chameleon.io JavaScript client library
+@lit-labs/signals,0.2.0,https://www.npmjs.com/package/@lit-labs/signals,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript Signals proposal integration for Lit
+unbuild,3.6.1,https://www.npmjs.com/package/unbuild,pi0,https://www.npmjs.com/~pi0,A unified JavaScript build system
+nitropack,2.13.3,https://www.npmjs.com/package/nitropack,pi0,https://www.npmjs.com/~pi0,Build and Deploy Universal JavaScript Servers
+is-lite,2.0.0,https://www.npmjs.com/package/is-lite,GitHub Actions,https://www.npmjs.com/~GitHub Actions,A tiny javascript type testing tool
+framesync,6.1.2,https://www.npmjs.com/package/framesync,popmotion,https://www.npmjs.com/~popmotion,A frame-synced render loop for JavaScript
+gleap,15.3.2,https://www.npmjs.com/package/gleap,boehlerlukas,https://www.npmjs.com/~boehlerlukas,![Gleap JavaScript SDK Intro](https://github.com/GleapSDK/JavaScript-SDK/blob/master/resources/banner.png?raw=true)
+knip,6.7.0,https://www.npmjs.com/package/knip,webpro,https://www.npmjs.com/~webpro,"Find and fix unused dependencies, exports and files in your TypeScript and JavaScript projects"
+paho-mqtt,1.1.0,https://www.npmjs.com/package/paho-mqtt,jpwsutton,https://www.npmjs.com/~jpwsutton,Eclipse Paho JavaScript MQTT client for Browsers
+@aws-sdk/client-sts,3.1038.0,https://www.npmjs.com/package/@aws-sdk/client-sts,aws-sdk-bot,https://www.npmjs.com/~aws-sdk-bot,"AWS SDK for JavaScript Sts Client for Node.js, Browser and React Native"
+@algolia/client-common,5.51.0,https://www.npmjs.com/package/@algolia/client-common,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Common package for the Algolia JavaScript API client.
+ltx,3.1.2,https://www.npmjs.com/package/ltx,sonny,https://www.npmjs.com/~sonny,"<xml for=""JavaScript"">"
+@oxfmt/binding-darwin-arm64,0.47.0,https://www.npmjs.com/package/@oxfmt/binding-darwin-arm64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Formatter for the JavaScript Oxidation Compiler
+impit-linux-x64-musl,0.13.1,https://www.npmjs.com/package/impit-linux-x64-musl,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Impit for JavaScript
+ix,7.0.0,https://www.npmjs.com/package/ix,ptaylor,https://www.npmjs.com/~ptaylor,The Interactive Extensions for JavaScript
+bare-assert,1.2.0,https://www.npmjs.com/package/bare-assert,kasperisager,https://www.npmjs.com/~kasperisager,Assertion library for JavaScript
+cidaas-javascript-sdk,5.1.4,https://www.npmjs.com/package/cidaas-javascript-sdk,cidaasnpm,https://www.npmjs.com/~cidaasnpm,Cidaas native javascript sdk
+@cyclonedx/cyclonedx-library,10.0.0,https://www.npmjs.com/package/@cyclonedx/cyclonedx-library,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Core functionality of CycloneDX for JavaScript (Node.js or WebBrowser).
+snapsvg,0.5.1,https://www.npmjs.com/package/snapsvg,dmitrybaranovskiy,https://www.npmjs.com/~dmitrybaranovskiy,JavaScript Vector Library
+jsbi,4.3.2,https://www.npmjs.com/package/jsbi,google-wombot,https://www.npmjs.com/~google-wombot,"JSBI is a pure-JavaScript implementation of [the ECMAScript BigInt proposal](https://tc39.es/proposal-bigint/), which officially became a part of the JavaScript language in ES2020."
+@turf/turf,7.3.5,https://www.npmjs.com/package/@turf/turf,GitHub Actions,https://www.npmjs.com/~GitHub Actions,a JavaScript library for performing geospatial operations with GeoJSON
+showdown,2.1.0,https://www.npmjs.com/package/showdown,tivie,https://www.npmjs.com/~tivie,A Markdown to HTML converter written in Javascript
+buffer-crc32,1.0.0,https://www.npmjs.com/package/buffer-crc32,kibertoad,https://www.npmjs.com/~kibertoad,A pure javascript CRC32 algorithm that plays nice with binary data
+@syncfusion/ej2-excel-export,33.2.3,https://www.npmjs.com/package/@syncfusion/ej2-excel-export,syncfusion-javascript,https://www.npmjs.com/~syncfusion-javascript,Essential Javascript 2 Excel Export Library
+@bitgo-beta/utxo-lib,2.4.1,https://www.npmjs.com/package/@bitgo-beta/utxo-lib,bitgoaaron,https://www.npmjs.com/~bitgoaaron,Client-side Bitcoin JavaScript library
+gif.js,0.2.0,https://www.npmjs.com/package/gif.js,jnordberg,https://www.npmjs.com/~jnordberg,JavaScript GIF encoding library
+zca-js,2.1.2,https://www.npmjs.com/package/zca-js,rfs-adreno,https://www.npmjs.com/~rfs-adreno,Unofficial Zalo API for JavaScript
+vt-pbf,3.1.3,https://www.npmjs.com/package/vt-pbf,mourner,https://www.npmjs.com/~mourner,Serialize mapbox vector tiles to binary protobufs in javascript.
+croppie,2.6.5,https://www.npmjs.com/package/croppie,dbsy9d,https://www.npmjs.com/~dbsy9d,A simple javascript image cropper
+es-cookie,1.5.0,https://www.npmjs.com/package/es-cookie,theodorejb,https://www.npmjs.com/~theodorejb,A JavaScript module for handling cookies
+decode-formdata,0.9.0,https://www.npmjs.com/package/decode-formdata,fabian-hiller,https://www.npmjs.com/~fabian-hiller,Decodes complex FormData into a JavaScript object
+@launchdarkly/js-client-sdk,4.6.3,https://www.npmjs.com/package/@launchdarkly/js-client-sdk,GitHub Actions,https://www.npmjs.com/~GitHub Actions,LaunchDarkly SDK for JavaScript in Browsers
+safe-identifier,0.4.2,https://www.npmjs.com/package/safe-identifier,eemeli,https://www.npmjs.com/~eemeli,Sanitize strings for use as JavaScript identifiers & property names
+mock-socket,9.3.1,https://www.npmjs.com/package/mock-socket,atrue,https://www.npmjs.com/~atrue,Javascript mocking library for websockets and socket.io
+@oxlint/binding-darwin-x64,1.62.0,https://www.npmjs.com/package/@oxlint/binding-darwin-x64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+infinispan,0.13.0,https://www.npmjs.com/package/infinispan,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Infinispan Javascript client
+ssim.js,3.5.0,https://www.npmjs.com/package/ssim.js,obartra,https://www.npmjs.com/~obartra,JavaScript implementation of the SSIM algorithm
+undeclared-identifiers,1.1.3,https://www.npmjs.com/package/undeclared-identifiers,goto-bus-stop,https://www.npmjs.com/~goto-bus-stop,find undeclared identifiers and property accesses in a javascript file.
+get-set-props,0.2.0,https://www.npmjs.com/package/get-set-props,dustinspecker,https://www.npmjs.com/~dustinspecker,List of getter/setter properties for JavaScript types
+xpath.js,1.1.0,https://www.npmjs.com/package/xpath.js,yaron,https://www.npmjs.com/~yaron,Xpath pure javascript implementation for node.js
+@oxlint/binding-win32-x64-msvc,1.62.0,https://www.npmjs.com/package/@oxlint/binding-win32-x64-msvc,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+amazon-chime-sdk-js,3.30.0,https://www.npmjs.com/package/amazon-chime-sdk-js,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Amazon Chime SDK for JavaScript
+@oxlint/binding-linux-arm64-musl,1.62.0,https://www.npmjs.com/package/@oxlint/binding-linux-arm64-musl,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+tap,21.7.1,https://www.npmjs.com/package/tap,isaacs,https://www.npmjs.com/~isaacs,A Test-Anything-Protocol library for JavaScript
+@amplitude/experiment-js-client,1.21.0,https://www.npmjs.com/package/@amplitude/experiment-js-client,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Amplitude Experiment Javascript Client SDK
+@aerisweather/javascript-sdk,1.8.6,https://www.npmjs.com/package/@aerisweather/javascript-sdk,oliver.alexander.aw,https://www.npmjs.com/~oliver.alexander.aw,Core Javascript library shared across multiple projects
+@turnkey/sdk-server,5.3.0,https://www.npmjs.com/package/@turnkey/sdk-server,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript Server SDK
+bidc,0.0.4,https://www.npmjs.com/package/bidc,quietshu,https://www.npmjs.com/~quietshu,Bidirectional Channel for JavaScript
+cardinal,2.1.1,https://www.npmjs.com/package/cardinal,thlorenz,https://www.npmjs.com/~thlorenz,Syntax highlights JavaScript code with ANSI colors to be printed to the terminal.
+safe-flat,2.1.0,https://www.npmjs.com/package/safe-flat,jessie-codes,https://www.npmjs.com/~jessie-codes,Safely flatten a nested JavaScript object.
+diffusion,6.12.1,https://www.npmjs.com/package/diffusion,push_technology,https://www.npmjs.com/~push_technology,Diffusion JavaScript client
+tau-prolog,0.3.4,https://www.npmjs.com/package/tau-prolog,jariazavalverde,https://www.npmjs.com/~jariazavalverde,An open source Prolog interpreter in JavaScript
+array-timsort,1.0.3,https://www.npmjs.com/package/array-timsort,kael,https://www.npmjs.com/~kael,Fast JavaScript array sorting by implementing Python's Timsort algorithm
+filestack-js,3.50.4,https://www.npmjs.com/package/filestack-js,filestack-dev,https://www.npmjs.com/~filestack-dev,Official JavaScript library for Filestack
+fusioncharts,4.2.2,https://www.npmjs.com/package/fusioncharts,meherhowji,https://www.npmjs.com/~meherhowji,FusionCharts JavaScript charting framework
+libsodium-wrappers,0.8.4,https://www.npmjs.com/package/libsodium-wrappers,jedisct1,https://www.npmjs.com/~jedisct1,The Sodium cryptographic library compiled to pure JavaScript (wrappers)
+@launchdarkly/js-client-sdk-common,1.26.1,https://www.npmjs.com/package/@launchdarkly/js-client-sdk-common,GitHub Actions,https://www.npmjs.com/~GitHub Actions,LaunchDarkly Client SDK for JavaScript - common code
+medium-zoom,1.1.0,https://www.npmjs.com/package/medium-zoom,francoischalifour,https://www.npmjs.com/~francoischalifour,A JavaScript library for zooming images like Medium
+glob-to-regex.js,1.2.0,https://www.npmjs.com/package/glob-to-regex.js,streamich,https://www.npmjs.com/~streamich,Transform GLOB patterns to JavaScript regular expressions for fast file path matching.
+typeforce,1.18.0,https://www.npmjs.com/package/typeforce,dcousens,https://www.npmjs.com/~dcousens,Another biased type checking solution for Javascript
+gherkin-lint,4.2.4,https://www.npmjs.com/package/gherkin-lint,andrewnicols,https://www.npmjs.com/~andrewnicols,A Gherkin linter/validator written in javascript
+@canvasjs/charts,3.15.19,https://www.npmjs.com/package/@canvasjs/charts,canvasjs,https://www.npmjs.com/~canvasjs,CanvasJS JavaScript Charts - Official
+@microsoft/applicationinsights-web-basic,3.4.1,https://www.npmjs.com/package/@microsoft/applicationinsights-web-basic,microsoft1es,https://www.npmjs.com/~microsoft1es,Microsoft Application Insights JavaScript SDK - Web Basic
+babel-literal-to-ast,2.1.0,https://www.npmjs.com/package/babel-literal-to-ast,izaakschroeder,https://www.npmjs.com/~izaakschroeder,Turn JavaScript objects into their AST representation.
+sonarqube-scanner,4.3.6,https://www.npmjs.com/package/sonarqube-scanner,GitHub Actions,https://www.npmjs.com/~GitHub Actions,SonarQube/SonarCloud Scanner for the JavaScript world
+@solana-program/memo,0.11.0,https://www.npmjs.com/package/@solana-program/memo,joncinque,https://www.npmjs.com/~joncinque,JavaScript client for the Memo program
+decomment,0.9.5,https://www.npmjs.com/package/decomment,vitaly.tomilov,https://www.npmjs.com/~vitaly.tomilov,"Removes comments from JSON/JavaScript, CSS/HTML, CPP/H, etc."
+inputmask,5.0.9,https://www.npmjs.com/package/inputmask,robinherbots,https://www.npmjs.com/~robinherbots,"Inputmask is a javascript library which creates an input mask.  Inputmask can run against vanilla javascript, jQuery and jqlite."
+nouislider,15.8.1,https://www.npmjs.com/package/nouislider,leongersen,https://www.npmjs.com/~leongersen,noUiSlider is a lightweight JavaScript range slider.
+@oxlint/binding-win32-arm64-msvc,1.62.0,https://www.npmjs.com/package/@oxlint/binding-win32-arm64-msvc,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+regression,2.0.1,https://www.npmjs.com/package/regression,tom-alexander,https://www.npmjs.com/~tom-alexander,Javascript least squares data fitting methods
+gradle-to-js,2.0.1,https://www.npmjs.com/package/gradle-to-js,karllindmark,https://www.npmjs.com/~karllindmark,A quick & dirty Gradle build file to JavaScript object parser
+@vavt/util,2.1.2,https://www.npmjs.com/package/@vavt/util,imzbf,https://www.npmjs.com/~imzbf,JavaScript library.
+@oxfmt/binding-win32-x64-msvc,0.47.0,https://www.npmjs.com/package/@oxfmt/binding-win32-x64-msvc,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Formatter for the JavaScript Oxidation Compiler
+imagescript,1.3.1,https://www.npmjs.com/package/imagescript,matmen,https://www.npmjs.com/~matmen,zero-dependency javascript image manipulation
+variable-diff,2.0.2,https://www.npmjs.com/package/variable-diff,taylorhakes,https://www.npmjs.com/~taylorhakes,Visual diff between javascript variables
+hcl2-parser,1.0.3,https://www.npmjs.com/package/hcl2-parser,bencuk,https://www.npmjs.com/~bencuk,HCL v2 parser for JavaScript
+obug,2.1.1,https://www.npmjs.com/package/obug,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"A lightweight JavaScript debugging utility, forked from debug, featuring TypeScript and ESM support."
+@bitgo/utxo-lib,11.22.0,https://www.npmjs.com/package/@bitgo/utxo-lib,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Client-side Bitcoin JavaScript library
+cssesc,3.0.0,https://www.npmjs.com/package/cssesc,mathias,https://www.npmjs.com/~mathias,A JavaScript library for escaping CSS strings and identifiers while generating the shortest possible ASCII-only output.
+smartsheet,4.7.2,https://www.npmjs.com/package/smartsheet,smartsheet-platform,https://www.npmjs.com/~smartsheet-platform,Smartsheet JavaScript client SDK
+@oxfmt/binding-darwin-x64,0.47.0,https://www.npmjs.com/package/@oxfmt/binding-darwin-x64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Formatter for the JavaScript Oxidation Compiler
+aws-sdk-mock,6.2.2,https://www.npmjs.com/package/aws-sdk-mock,luchoturtle,https://www.npmjs.com/~luchoturtle,Functions to mock the JavaScript aws-sdk
+int64-buffer,1.1.0,https://www.npmjs.com/package/int64-buffer,kawanet,https://www.npmjs.com/~kawanet,64bit Long Integer on Buffer/Array/ArrayBuffer in Pure JavaScript
+ziggy-js,2.6.2,https://www.npmjs.com/package/ziggy-js,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Use your Laravel named routes in JavaScript.
+@translated/lara,1.9.1,https://www.npmjs.com/package/@translated/lara,translatedteam,https://www.npmjs.com/~translatedteam,Official Lara SDK for JavaScript and Node.js
+jsmin,1.0.1,https://www.npmjs.com/package/jsmin,pkrumins,https://www.npmjs.com/~pkrumins,A node.js module for javascript minification
+modelo,4.2.3,https://www.npmjs.com/package/modelo,kevinconway,https://www.npmjs.com/~kevinconway,A JavaScript object inheritance utility.
+javascript-blowfish,1.0.4,https://www.npmjs.com/package/javascript-blowfish,thesunlover,https://www.npmjs.com/~thesunlover,"Blowfish encryption library Javascript, jquery,coffeescript (blowfish.js)"
+alpinejs,3.15.11,https://www.npmjs.com/package/alpinejs,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"The rugged, minimal JavaScript framework"
+electron,41.3.0,https://www.npmjs.com/package/electron,electron-nightly,https://www.npmjs.com/~electron-nightly,"Build cross platform desktop apps with JavaScript, HTML, and CSS"
+webpack-remove-empty-scripts,1.1.1,https://www.npmjs.com/package/webpack-remove-empty-scripts,webdiscus,https://www.npmjs.com/~webdiscus,Webpack plugin removes empty JavaScript files generated when using styles.
+lamejs,1.2.1,https://www.npmjs.com/package/lamejs,zhuker,https://www.npmjs.com/~zhuker,Pure JavaScript MP3 Encoder
+api-elements,0.3.2,https://www.npmjs.com/package/api-elements,patrickmedina,https://www.npmjs.com/~patrickmedina,API Elements JavaScript
+is-accessor-descriptor,3.0.5,https://www.npmjs.com/package/is-accessor-descriptor,ljharb,https://www.npmjs.com/~ljharb,Returns true if a value has the characteristics of a valid JavaScript accessor descriptor.
+private,0.1.8,https://www.npmjs.com/package/private,benjamn,https://www.npmjs.com/~benjamn,Utility for associating truly private state with any JavaScript object
+sherif-linux-x64-musl,1.11.1,https://www.npmjs.com/package/sherif-linux-x64-musl,quiibz,https://www.npmjs.com/~quiibz,"Opinionated, zero-config linter for TypeScript & JavaScript monorepos"
+oblivious-set,2.0.0,https://www.npmjs.com/package/oblivious-set,pubkey,https://www.npmjs.com/~pubkey,Like a JavaScript Set() but with a TTL for entries
+@hackler/javascript-devtools,1.0.3,https://www.npmjs.com/package/@hackler/javascript-devtools,hackler,https://www.npmjs.com/~hackler,Javascript Devtools For Hackle
+diff-json,2.0.0,https://www.npmjs.com/package/diff-json,viruschidai,https://www.npmjs.com/~viruschidai,Generates diffs of javascript objects.
+bun,1.3.13,https://www.npmjs.com/package/bun,jarred,https://www.npmjs.com/~jarred,Bun is a fast all-in-one JavaScript runtime.
+isnumeric,0.3.3,https://www.npmjs.com/package/isnumeric,leecrossley,https://www.npmjs.com/~leecrossley,Determine if a JavaScript object is numeric
+@bitgo-beta/bitgo,14.2.1-beta.23,https://www.npmjs.com/package/@bitgo-beta/bitgo,bitgoaaron,https://www.npmjs.com/~bitgoaaron,BitGo JavaScript SDK
+@turnkey/sdk-browser,5.16.1,https://www.npmjs.com/package/@turnkey/sdk-browser,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript Browser SDK
+ssh2,1.17.0,https://www.npmjs.com/package/ssh2,mscdex,https://www.npmjs.com/~mscdex,SSH2 client and server modules written in pure JavaScript for node.js
+@pdfme/pdf-lib,6.0.6,https://www.npmjs.com/package/@pdfme/pdf-lib,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Create and modify PDF files with JavaScript
+sendbird,3.1.33,https://www.npmjs.com/package/sendbird,sendbird,https://www.npmjs.com/~sendbird,Sendbird JavaScript SDK
+js-object-utilities,2.2.1,https://www.npmjs.com/package/js-object-utilities,fishcharlie,https://www.npmjs.com/~fishcharlie,JavaScript utilities for nested objects
+devextreme,25.2.6,https://www.npmjs.com/package/devextreme,devexpress-npm-publisher,https://www.npmjs.com/~devexpress-npm-publisher,JavaScript/TypeScript Component Suite for Responsive Web Development
+iron-session,8.0.4,https://www.npmjs.com/package/iron-session,vvo,https://www.npmjs.com/~vvo,"Secure, stateless, and cookie-based session library for JavaScript"
+route-recognizer,0.3.4,https://www.npmjs.com/package/route-recognizer,rwjblue,https://www.npmjs.com/~rwjblue,A lightweight JavaScript library that matches paths against registered routes.
+@hotwired/stimulus,3.2.2,https://www.npmjs.com/package/@hotwired/stimulus,dhh,https://www.npmjs.com/~dhh,A modest JavaScript framework for the HTML you already have.
+@crowdin/ota-client,2.1.0,https://www.npmjs.com/package/@crowdin/ota-client,GitHub Actions,https://www.npmjs.com/~GitHub Actions,JavaScript library for Crowdin OTA Content Delivery
+@rolldown/binding-linux-x64-gnu,1.0.0-rc.17,https://www.npmjs.com/package/@rolldown/binding-linux-x64-gnu,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Fast JavaScript/TypeScript bundler in Rust with Rollup-compatible API.
+@dailymotion/vast-client,6.4.4,https://www.npmjs.com/package/@dailymotion/vast-client,clementfrancon,https://www.npmjs.com/~clementfrancon,JavaScript VAST Client
+esbuild-linux-arm,0.15.18,https://www.npmjs.com/package/esbuild-linux-arm,evanw,https://www.npmjs.com/~evanw,"The Linux ARM binary for esbuild, a JavaScript bundler."
+blakejs,1.2.1,https://www.npmjs.com/package/blakejs,dcposch,https://www.npmjs.com/~dcposch,Pure Javascript implementation of the BLAKE2b and BLAKE2s hash functions
+@xarc/run,2.3.0,https://www.npmjs.com/package/@xarc/run,jchip,https://www.npmjs.com/~jchip,"concurrent or serial run npm scripts, javascript tasks, and more"
+ag-grid-enterprise,35.2.1,https://www.npmjs.com/package/ag-grid-enterprise,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Advanced Data Grid / Data Table supporting Javascript / Typescript / React / Angular / Vue
+character-parser,4.0.0,https://www.npmjs.com/package/character-parser,character-parser-bot,https://www.npmjs.com/~character-parser-bot,"Parse JavaScript one character at a time to look for snippets in Templates.  This is not a validator, it's just designed to allow you to have sections of JavaScript delimited by brackets robustly."
+weak-napi,2.0.2,https://www.npmjs.com/package/weak-napi,addaleax,https://www.npmjs.com/~addaleax,Make weak references to JavaScript Objects.
+@cloudblueconnect/connect-javascript-sdk,25.0.0,https://www.npmjs.com/package/@cloudblueconnect/connect-javascript-sdk,ffaraoneim,https://www.npmjs.com/~ffaraoneim,Cloud Blue Connect Javascript SDK
+universal-serialize,1.0.10,https://www.npmjs.com/package/universal-serialize,bluepnume,https://www.npmjs.com/~bluepnume,Javascript module template.
+gatsby-plugin-no-javascript-utils,0.13.2,https://www.npmjs.com/package/gatsby-plugin-no-javascript-utils,shoonia,https://www.npmjs.com/~shoonia,The utils for static site without javascript
+@oxlint/binding-freebsd-x64,1.62.0,https://www.npmjs.com/package/@oxlint/binding-freebsd-x64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+omggif,1.0.10,https://www.npmjs.com/package/omggif,deanm,https://www.npmjs.com/~deanm,omggif is a JavaScript implementation of a GIF 89a encoder and decoder.
+option,0.2.4,https://www.npmjs.com/package/option,mwilliamson,https://www.npmjs.com/~mwilliamson,"The option type, also known as the maybe type, for JavaScript"
+qaseio,2.4.3,https://www.npmjs.com/package/qaseio,qaseio,https://www.npmjs.com/~qaseio,Qase TMS Javascript API Client
+device-detector-js,3.0.3,https://www.npmjs.com/package/device-detector-js,etiennemartin,https://www.npmjs.com/~etiennemartin,A javascript port of Matomo device-detector
+@oxfmt/binding-linux-arm64-musl,0.47.0,https://www.npmjs.com/package/@oxfmt/binding-linux-arm64-musl,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Formatter for the JavaScript Oxidation Compiler
+fastpriorityqueue,0.8.0,https://www.npmjs.com/package/fastpriorityqueue,lemire,https://www.npmjs.com/~lemire,Fast heap-based priority queue in JavaScript
+@twilio/video-processors,3.2.0,https://www.npmjs.com/package/@twilio/video-processors,CircleCI,https://www.npmjs.com/~CircleCI,Twilio Video Processors JavaScript Library
+croner,10.0.1,https://www.npmjs.com/package/croner,hexagon,https://www.npmjs.com/~hexagon,Trigger functions and/or evaluate cron expressions in JavaScript. No dependencies. Most features. All environments.
+files.com,1.2.617,https://www.npmjs.com/package/files.com,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Files.com SDK for JavaScript
+suneditor,3.1.2,https://www.npmjs.com/package/suneditor,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Vanilla JavaScript based WYSIWYG web editor
+@oxlint/binding-linux-riscv64-gnu,1.62.0,https://www.npmjs.com/package/@oxlint/binding-linux-riscv64-gnu,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+@redis/graph,1.1.1,https://www.npmjs.com/package/@redis/graph,leibale,https://www.npmjs.com/~leibale,"Example usage: ```javascript import { createClient, Graph } from 'redis';"
+object-to-formdata,4.5.1,https://www.npmjs.com/package/object-to-formdata,therealparmesh,https://www.npmjs.com/~therealparmesh,> Convenient JavaScript function that serializes Objects to FormData instances.
+is-data-descriptor,2.1.3,https://www.npmjs.com/package/is-data-descriptor,ljharb,https://www.npmjs.com/~ljharb,Returns true if a value has the characteristics of a valid JavaScript data descriptor.
+google-closure-library,20230802.0.0,https://www.npmjs.com/package/google-closure-library,google-wombot,https://www.npmjs.com/~google-wombot,Google's common JavaScript library
+parse-bmfont-xml,1.1.6,https://www.npmjs.com/package/parse-bmfont-xml,mattdesl,https://www.npmjs.com/~mattdesl,parses XML BMFont files into a JavaScript object
+object-refs,0.4.0,https://www.npmjs.com/package/object-refs,nikku,https://www.npmjs.com/~nikku,Minimal bi-directional object references for JavaScript
+core-object,3.1.5,https://www.npmjs.com/package/core-object,stefanpenner,https://www.npmjs.com/~stefanpenner,A lightweight implementation of OOP Class in JavaScript
+@bytescale/sdk,3.53.0,https://www.npmjs.com/package/@bytescale/sdk,bytescale-ci,https://www.npmjs.com/~bytescale-ci,Bytescale JavaScript SDK
+es6-shim,0.35.8,https://www.npmjs.com/package/es6-shim,ljharb,https://www.npmjs.com/~ljharb,ECMAScript 6 (Harmony) compatibility shims for legacy JavaScript engines
+@libsql/client,0.17.3,https://www.npmjs.com/package/@libsql/client,GitHub Actions,https://www.npmjs.com/~GitHub Actions,libSQL driver for TypeScript and JavaScript
+tz-offset,0.0.2,https://www.npmjs.com/package/tz-offset,merencia,https://www.npmjs.com/~merencia,Javascript Timezone Offset
+xo,2.0.2,https://www.npmjs.com/package/xo,sindresorhus,https://www.npmjs.com/~sindresorhus,JavaScript/TypeScript linter (ESLint wrapper) with great defaults
+@oxlint/binding-linux-ppc64-gnu,1.62.0,https://www.npmjs.com/package/@oxlint/binding-linux-ppc64-gnu,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+art-template,4.13.4,https://www.npmjs.com/package/art-template,v4v5qc,https://www.npmjs.com/~v4v5qc,JavaScript Template Engine
+unix-crypt-td-js,1.1.4,https://www.npmjs.com/package/unix-crypt-td-js,timdumol,https://www.npmjs.com/~timdumol,Javascript implementation of the Unix crypt(3) DES-based hash
+perf-regexes,1.0.1,https://www.npmjs.com/package/perf-regexes,amarcruz,https://www.npmjs.com/~amarcruz,Optimized and powerful regexes for JavaScript
+@honeybadger-io/js,6.12.3,https://www.npmjs.com/package/@honeybadger-io/js,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Universal (Browser & Node) JavaScript error notifier for Honeybadger.io
+@date-io/core,3.2.0,https://www.npmjs.com/package/@date-io/core,dmtr.kovalenko,https://www.npmjs.com/~dmtr.kovalenko,Abstraction over common javascript date management libraries
+hammerjs,2.0.8,https://www.npmjs.com/package/hammerjs,arschmitz,https://www.npmjs.com/~arschmitz,A javascript library for multi-touch gestures
+@oxlint/binding-linux-arm-gnueabihf,1.62.0,https://www.npmjs.com/package/@oxlint/binding-linux-arm-gnueabihf,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+@oxfmt/binding-win32-arm64-msvc,0.47.0,https://www.npmjs.com/package/@oxfmt/binding-win32-arm64-msvc,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Formatter for the JavaScript Oxidation Compiler
+sparkline,0.2.0,https://www.npmjs.com/package/sparkline,shiwano,https://www.npmjs.com/~shiwano,A JavaScript implementation of 'spark'.
+@oxlint/binding-linux-riscv64-musl,1.62.0,https://www.npmjs.com/package/@oxlint/binding-linux-riscv64-musl,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+@multiformats/multiaddr,13.0.1,https://www.npmjs.com/package/@multiformats/multiaddr,npm-service-account-multiformats,https://www.npmjs.com/~npm-service-account-multiformats,The JavaScript implementation of the Multiaddr spec
+@namecheap/serialize-javascript,6.4.1,https://www.npmjs.com/package/@namecheap/serialize-javascript,namecheap_npm,https://www.npmjs.com/~namecheap_npm,Serialize JavaScript to a superset of JSON that includes regular expressions and functions.
+to-ast,1.0.0,https://www.npmjs.com/package/to-ast,devongovett,https://www.npmjs.com/~devongovett,Converts JavaScript objects to equivalent ASTs
+eslint-config-standard-react,13.0.0,https://www.npmjs.com/package/eslint-config-standard-react,linusu,https://www.npmjs.com/~linusu,JavaScript Standard Style React/JSX support - ESLint Shareable Config
+dependency-cruiser,17.3.10,https://www.npmjs.com/package/dependency-cruiser,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"Validate and visualize dependencies. With your rules. JavaScript, TypeScript, CoffeeScript. ES6, CommonJS, AMD."
+@oxlint/binding-android-arm64,1.62.0,https://www.npmjs.com/package/@oxlint/binding-android-arm64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+superstruct,2.0.2,https://www.npmjs.com/package/superstruct,artmllr,https://www.npmjs.com/~artmllr,A simple and composable way to validate data in JavaScript (and TypeScript).
+@oxlint/binding-android-arm-eabi,1.62.0,https://www.npmjs.com/package/@oxlint/binding-android-arm-eabi,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+@libsql/core,0.17.3,https://www.npmjs.com/package/@libsql/core,GitHub Actions,https://www.npmjs.com/~GitHub Actions,libSQL driver for TypeScript and JavaScript
+@remotion/media-parser,4.0.453,https://www.npmjs.com/package/@remotion/media-parser,jonny,https://www.npmjs.com/~jonny,A pure JavaScript library for parsing video files
+@oxlint/binding-openharmony-arm64,1.62.0,https://www.npmjs.com/package/@oxlint/binding-openharmony-arm64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+node-vault,0.12.0,https://www.npmjs.com/package/node-vault,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Javascript client for HashiCorp's Vault
+b-validate,1.5.3,https://www.npmjs.com/package/b-validate,yinkaihui,https://www.npmjs.com/~yinkaihui,Javascript type validate
+earcut,3.0.2,https://www.npmjs.com/package/earcut,mourner,https://www.npmjs.com/~mourner,The fastest and smallest JavaScript polygon triangulation library for your WebGL apps
+@langfuse/client,5.2.0,https://www.npmjs.com/package/@langfuse/client,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Langfuse API client for universal JavaScript environments
+@oxlint/binding-linux-arm-musleabihf,1.62.0,https://www.npmjs.com/package/@oxlint/binding-linux-arm-musleabihf,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+esbuild-netbsd-64,0.15.18,https://www.npmjs.com/package/esbuild-netbsd-64,evanw,https://www.npmjs.com/~evanw,"The NetBSD AMD64 binary for esbuild, a JavaScript bundler."
+@oxlint/binding-linux-s390x-gnu,1.62.0,https://www.npmjs.com/package/@oxlint/binding-linux-s390x-gnu,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+testcheck,1.0.0-rc.2,https://www.npmjs.com/package/testcheck,leebyron,https://www.npmjs.com/~leebyron,Property testing for JavaScript
+catharsis,0.11.0,https://www.npmjs.com/package/catharsis,hegemonic,https://www.npmjs.com/~hegemonic,A JavaScript parser for Google Closure Compiler and JSDoc type expressions.
+unzipit,2.0.1,https://www.npmjs.com/package/unzipit,GitHub Actions,https://www.npmjs.com/~GitHub Actions,random access unzip library for JavaScript
+ember-source,6.12.0,https://www.npmjs.com/package/ember-source,GitHub Actions,https://www.npmjs.com/~GitHub Actions,A JavaScript framework for creating ambitious web applications
+iceberg-js,0.8.1,https://www.npmjs.com/package/iceberg-js,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"A small, framework-agnostic JavaScript/TypeScript client for the Apache Iceberg REST Catalog"
+rollup-plugin-obfuscator,1.1.0,https://www.npmjs.com/package/rollup-plugin-obfuscator,getki,https://www.npmjs.com/~getki,The most powerful rollup plugin for javascript-obfuscator
+hashmap,2.4.0,https://www.npmjs.com/package/hashmap,flesler,https://www.npmjs.com/~flesler,HashMap Class for JavaScript
+@rolldown/binding-linux-x64-musl,1.0.0-rc.17,https://www.npmjs.com/package/@rolldown/binding-linux-x64-musl,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Fast JavaScript/TypeScript bundler in Rust with Rollup-compatible API.
+cross-domain-utils,2.0.38,https://www.npmjs.com/package/cross-domain-utils,bluepnume,https://www.npmjs.com/~bluepnume,Javascript module template.
+spel2js,0.2.9,https://www.npmjs.com/package/spel2js,benmarch,https://www.npmjs.com/~benmarch,Parse Spring Expression Language in JavaScript
+grapheme-splitter,1.0.4,https://www.npmjs.com/package/grapheme-splitter,orling,https://www.npmjs.com/~orling,A JavaScript library that breaks strings into their individual user-perceived characters. It supports emojis!
+react-json-view,1.21.3,https://www.npmjs.com/package/react-json-view,mac-s-g,https://www.npmjs.com/~mac-s-g,Interactive react component for displaying javascript arrays and JSON objects.
+@ts-common/iterator,1.1.2,https://www.npmjs.com/package/@ts-common/iterator,sergeyshandar,https://www.npmjs.com/~sergeyshandar,Iterator library for JavaScript and TypeScript
+@devcycle/js-client-sdk,1.47.8,https://www.npmjs.com/package/@devcycle/js-client-sdk,GitHub Actions,https://www.npmjs.com/~GitHub Actions,The Javascript Client SDK for DevCycle
+fmin,0.0.4,https://www.npmjs.com/package/fmin,benfrederickson,https://www.npmjs.com/~benfrederickson,Unconstrained funcion minimization in Javascript
+ytdl-core,4.11.5,https://www.npmjs.com/package/ytdl-core,fent,https://www.npmjs.com/~fent,YouTube video downloader in pure javascript.
+unbzip2-stream,1.4.3,https://www.npmjs.com/package/unbzip2-stream,regular,https://www.npmjs.com/~regular,streaming unbzip2 implementation in pure javascript for node and browsers
+gpu.js,2.16.0,https://www.npmjs.com/package/gpu.js,robertleeplummerjr,https://www.npmjs.com/~robertleeplummerjr,GPU Accelerated JavaScript
+@azure/storage-file-datalake,12.29.0,https://www.npmjs.com/package/@azure/storage-file-datalake,microsoft1es,https://www.npmjs.com/~microsoft1es,Microsoft Azure Storage SDK for JavaScript - DataLake
+jsts,2.12.1,https://www.npmjs.com/package/jsts,bjornharrtell,https://www.npmjs.com/~bjornharrtell,A JavaScript library of spatial predicates and functions for processing geometry
+zalgo-promise,1.0.48,https://www.npmjs.com/package/zalgo-promise,bluepnume,https://www.npmjs.com/~bluepnume,Javascript module template.
+aws-xray-sdk-core,3.12.0,https://www.npmjs.com/package/aws-xray-sdk-core,awsxray,https://www.npmjs.com/~awsxray,AWS X-Ray SDK for Javascript
+pexels,1.4.0,https://www.npmjs.com/package/pexels,farinajoey,https://www.npmjs.com/~farinajoey,The official Pexels API Javascript client.
+ical.js,2.2.1,https://www.npmjs.com/package/ical.js,kewisch,https://www.npmjs.com/~kewisch,Javascript parser for ics (rfc5545) and vcard (rfc6350) data
+parse-bmfont-ascii,1.0.6,https://www.npmjs.com/package/parse-bmfont-ascii,mattdesl,https://www.npmjs.com/~mattdesl,parses ASCII BMFont files to a JavaScript object
+bcryptjs,3.0.3,https://www.npmjs.com/package/bcryptjs,dcode,https://www.npmjs.com/~dcode,"Optimized bcrypt in plain JavaScript with zero dependencies, with TypeScript support. Compatible to 'bcrypt'."
+@oxlint/binding-win32-ia32-msvc,1.62.0,https://www.npmjs.com/package/@oxlint/binding-win32-ia32-msvc,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Linter for the JavaScript Oxidation Compiler
+url-search-params-polyfill,8.2.5,https://www.npmjs.com/package/url-search-params-polyfill,jerrybendy,https://www.npmjs.com/~jerrybendy,a simple polyfill for javascript URLSearchParams
+rxfire,6.1.0,https://www.npmjs.com/package/rxfire,google-wombot,https://www.npmjs.com/~google-wombot,Firebase JavaScript library RxJS
+@date-io/date-fns,3.2.1,https://www.npmjs.com/package/@date-io/date-fns,dmtr.kovalenko,https://www.npmjs.com/~dmtr.kovalenko,Abstraction over common javascript date management libraries
+@fragaria/address-formatter,6.7.1,https://www.npmjs.com/package/@fragaria/address-formatter,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Universal international address formatting in Javascript
+persona,5.8.0,https://www.npmjs.com/package/persona,charlesyeh,https://www.npmjs.com/~charlesyeh,The official JavaScript SDK for the Persona Inquiry Flow.
+rx-lite,4.0.8,https://www.npmjs.com/package/rx-lite,mattpodwysocki,https://www.npmjs.com/~mattpodwysocki,Lightweight library for composing asynchronous and event-based operations in JavaScript
+which-typed-array,1.1.20,https://www.npmjs.com/package/which-typed-array,ljharb,https://www.npmjs.com/~ljharb,"Which kind of Typed Array is this JavaScript value? Works cross-realm, without `instanceof`, and despite Symbol.toStringTag."
+unsplash-js,7.0.20,https://www.npmjs.com/package/unsplash-js,unsplash,https://www.npmjs.com/~unsplash,Official JavaScript wrapper for the Unsplash API
+krustykrab,1.1.0,https://www.npmjs.com/package/krustykrab,vtaits,https://www.npmjs.com/~vtaits,Rust utils for JavaScript projects
+@aws-sdk/client-sqs,3.1038.0,https://www.npmjs.com/package/@aws-sdk/client-sqs,aws-sdk-bot,https://www.npmjs.com/~aws-sdk-bot,"AWS SDK for JavaScript Sqs Client for Node.js, Browser and React Native"
+urijs,1.19.11,https://www.npmjs.com/package/urijs,rodneyrehm,https://www.npmjs.com/~rodneyrehm,URI.js is a Javascript library for working with URLs.
+@toruslabs/ffjavascript,6.0.0,https://www.npmjs.com/package/@toruslabs/ffjavascript,chaitanyapotti,https://www.npmjs.com/~chaitanyapotti,Finite Field Library in Javascript
+@casbin/expression-eval,5.3.0,https://www.npmjs.com/package/@casbin/expression-eval,hsluoyz,https://www.npmjs.com/~hsluoyz,JavaScript expression parsing and evaluation.
+picomodal,3.0.0,https://www.npmjs.com/package/picomodal,nycto,https://www.npmjs.com/~nycto,"A small, self-contained JavaScript modal library"
+@ctrl/tinycolor,4.2.0,https://www.npmjs.com/package/@ctrl/tinycolor,scttcper,https://www.npmjs.com/~scttcper,"Fast, small color manipulation and conversion for JavaScript"
+esbuild-windows-64,0.15.18,https://www.npmjs.com/package/esbuild-windows-64,evanw,https://www.npmjs.com/~evanw,"The Windows 64-bit binary for esbuild, a JavaScript bundler."
+js-md4,0.3.2,https://www.npmjs.com/package/js-md4,emn178,https://www.npmjs.com/~emn178,A simple MD4 hash function for JavaScript supports UTF-8 encoding.
+detective-amd,6.1.0,https://www.npmjs.com/package/detective-amd,xhmikosr,https://www.npmjs.com/~xhmikosr,Find all dependencies within a JavaScript file using AMD module syntax
+command-score,0.1.2,https://www.npmjs.com/package/command-score,cirwin,https://www.npmjs.com/~cirwin,Yet another javascript fuzzy matching library
+image-ssim,0.2.0,https://www.npmjs.com/package/image-ssim,darosh,https://www.npmjs.com/~darosh,Image structural similarity (SSIM). In TypeScript/JavaScript. For browser/server.
+ember-cli-terser,4.0.2,https://www.npmjs.com/package/ember-cli-terser,rwjblue,https://www.npmjs.com/~rwjblue,JavaScript minification for Ember-CLI
+env-runner,0.1.7,https://www.npmjs.com/package/env-runner,pi0,https://www.npmjs.com/~pi0,Generic environment runner for JavaScript runtimes.
+antlr4ts,0.5.0-alpha.4,https://www.npmjs.com/package/antlr4ts,sharwell,https://www.npmjs.com/~sharwell,ANTLR 4 runtime for JavaScript written in Typescript
+@neo4j-bloom/dagre,0.8.14,https://www.npmjs.com/package/@neo4j-bloom/dagre,neo4j-bloom-publisher,https://www.npmjs.com/~neo4j-bloom-publisher,Graph layout for JavaScript
+@xmldom/xmldom,0.9.10,https://www.npmjs.com/package/@xmldom/xmldom,karfau,https://www.npmjs.com/~karfau,A pure JavaScript W3C standard-based (XML DOM Level 2 Core) DOMParser and XMLSerializer module.
+@primer/behaviors,1.10.2,https://www.npmjs.com/package/@primer/behaviors,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Shared behaviors for JavaScript components
+prettier-eslint,16.4.2,https://www.npmjs.com/package/prettier-eslint,jounqin,https://www.npmjs.com/~jounqin,Formats your JavaScript using prettier followed by eslint --fix
+isomorphic-git,1.37.6,https://www.npmjs.com/package/isomorphic-git,jcubic,https://www.npmjs.com/~jcubic,A pure JavaScript reimplementation of git for node and browsers
+@speed-highlight/core,1.2.15,https://www.npmjs.com/package/@speed-highlight/core,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"🌈 Light, fast, and easy to use, dependencies free javascript syntax highlighter, with automatic language detection"
+pandemonium,2.4.1,https://www.npmjs.com/package/pandemonium,yomguithereal,https://www.npmjs.com/~yomguithereal,Typical random-related functions for JavaScript.
+dcmjs,0.50.1,https://www.npmjs.com/package/dcmjs,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Javascript implementation of DICOM manipulation
+pusher-js,8.5.0,https://www.npmjs.com/package/pusher-js,pushercom,https://www.npmjs.com/~pushercom,"Pusher Channels JavaScript library for browsers, React Native, NodeJS and web workers"
+encore.dev,1.56.7,https://www.npmjs.com/package/encore.dev,eandre,https://www.npmjs.com/~eandre,Encore's JavaScript/TypeScript SDK
+jw-paginate,1.0.4,https://www.npmjs.com/package/jw-paginate,cornflourblue,https://www.npmjs.com/~cornflourblue,Pure Pagination Logic in JavaScript / TypeScript
+@aws-sdk/client-dynamodb,3.1038.0,https://www.npmjs.com/package/@aws-sdk/client-dynamodb,aws-sdk-bot,https://www.npmjs.com/~aws-sdk-bot,"AWS SDK for JavaScript Dynamodb Client for Node.js, Browser and React Native"
+eval5,1.4.8,https://www.npmjs.com/package/eval5,bplok20010,https://www.npmjs.com/~bplok20010,A JavaScript interpreter written in JavaScript
+@cloudflare/workerd-windows-64,1.20260426.1,https://www.npmjs.com/package/@cloudflare/workerd-windows-64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"👷 workerd for Windows 64-bit, Cloudflare's JavaScript/Wasm Runtime"
+panolens,0.12.1,https://www.npmjs.com/package/panolens,flyandi,https://www.npmjs.com/~flyandi,Javascript panorama viewer
+@oxfmt/binding-linux-riscv64-gnu,0.47.0,https://www.npmjs.com/package/@oxfmt/binding-linux-riscv64-gnu,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Formatter for the JavaScript Oxidation Compiler
+@aws-sdk/client-cognito-identity,3.1038.0,https://www.npmjs.com/package/@aws-sdk/client-cognito-identity,aws-sdk-bot,https://www.npmjs.com/~aws-sdk-bot,"AWS SDK for JavaScript Cognito Identity Client for Node.js, Browser and React Native"
+sval,0.6.12,https://www.npmjs.com/package/sval,siubaak,https://www.npmjs.com/~siubaak,A javascript interpreter written in javascript
+filepicker-js,2.4.18,https://www.npmjs.com/package/filepicker-js,szwacz,https://www.npmjs.com/~szwacz,Filepicker client javascript library
+eval-estree-expression,3.0.1,https://www.npmjs.com/package/eval-estree-expression,jonschlinkert,https://www.npmjs.com/~jonschlinkert,"Safely evaluate JavaScript (estree) expressions, sync and async."
+@algolia/autocomplete-js,1.19.8,https://www.npmjs.com/package/@algolia/autocomplete-js,instantsearch-bot,https://www.npmjs.com/~instantsearch-bot,Fast and fully-featured autocomplete JavaScript library.
+@salesforce/source-deploy-retrieve,12.34.5,https://www.npmjs.com/package/@salesforce/source-deploy-retrieve,salesforce-releases,https://www.npmjs.com/~salesforce-releases,JavaScript library to run Salesforce metadata deploys and retrieves
+@tensorflow/tfjs-layers,4.22.0,https://www.npmjs.com/package/@tensorflow/tfjs-layers,delhibabu,https://www.npmjs.com/~delhibabu,TensorFlow layers API in JavaScript
+@aws-sdk/client-lambda,3.1038.0,https://www.npmjs.com/package/@aws-sdk/client-lambda,aws-sdk-bot,https://www.npmjs.com/~aws-sdk-bot,"AWS SDK for JavaScript Lambda Client for Node.js, Browser and React Native"
+pixabay-javascript-autocomplete,1.0.4,https://www.npmjs.com/package/pixabay-javascript-autocomplete,ensecoz,https://www.npmjs.com/~ensecoz,"lightweight, vanilla javascript completion suggester"
+@oxfmt/binding-linux-s390x-gnu,0.47.0,https://www.npmjs.com/package/@oxfmt/binding-linux-s390x-gnu,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Formatter for the JavaScript Oxidation Compiler
+@js.properties/properties,0.5.4,https://www.npmjs.com/package/@js.properties/properties,pallxk,https://www.npmjs.com/~pallxk,JavaScript .properties parser and stringifier
+node-range,0.1.0,https://www.npmjs.com/package/node-range,mhernandez,https://www.npmjs.com/~mhernandez,Simple Lazy Ranges for Node/Javascript
+@fusioncharts/charts,4.2.2,https://www.npmjs.com/package/@fusioncharts/charts,meherhowji,https://www.npmjs.com/~meherhowji,JavaScript Data Visualisation Library
+esbuild-darwin-64,0.15.18,https://www.npmjs.com/package/esbuild-darwin-64,evanw,https://www.npmjs.com/~evanw,"The macOS 64-bit binary for esbuild, a JavaScript bundler."
+@json2csv/plainjs,7.0.6,https://www.npmjs.com/package/@json2csv/plainjs,juanjodiaz,https://www.npmjs.com/~juanjodiaz,Pure Javascript JSON to CSV converter.
+esbuild-openbsd-64,0.15.18,https://www.npmjs.com/package/esbuild-openbsd-64,evanw,https://www.npmjs.com/~evanw,"The OpenBSD 64-bit binary for esbuild, a JavaScript bundler."
+@feathersjs/hooks,0.9.0,https://www.npmjs.com/package/@feathersjs/hooks,daffl,https://www.npmjs.com/~daffl,Async middleware for JavaScript and TypeScript
+murmur-32,1.0.0,https://www.npmjs.com/package/murmur-32,linusu,https://www.npmjs.com/~linusu,MurmurHash3 x86 32-bit implemented in JavaScript.
+flow-bin,0.311.0,https://www.npmjs.com/package/flow-bin,flowtype,https://www.npmjs.com/~flowtype,Binary wrapper for Flow - A static type checker for JavaScript
+sockjs-client,1.6.1,https://www.npmjs.com/package/sockjs-client,brycekahle,https://www.npmjs.com/~brycekahle,SockJS-client is a browser JavaScript library that provides a WebSocket-like object.
+jssip,3.13.7,https://www.npmjs.com/package/jssip,jmillan,https://www.npmjs.com/~jmillan,The Javascript SIP library
+@multiversx/sdk-core,15.4.0,https://www.npmjs.com/package/@multiversx/sdk-core,p0pe,https://www.npmjs.com/~p0pe,MultiversX SDK for JavaScript and TypeScript
+@flatten-js/core,1.6.12,https://www.npmjs.com/package/@flatten-js/core,alexbol99,https://www.npmjs.com/~alexbol99,Javascript library for 2d geometry
+pcre-to-regexp,1.1.0,https://www.npmjs.com/package/pcre-to-regexp,tootallnate,https://www.npmjs.com/~tootallnate,Converts PCRE regexp strings to JavaScript RegExp instances
+inversify,8.1.0,https://www.npmjs.com/package/inversify,notaphplover,https://www.npmjs.com/~notaphplover,A powerful and lightweight inversion of control container for JavaScript and Node.js apps powered by TypeScript.
+algosdk,3.5.2,https://www.npmjs.com/package/algosdk,algo-devops-service,https://www.npmjs.com/~algo-devops-service,The official JavaScript SDK for Algorand
+esbuild-linux-32,0.15.18,https://www.npmjs.com/package/esbuild-linux-32,evanw,https://www.npmjs.com/~evanw,"The Linux 32-bit binary for esbuild, a JavaScript bundler."
+algorand-msgpack,1.1.0,https://www.npmjs.com/package/algorand-msgpack,jasonpaulos,https://www.npmjs.com/~jasonpaulos,MessagePack for ECMA-262/JavaScript/TypeScript
+@woocommerce/woocommerce-rest-api,1.0.2,https://www.npmjs.com/package/@woocommerce/woocommerce-rest-api,~woocommerce,https://www.npmjs.com/~~woocommerce,WooCommerce REST API - JavaScript Library
+esbuild-windows-32,0.15.18,https://www.npmjs.com/package/esbuild-windows-32,evanw,https://www.npmjs.com/~evanw,"The Windows 32-bit binary for esbuild, a JavaScript bundler."
+linq,4.0.3,https://www.npmjs.com/package/linq,mihaifm,https://www.npmjs.com/~mihaifm,linq.js - LINQ for JavaScript
+html-tag,2.0.0,https://www.npmjs.com/package/html-tag,jonschlinkert,https://www.npmjs.com/~jonschlinkert,Generate HTML elements from a javascript object.
+@intacct/intacct-sdk,2.2.1,https://www.npmjs.com/package/@intacct/intacct-sdk,dylan.holt.sage,https://www.npmjs.com/~dylan.holt.sage,Sage Intacct SDK for JavaScript
+@dashevo/x11-hash-js,1.0.2,https://www.npmjs.com/package/@dashevo/x11-hash-js,alex-werner,https://www.npmjs.com/~alex-werner,x11 javascript hashing algorithm in pure javascript
+esbuild-sunos-64,0.15.18,https://www.npmjs.com/package/esbuild-sunos-64,evanw,https://www.npmjs.com/~evanw,"The illumos 64-bit binary for esbuild, a JavaScript bundler."
+platform,1.3.6,https://www.npmjs.com/package/platform,d10,https://www.npmjs.com/~d10,A platform detection library that works on nearly all JavaScript platforms.
+karma-sourcemap-loader,0.4.0,https://www.npmjs.com/package/karma-sourcemap-loader,demerzel3,https://www.npmjs.com/~demerzel3,Karma plugin that locates and loads existing javascript source map files.
+@descope/sdk-mixins,0.16.1,https://www.npmjs.com/package/@descope/sdk-mixins,omercnet,https://www.npmjs.com/~omercnet,Descope JavaScript SDK mixins
+evernote,2.0.5,https://www.npmjs.com/package/evernote,akhaku,https://www.npmjs.com/~akhaku,Evernote JavaScript SDK
+@ken-all/kenall,2.3.1,https://www.npmjs.com/package/@ken-all/kenall,moriyoshi,https://www.npmjs.com/~moriyoshi,KENALL JavaScript SDK
+ttl-set,1.0.0,https://www.npmjs.com/package/ttl-set,watson,https://www.npmjs.com/~watson,"Like a JavaScript Set, but with a TTL on entries"
+regex-not,1.0.2,https://www.npmjs.com/package/regex-not,jonschlinkert,https://www.npmjs.com/~jonschlinkert,Create a javascript regular expression for matching everything except for the given string.
+@ninetailed/experience.js,7.22.0,https://www.npmjs.com/package/@ninetailed/experience.js,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Ninetailed SDK for javascript
+@emartech/telemetry-javascript,1.5.2,https://www.npmjs.com/package/@emartech/telemetry-javascript,emarsys-deployer,https://www.npmjs.com/~emarsys-deployer,Telemetry package for Typescript/Javascript code use
+@lemonadejs/contextmenu,5.8.3,https://www.npmjs.com/package/@lemonadejs/contextmenu,hodeware,https://www.npmjs.com/~hodeware,LemonadeJS Contextmenu JavaScript Plugin
+@oxfmt/binding-openharmony-arm64,0.47.0,https://www.npmjs.com/package/@oxfmt/binding-openharmony-arm64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Formatter for the JavaScript Oxidation Compiler
+@oxfmt/binding-linux-riscv64-musl,0.47.0,https://www.npmjs.com/package/@oxfmt/binding-linux-riscv64-musl,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Formatter for the JavaScript Oxidation Compiler
+iso639-codes,1.0.1,https://www.npmjs.com/package/iso639-codes,tiagodanin,https://www.npmjs.com/~tiagodanin,ISO639 Codes for JavaScript
+@oxfmt/binding-android-arm64,0.47.0,https://www.npmjs.com/package/@oxfmt/binding-android-arm64,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Formatter for the JavaScript Oxidation Compiler
+query-selector,2.0.0,https://www.npmjs.com/package/query-selector,yiminghe,https://www.npmjs.com/~yiminghe,javascript implementation of querySelectorAll
+@oxfmt/binding-linux-ppc64-gnu,0.47.0,https://www.npmjs.com/package/@oxfmt/binding-linux-ppc64-gnu,GitHub Actions,https://www.npmjs.com/~GitHub Actions,Formatter for the JavaScript Oxidation Compiler
+match-sorter,8.3.0,https://www.npmjs.com/package/match-sorter,GitHub Actions,https://www.npmjs.com/~GitHub Actions,"Simple, expected, and deterministic best-match sorting of an array in JavaScript"
+currency.js,2.0.4,https://www.npmjs.com/package/currency.js,scurker,https://www.npmjs.com/~scurker,"A small, lightweight javascript library for working with currency values."
+@queue-it/connector-javascript,5.0.1,https://www.npmjs.com/package/@queue-it/connector-javascript,queue-it,https://www.npmjs.com/~queue-it,Connector to integrate Queue-it into a javascript based server side application.
+ahoy.js,0.4.5,https://www.npmjs.com/package/ahoy.js,ankane,https://www.npmjs.com/~ankane,"Simple, powerful JavaScript analytics"
+elastic-builder,4.1.0,https://www.npmjs.com/package/elastic-builder,GitHub Actions,https://www.npmjs.com/~GitHub Actions,A JavaScript implementation of the elasticsearch Query DSL
+react-on-rails,16.6.0,https://www.npmjs.com/package/react-on-rails,shakacode-justin,https://www.npmjs.com/~shakacode-justin,react-on-rails JavaScript for react_on_rails Ruby gem
+bufio,1.2.3,https://www.npmjs.com/package/bufio,chjj,https://www.npmjs.com/~chjj,Buffer and serialization utilities for javascript
+custom-error-instance,2.1.2,https://www.npmjs.com/package/custom-error-instance,gi60s,https://www.npmjs.com/~gi60s,Create custom JavaScript errors that also match instanceof.
