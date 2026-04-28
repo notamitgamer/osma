@@ -1,15 +1,13 @@
-name: OSMA ETL Pipeline
+name: Manual Bulk CSV Extractor
 
 on:
-  schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight UTC
-  workflow_dispatch: # Allows manual trigger
+  workflow_dispatch: # This allows you to manually trigger it from the Actions tab
 
 permissions:
   contents: write
 
 jobs:
-  run-etl:
+  extract-csv:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -20,21 +18,18 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Run NPM Extraction
-        run: python scripts/extract_npm.py
+      - name: Ensure Data Directory
+        run: mkdir -p data
 
-      - name: Run PyPI Extraction
-        run: python scripts/extract_pypi.py
+      - name: Extract NPM to CSV
+        run: python scripts/extract_npm_csv.py
 
-      - name: Run Upsert (Chunking & Indexing)
-        run: python scripts/upsert.py
-        
-      - name: Sync Global Stats
-        run: python scripts/sync_stats.py
+      - name: Extract PyPI to CSV
+        run: python scripts/extract_pypi_csv.py
 
-      - name: Commit and Push Changes
+      - name: Commit and Push CSVs
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add data/ state/ stats/
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): auto-update package metadata [skip ci]" && git push)
+          git add data/*.csv
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: manual bulk data extraction to CSV" && git push)
