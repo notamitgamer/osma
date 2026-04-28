@@ -6,7 +6,7 @@ import time
 STATE_FILE = "state/npm_state.json"
 OUTPUT_FILE = "state/npm_extract.json"
 # Using the public NPM registry changes feed
-CHANGES_URL = "https://replicate.npmjs.com/_changes?include_docs=true&limit=100&since={}"
+CHANGES_URL = "https://replicate.npmjs.com/_changes?include_docs=true&limit=1000&since={}"
 
 def ensure_dirs():
     os.makedirs("state", exist_ok=True)
@@ -15,7 +15,17 @@ def load_state():
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, "r") as f:
             return json.load(f)
-    return {"last_seq": 0}
+            
+    # On first run, get the current max sequence so we track new packages from today
+    print("[NPM] First run detected. Fetching latest registry sequence...")
+    try:
+        req = urllib.request.Request("https://replicate.npmjs.com/", headers={'User-Agent': 'OSMA-ETL-Bot'})
+        with urllib.request.urlopen(req) as response:
+            latest_seq = json.loads(response.read().decode()).get("update_seq", 0)
+            return {"last_seq": latest_seq}
+    except Exception as e:
+        print(f"[NPM] Error fetching latest sequence: {e}")
+        return {"last_seq": 0}
 
 def save_state(seq):
     with open(STATE_FILE, "w") as f:
