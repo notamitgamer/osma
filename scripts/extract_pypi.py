@@ -15,8 +15,8 @@ def load_state():
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, "r") as f:
             return json.load(f)
-    # Default to 1 hour ago for the first run to prevent massive full-sync
-    return {"last_timestamp": int(time.time()) - 3600}
+    # Default to 24 hours ago for the first run
+    return {"last_timestamp": int(time.time()) - 86400}
 
 def save_state(timestamp):
     with open(STATE_FILE, "w") as f:
