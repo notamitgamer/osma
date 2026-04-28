@@ -11,39 +11,50 @@ PYPI_RPC_URL = "https://pypi.org/pypi"
 def ensure_dirs():
     os.makedirs("state", exist_ok=True)
 
-def load_state():
+def get_latest_serial(client):
+    try:
+        return client.changelog_last_serial()
+    except Exception as e:
+        print(f"[PyPI] Error fetching last serial: {e}")
+        return 0
+
+def load_state(client):
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, "r") as f:
             return json.load(f)
-    # Default to 24 hours ago for the first run
-    return {"last_timestamp": int(time.time()) - 86400}
+            
+    # First run: get the current max serial to establish a baseline
+    print("[PyPI] First run detected. Fetching latest registry serial...")
+    serial = get_latest_serial(client)
+    return {"last_serial": serial}
 
-def save_state(timestamp):
+def save_state(serial):
     with open(STATE_FILE, "w") as f:
-        json.dump({"last_timestamp": timestamp}, f)
+        json.dump({"last_serial": serial}, f)
 
 def extract():
     ensure_dirs()
-    state = load_state()
-    last_timestamp = state.get("last_timestamp")
+    client = xmlrpc.client.ServerProxy(PYPI_RPC_URL)
+    state = load_state(client)
+    last_serial = state.get("last_serial", 0)
     
-    print(f"[PyPI] Fetching changelog since {last_timestamp}...")
+    print(f"[PyPI] Fetching changelog since serial {last_serial}...")
     
     try:
-        client = xmlrpc.client.ServerProxy(PYPI_RPC_URL)
-        # Returns list of tuples: (name, version, timestamp, action)
-        changelog = client.changelog(last_timestamp)
+        # Using the new serial-based method
+        changelog = client.changelog_since_serial(last_serial)
     except Exception as e:
         print(f"[PyPI] Error fetching XML-RPC changelog: {e}")
         return
 
     results = {}
-    new_timestamp = last_timestamp
+    new_serial = last_serial
 
+    # The new method returns 5 elements per event (includes serial)
     for event in changelog:
-        pkg_name, version, timestamp, action = event
-        if timestamp > new_timestamp:
-            new_timestamp = timestamp
+        pkg_name, version, timestamp, action, serial = event
+        if serial > new_serial:
+            new_serial = serial
             
         # Keep only the latest event for a package in this batch
         if pkg_name not in results:
@@ -52,12 +63,12 @@ def extract():
                 "ecosystem": "pypi",
                 "package_name": pkg_name,
                 "version": version or "0.0.0",
-                "author": "PyPI Contributor", # Full metadata requires HTTP API per package, saving API limits here
+                "author": "PyPI Contributor",
                 "author_profile_url": "",
                 "repo_url": "",
                 "registry_url": f"https://pypi.org/project/{pkg_name}/",
                 "deprecated": False,
-                "first_seen": dt_iso, # Approximation for delta feed
+                "first_seen": dt_iso,
                 "last_updated": dt_iso
             }
 
@@ -66,8 +77,8 @@ def extract():
     with open(OUTPUT_FILE, "w") as f:
         json.dump(output_list, f, indent=2)
 
-    save_state(new_timestamp)
-    print(f"[PyPI] Extracted {len(output_list)} packages. New timestamp: {new_timestamp}")
+    save_state(new_serial)
+    print(f"[PyPI] Extracted {len(output_list)} packages. New serial: {new_serial}")
 
 if __name__ == "__main__":
     extract()
