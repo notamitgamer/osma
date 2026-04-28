@@ -25,10 +25,6 @@ def get_chunk_filename(package_no):
     return f"chunk_{start:06d}_{end:06d}.jsonl"
 
 def update_ecosystem(ecosystem_name, extract_file):
-    if not os.path.exists(extract_file):
-        print(f"[Upsert] No extraction file for {ecosystem_name}, skipping.")
-        return
-
     print(f"[Upsert] Processing {ecosystem_name}...")
     
     data_dir = f"data/{ecosystem_name}"
@@ -44,6 +40,16 @@ def update_ecosystem(ecosystem_name, extract_file):
     })
     
     pkg_index = load_json(index_file, {})
+    
+    # Save base files immediately so stats sync can read them even if empty
+    manifest["last_etl_run"] = time.strftime('%Y-%m-%dT%H:%M:%SZ')
+    save_json(manifest_file, manifest)
+    save_json(index_file, pkg_index)
+
+    if not os.path.exists(extract_file):
+        print(f"[Upsert] No extraction file for {ecosystem_name}, skipping updates.")
+        return
+
     extracted_data = load_json(extract_file, [])
 
     if not extracted_data:
