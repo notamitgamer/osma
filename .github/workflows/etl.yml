@@ -22,10 +22,10 @@ jobs:
         run: mkdir -p data
 
       - name: Extract NPM to CSV
-        run: python scripts/extract_npm.py
+        run: python scripts/extract_npm_csv.py
 
       - name: Extract PyPI to CSV
-        run: python scripts/extract_pypi.py
+        run: python scripts/extract_pypi_csv.py
 
       - name: Commit and Push CSVs
         run: |
