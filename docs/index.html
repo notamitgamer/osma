@@ -20,13 +20,37 @@
             --m3-on-secondary-container: #1d192b;
             --m3-outline: #79747e;
             --m3-error: #b3261e;
+            --m3-error-container: #f9dedc;
         }
 
+        /* Global Typography Enforcement */
         * {
-            /* Force the Google Font and prevent system overrides */
             font-family: 'Lexend', sans-serif !important;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Custom Scrollbar Styles */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--m3-surface);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--m3-outline);
+            border-radius: 10px;
+            border: 3px solid var(--m3-surface);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--m3-primary);
+        }
+
+        /* Firefox Scrollbar Support */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--m3-outline) var(--m3-surface);
         }
 
         .font-mono-safe {
@@ -38,6 +62,7 @@
             color: #1c1b1f;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
 
         .m3-card {
@@ -79,13 +104,7 @@
             z-index: 10;
         }
 
-        .m3-row {
-            transition: background-color 0.1s ease;
-        }
-
-        .m3-row:hover {
-            background-color: var(--m3-secondary-container);
-        }
+        .m3-row:hover { background-color: var(--m3-secondary-container); }
 
         .pagination-btn {
             padding: 12px 24px;
@@ -98,15 +117,54 @@
             transition: all 0.2s;
         }
 
-        .btn-filled {
-            background-color: var(--m3-primary);
-            color: var(--m3-on-primary);
+        .btn-filled { background-color: var(--m3-primary); color: var(--m3-on-primary); }
+        .btn-tonal { background-color: var(--m3-secondary-container); color: var(--m3-on-secondary-container); }
+        .btn-outlined { border: 1px solid var(--m3-outline); color: var(--m3-primary); }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+            backdrop-filter: blur(4px);
         }
 
-        .btn-tonal {
-            background-color: var(--m3-secondary-container);
-            color: var(--m3-on-secondary-container);
+        .modal-content {
+            background: var(--m3-surface);
+            width: 95%;
+            max-width: 600px;
+            border-radius: 28px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalScale 0.3s cubic-bezier(0, 0, 0.2, 1);
         }
+
+        @keyframes modalScale {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .form-field { margin-bottom: 20px; }
+        .form-label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 8px; color: #49454f; }
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--m3-outline);
+            background: transparent;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-input:focus { border-color: var(--m3-primary); border-width: 2px; }
+        .important-marker { color: var(--m3-error); }
 
         .loader {
             border: 3px solid var(--m3-secondary-container);
@@ -117,34 +175,24 @@
             animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        .empty-state-link {
-            color: var(--m3-primary);
+        .action-link {
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
-            margin-top: 12px;
-            padding: 8px 16px;
-            border: 1px solid var(--m3-outline);
+            gap: 8px;
+            padding: 10px 20px;
             border-radius: 100px;
             transition: all 0.2s;
+            font-size: 0.875rem;
         }
 
-        .empty-state-link:hover {
-            background-color: var(--m3-primary-container);
-            border-color: var(--m3-primary);
-        }
+        .btn-list-trigger { background-color: var(--m3-primary-container); color: var(--m3-on-primary-container); }
+        .btn-pypi-link { border: 1px solid var(--m3-outline); color: var(--m3-primary); }
 
-        /* Responsive adjustments */
-        @media (max-width: 640px) {
-            .m3-card { border-radius: 0; border-left: none; border-right: none; }
-        }
+        @media (max-width: 640px) { .m3-card { border-radius: 0; } }
     </style>
 </head>
 <body class="pb-12">
@@ -162,9 +210,14 @@
                 </div>
             </div>
             
-            <div class="search-container w-full md:w-[400px]">
-                <i class="bi bi-search text-gray-500 ml-2"></i>
-                <input type="text" id="searchInput" class="search-input" placeholder="Search packages or versions..." autocomplete="off">
+            <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                <div class="search-container flex-grow md:w-[400px]">
+                    <i class="bi bi-search text-gray-500 ml-2"></i>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search packages..." autocomplete="off">
+                    <button id="clearSearch" class="hidden p-2 hover:bg-gray-200 rounded-full transition-colors">
+                        <i class="bi bi-x-circle-fill text-gray-400"></i>
+                    </button>
+                </div>
             </div>
         </header>
 
@@ -192,27 +245,24 @@
                             <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-gray-500 border-b border-gray-200 text-right">Repository</th>
                         </tr>
                     </thead>
-                    <tbody id="tableBody" class="divide-y divide-gray-50">
-                        <!-- Content injected via JS -->
-                    </tbody>
+                    <tbody id="tableBody" class="divide-y divide-gray-50"></tbody>
                 </table>
             </div>
 
-            <!-- Enhanced Empty State -->
-            <div id="noResults" class="hidden p-16 text-center bg-gray-50/50">
-                <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gray-100 mb-6">
-                    <i class="bi bi-question-circle text-4xl text-gray-300"></i>
+            <!-- Enhanced Exact Match/Empty State -->
+            <div id="noResults" class="hidden p-12 text-center border-t border-gray-100 bg-gray-50/30">
+                <div id="noResultsIcon" class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
+                    <i class="bi bi-question-circle text-3xl text-gray-300"></i>
                 </div>
-                <h3 class="text-xl font-bold text-gray-800" id="notFoundTitle">No Matches Found</h3>
-                <p class="mt-2 text-gray-500 max-w-md mx-auto leading-relaxed" id="notFoundDesc">
-                    The keyword you searched for is not currently in our local repository index.
+                <h3 class="text-lg font-bold text-gray-800" id="notFoundTitle">No Matches Found</h3>
+                <p class="mt-1 text-sm text-gray-500 max-w-md mx-auto leading-relaxed" id="notFoundDesc">
+                    The exact keyword you searched for is not currently in our local repository index.
                 </p>
-                <div id="externalCheckContainer" class="mt-6">
-                    <!-- Dynamic Link Generated Here -->
+                <div id="externalCheckContainer" class="mt-6 flex flex-wrap justify-center gap-3">
+                    <!-- Links and Buttons generated here -->
                 </div>
             </div>
 
-            <!-- Loading Spinner -->
             <div id="loaderContainer" class="p-32 flex flex-col items-center justify-center">
                 <div class="loader"></div>
                 <p class="mt-6 text-gray-500 font-medium tracking-wide">Syncing with Remote CSV...</p>
@@ -221,9 +271,7 @@
 
         <!-- Pagination Bar -->
         <footer class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-6 px-2">
-            <div class="text-sm font-medium text-gray-500" id="pageInfo">
-                Ready to explore
-            </div>
+            <div class="text-sm font-medium text-gray-500" id="pageInfo">Ready to explore</div>
             <div class="flex items-center gap-3">
                 <button id="prevBtn" class="pagination-btn btn-tonal disabled:opacity-20 disabled:cursor-not-allowed">
                     <i class="bi bi-arrow-left-short text-xl mr-1"></i> Prev
@@ -235,6 +283,82 @@
         </footer>
     </div>
 
+    <!-- Package Submission Modal -->
+    <div id="packageModal" class="modal-overlay" onclick="handleOverlayClick(event)">
+        <div class="modal-content shadow-2xl">
+            <div class="p-6 border-b border-gray-100 flex justify-between items-start">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900" id="modalMainTitle">List Your Package</h2>
+                    <p class="text-sm text-gray-500 mt-1" id="modalSubTitle">Submit your package for the OSMA audit list.</p>
+                </div>
+                <button onclick="toggleModal(false)" class="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+
+            <div id="modalFormView" class="p-8">
+                <div class="mb-6 p-4 bg-[#fdf2f2] border border-[#f9dedc] rounded-xl text-xs text-[#b3261e]">
+                    <i class="bi bi-info-circle-fill mr-2"></i> Note: Fields marked with <span class="important-marker">*</span> are important.
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="form-field">
+                        <label class="form-label">Package Name <span class="important-marker">*</span></label>
+                        <input type="text" id="pkg_name" class="form-input" placeholder="e.g. requests">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">Version <span class="important-marker">*</span></label>
+                        <input type="text" id="pkg_version" class="form-input" placeholder="e.g. 2.31.0">
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label class="form-label">PyPI Link <span class="important-marker">*</span></label>
+                    <input type="url" id="pkg_link" class="form-input" placeholder="https://pypi.org/project/name/">
+                    <p id="pkg_link_error" class="hidden text-[10px] text-red-500 mt-1">Please enter a valid pypi.org link.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="form-field">
+                        <label class="form-label">Email ID <span class="important-marker">*</span></label>
+                        <input type="email" id="user_email" class="form-input" placeholder="you@example.com">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label">GitHub Username <span class="important-marker">*</span></label>
+                        <input type="text" id="user_github" class="form-input" placeholder="octocat">
+                        <p id="user_github_error" class="hidden text-[10px] text-red-500 mt-1">Checking GitHub...</p>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-end gap-3">
+                    <button onclick="toggleModal(false)" class="pagination-btn btn-tonal">Cancel</button>
+                    <button id="submitBtn" onclick="handleSubmission()" class="pagination-btn btn-filled">Confirm & Review</button>
+                </div>
+            </div>
+
+            <div id="modalSummaryView" class="hidden p-8">
+                <div class="p-6 bg-gray-50 border border-gray-200 rounded-2xl mb-6">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Submission Content</h4>
+                    <div id="summaryText" class="font-mono-safe text-sm bg-white p-4 border border-gray-200 rounded-lg whitespace-pre-wrap leading-relaxed"></div>
+                    <button onclick="copySubmissionText()" class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#6750a4]">
+                        <i id="copyIcon" class="bi bi-clipboard"></i> <span id="copyText">Copy Formatted Text</span>
+                    </button>
+                </div>
+                <div class="p-5 bg-[#f3edf7] rounded-2xl flex items-start gap-4 mb-8">
+                    <div class="w-10 h-10 bg-white rounded-full flex-shrink-0 flex items-center justify-center text-[#6750a4]">
+                        <i class="bi bi-envelope-check"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-semibold text-[#21005d]">Final Step: Send Email</p>
+                        <p class="text-xs text-gray-600 mt-1">Click the button below to open your mail app, then paste the copied content without editing and send.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <button onclick="openMail()" class="pagination-btn btn-filled w-full flex-grow">
+                        <i class="bi bi-send-fill mr-2"></i> Mail Details to Dev
+                    </button>
+                    <button onclick="backToForm()" class="pagination-btn btn-tonal">Edit Form</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         const CSV_URL = 'https://raw.githubusercontent.com/notamitgamer/osma/refs/heads/main/data/pypi.csv';
         const ITEMS_PER_PAGE = 200;
@@ -243,9 +367,9 @@
         let filteredData = [];
         let currentPage = 0;
 
-        // UI Components
         const tableBody = document.getElementById('tableBody');
         const searchInput = document.getElementById('searchInput');
+        const clearSearch = document.getElementById('clearSearch');
         const totalCountSpan = document.getElementById('totalCount');
         const filteredCount = document.getElementById('filteredCount');
         const filteredCountWrapper = document.getElementById('filteredCountWrapper');
@@ -256,171 +380,238 @@
         const noResults = document.getElementById('noResults');
         const externalCheckContainer = document.getElementById('externalCheckContainer');
         const notFoundTitle = document.getElementById('notFoundTitle');
+        const noResultsIcon = document.getElementById('noResultsIcon');
 
-        /**
-         * Robust CSV Parser for PyPI names (handles quotes and weird characters)
-         */
+        const packageModal = document.getElementById('packageModal');
+        const modalFormView = document.getElementById('modalFormView');
+        const modalSummaryView = document.getElementById('modalSummaryView');
+        const summaryText = document.getElementById('summaryText');
+        const modalMainTitle = document.getElementById('modalMainTitle');
+        const modalSubTitle = document.getElementById('modalSubTitle');
+        const submitBtn = document.getElementById('submitBtn');
+
         function parseCSVLine(line) {
             const result = [];
-            let curValue = "";
-            let inQuotes = false;
-            
+            let curValue = "", inQuotes = false;
             for (let i = 0; i < line.length; i++) {
-                const char = line[i];
-                if (char === '"') inQuotes = !inQuotes;
-                else if (char === ',' && !inQuotes) {
-                    result.push(curValue.trim());
-                    curValue = "";
-                } else curValue += char;
+                if (line[i] === '"') inQuotes = !inQuotes;
+                else if (line[i] === ',' && !inQuotes) { result.push(curValue.trim()); curValue = ""; }
+                else curValue += line[i];
             }
             result.push(curValue.trim());
             return result;
         }
 
-        /**
-         * Initialization & Data Fetch
-         */
         async function loadData() {
             try {
                 const response = await fetch(CSV_URL);
-                if (!response.ok) throw new Error('Data Source Unavailable');
                 const text = await response.text();
-                
                 const lines = text.split('\n').filter(l => l.trim().length > 0);
-                
                 allData = lines.slice(1).map(line => {
                     const values = parseCSVLine(line);
-                    return {
-                        id: values[0] || '',
-                        name: values[1] || '',
-                        version: values[2] || '',
-                        link: values[3] || ''
-                    };
+                    return { id: values[0] || '', name: values[1] || '', version: values[2] || '', link: values[3] || '' };
                 });
-
                 filteredData = [...allData];
                 loaderContainer.classList.add('hidden');
                 totalCountSpan.textContent = `${allData.length.toLocaleString()} Indexed Packages`;
-                updateDisplay();
+                renderTable();
             } catch (error) {
                 console.error(error);
-                loaderContainer.innerHTML = `
-                    <div class="text-[#b3261e] text-center p-8">
-                        <i class="bi bi-cloud-slash text-5xl mb-4 block"></i>
-                        <h4 class="text-xl font-bold">Sync Error</h4>
-                        <p class="text-sm opacity-80 mt-2">Could not reach the GitHub CSV. Check your connection.</p>
-                    </div>
-                `;
+                loaderContainer.innerHTML = `<div class="p-8 text-red-500">Sync Error</div>`;
             }
         }
 
-        /**
-         * Render Table Logic
-         */
         function renderTable() {
             const start = currentPage * ITEMS_PER_PAGE;
             const end = start + ITEMS_PER_PAGE;
             const pageItems = filteredData.slice(start, end);
+            const query = searchInput.value.trim().toLowerCase();
 
             tableBody.innerHTML = '';
-            
-            if (pageItems.length === 0) {
-                const keyword = searchInput.value.trim();
-                noResults.classList.remove('hidden');
-                notFoundTitle.innerHTML = `<span class="text-[#b3261e]">"${keyword}"</span> Not Found`;
-                
-                externalCheckContainer.innerHTML = `
-                    <p class="text-sm text-gray-400 mb-4 italic">Maybe it's not listed in OSMA yet?</p>
-                    <a href="https://pypi.org/search/?q=${encodeURIComponent(keyword)}" target="_blank" class="empty-state-link">
-                        Search PyPI.org for "${keyword}" <i class="bi bi-box-arrow-up-right ml-1"></i>
-                    </a>
-                `;
-            } else {
-                noResults.classList.add('hidden');
+            const exactMatchExists = filteredData.some(item => item.name.toLowerCase() === query);
+            const showNotFound = (query !== "" && (!exactMatchExists || filteredData.length === 0));
+
+            if (pageItems.length > 0) {
                 pageItems.forEach(item => {
                     const row = document.createElement('tr');
-                    row.className = 'm3-row group';
+                    row.className = 'm3-row group border-b border-gray-50';
                     row.innerHTML = `
                         <td class="px-6 py-4 text-sm text-gray-400 font-mono-safe">${item.id}</td>
-                        <td class="px-6 py-4">
-                            <div class="font-semibold text-gray-800 text-base">${item.name}</div>
-                        </td>
+                        <td class="px-6 py-4 font-semibold text-gray-800">${item.name}</td>
                         <td class="px-6 py-4 text-center">
-                            <span class="inline-block px-3 py-1 bg-[#e8def8] text-[#1d192b] text-xs rounded-lg font-bold border border-[#d6c7ed]">
-                                ${item.version}
-                            </span>
+                            <span class="px-3 py-1 bg-[#e8def8] text-[#1d192b] text-xs rounded-lg font-bold">${item.version}</span>
                         </td>
                         <td class="px-6 py-4 text-right">
-                            <a href="${item.link}" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-[#6750a4] bg-transparent hover:bg-[#f3edf7] px-4 py-2 rounded-full transition-all">
-                                View <i class="bi bi-arrow-up-right-circle-fill opacity-40 group-hover:opacity-100"></i>
-                            </a>
+                            <a href="${item.link}" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-[#6750a4]">View <i class="bi bi-box-arrow-up-right"></i></a>
                         </td>
                     `;
                     tableBody.appendChild(row);
                 });
             }
 
-            // Sync Footer UI
-            const actualEnd = Math.min(end, filteredData.length);
-            const actualStart = filteredData.length === 0 ? 0 : start + 1;
-            pageInfo.innerHTML = `Displaying <b class="text-gray-900">${actualStart} - ${actualEnd}</b> of ${filteredData.length.toLocaleString()}`;
-            
+            if (showNotFound) {
+                noResults.classList.remove('hidden');
+                
+                if (filteredData.length > 0) {
+                    notFoundTitle.innerHTML = `Exact package <span class="text-[#6750a4]">"${query}"</span> not found`;
+                    noResultsIcon.classList.add('hidden');
+                } else {
+                    notFoundTitle.innerHTML = `<span class="text-[#b3261e]">"${query}"</span> not found`;
+                    noResultsIcon.classList.remove('hidden');
+                }
+
+                externalCheckContainer.innerHTML = `
+                    <div class="w-full text-gray-500 text-sm italic mb-4">Maybe it's not listed in OSMA yet?</div>
+                    <a href="https://pypi.org/search/?q=${encodeURIComponent(query)}" target="_blank" class="action-link btn-pypi-link">
+                        Search PyPI.org for "${query}" <i class="bi bi-search ml-1"></i>
+                    </a>
+                    <button onclick="toggleModal(true)" class="action-link btn-list-trigger shadow-sm">
+                        <i class="bi bi-plus-lg"></i> List Package
+                    </button>
+                `;
+            } else {
+                noResults.classList.add('hidden');
+            }
+
+            pageInfo.innerHTML = `Displaying <b>${filteredData.length === 0 ? 0 : start + 1} - ${Math.min(end, filteredData.length)}</b> of ${filteredData.length.toLocaleString()}`;
             prevBtn.disabled = currentPage === 0;
             nextBtn.disabled = end >= filteredData.length;
         }
 
-        /**
-         * Search Implementation
-         */
-        let searchTimeout;
         function handleSearch() {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => {
-                const query = searchInput.value.toLowerCase().trim();
-                
-                filteredData = allData.filter(item => 
-                    item.name.toLowerCase().includes(query) || 
-                    item.version.toLowerCase().includes(query) ||
-                    item.id.toLowerCase().includes(query)
-                );
-
-                currentPage = 0;
-                
-                if (query !== "") {
-                    filteredCountWrapper.classList.remove('hidden');
-                    filteredCount.textContent = `${filteredData.length.toLocaleString()} matches`;
-                } else {
-                    filteredCountWrapper.classList.add('hidden');
-                }
-                
-                renderTable();
-            }, 100);
-        }
-
-        function updateDisplay() {
+            const query = searchInput.value.toLowerCase().trim();
+            clearSearch.style.display = query.length > 0 ? 'block' : 'none';
+            
+            filteredData = allData.filter(i => i.name.toLowerCase().includes(query) || i.version.toLowerCase().includes(query));
+            currentPage = 0;
+            if (query) { filteredCountWrapper.classList.remove('hidden'); filteredCount.textContent = `${filteredData.length.toLocaleString()} matches`; }
+            else filteredCountWrapper.classList.add('hidden');
             renderTable();
         }
 
-        // Global Listeners
+        clearSearch.addEventListener('click', () => {
+            searchInput.value = '';
+            handleSearch();
+            searchInput.focus();
+        });
+
+        function toggleModal(show) {
+            packageModal.style.display = show ? 'flex' : 'none';
+            if (show) {
+                backToForm();
+                const query = searchInput.value.trim();
+                if (query) document.getElementById('pkg_name').value = query;
+            }
+        }
+
+        function handleOverlayClick(e) { if (e.target === packageModal) toggleModal(false); }
+
+        /**
+         * Validates GitHub username against real GitHub API
+         */
+        async function checkGitHubUser(username) {
+            try {
+                const response = await fetch(`https://api.github.com/users/${username}`);
+                return response.status === 200;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        async function validateForm() {
+            const pypiLink = document.getElementById('pkg_link').value;
+            const githubUser = document.getElementById('user_github').value.trim();
+            const email = document.getElementById('user_email').value;
+            const name = document.getElementById('pkg_name').value;
+            const ver = document.getElementById('pkg_version').value;
+            const gitErr = document.getElementById('user_github_error');
+
+            let valid = true;
+
+            // Simple requirement check
+            if (!name || !ver || !email || !githubUser || !pypiLink) {
+                alert("Please fill all required fields correctly.");
+                return false;
+            }
+
+            // PyPI Link Validation
+            if (!pypiLink.toLowerCase().includes('pypi.org/project/')) {
+                document.getElementById('pkg_link_error').classList.remove('hidden'); 
+                valid = false;
+            } else document.getElementById('pkg_link_error').classList.add('hidden');
+
+            // Start GitHub Validation
+            gitErr.classList.remove('hidden', 'text-red-500');
+            gitErr.classList.add('text-gray-500');
+            gitErr.textContent = "Verifying on GitHub...";
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Verifying...";
+
+            const userExists = await checkGitHubUser(githubUser);
+            
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Confirm & Review";
+
+            if (!userExists) {
+                gitErr.textContent = "User not found on GitHub.";
+                gitErr.classList.remove('text-gray-500', 'hidden');
+                gitErr.classList.add('text-red-500');
+                valid = false;
+            } else {
+                gitErr.classList.add('hidden');
+            }
+
+            return valid;
+        }
+
+        async function handleSubmission() {
+            const isValid = await validateForm();
+            if (!isValid) return;
+
+            const data = {
+                package: document.getElementById('pkg_name').value,
+                version: document.getElementById('pkg_version').value,
+                link: document.getElementById('pkg_link').value,
+                email: document.getElementById('user_email').value,
+                github: document.getElementById('user_github').value,
+            };
+            const formatted = `[OSMA SUBMISSION]\n------------------\nPackage: ${data.package}\nVersion: ${data.version}\nPyPI: ${data.link}\nAuthor: ${data.github}\nEmail: ${data.email}\n------------------\nID: OSMA-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
+            summaryText.textContent = formatted;
+            modalFormView.classList.add('hidden');
+            modalSummaryView.classList.remove('hidden');
+            modalMainTitle.textContent = "Confirm Submission";
+        }
+
+        function backToForm() {
+            modalFormView.classList.remove('hidden');
+            modalSummaryView.classList.add('hidden');
+            modalMainTitle.textContent = "List Your Package";
+            submitBtn.textContent = "Confirm & Review";
+        }
+
+        function copySubmissionText() {
+            const text = summaryText.textContent;
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+            document.getElementById('copyIcon').className = "bi bi-check-all text-green-500";
+            document.getElementById('copyText').textContent = "Copied!";
+            setTimeout(() => {
+                document.getElementById('copyIcon').className = "bi bi-clipboard";
+                document.getElementById('copyText').textContent = "Copy Formatted Text";
+            }, 2000);
+        }
+
+        function openMail() {
+            window.location.href = `mailto:mail@amit.is-a.dev?subject=New OSMA Package Submission&body=[Paste details here]`;
+        }
+
         searchInput.addEventListener('input', handleSearch);
-        
-        prevBtn.addEventListener('click', () => {
-            if (currentPage > 0) {
-                currentPage--;
-                renderTable();
-                document.querySelector('.overflow-x-auto').scrollTop = 0;
-            }
-        });
-
-        nextBtn.addEventListener('click', () => {
-            if ((currentPage + 1) * ITEMS_PER_PAGE < filteredData.length) {
-                currentPage++;
-                renderTable();
-                document.querySelector('.overflow-x-auto').scrollTop = 0;
-            }
-        });
-
-        // Initialize App
+        prevBtn.addEventListener('click', () => { if (currentPage > 0) { currentPage--; renderTable(); }});
+        nextBtn.addEventListener('click', () => { if ((currentPage + 1) * ITEMS_PER_PAGE < filteredData.length) { currentPage++; renderTable(); }});
         window.addEventListener('DOMContentLoaded', loadData);
     </script>
 </body>
