@@ -1,91 +1,94 @@
-import urllib.request
-import urllib.error
-import json
-import csv
 import os
-import time
-import concurrent.futures
-import threading
+import csv
+import re
+import urllib.request
+import json
 
-def extract_pypi():
-    print(f"\n[PyPI] Starting extraction of ALL packages...")
-    output_file = "data/pypi.csv"
+def normalize_pypi_name(name):
+    """
+    Normalizes PyPI package names according to PEP 503.
+    (e.g. 'Django-Auth' == 'django.auth' == 'django_auth' == 'django-auth')
+    """
+    return re.sub(r"[-_.]+", "-", str(name)).lower()
+
+def filter_deleted_packages(input_csv):
+    """
+    Cross-references the local CSV against PyPI's active master list.
+    Removes packages that have been deleted from PyPI.
+    """
+    # Temporary file to stream the kept records into
+    temp_output = "data/pypi_temp_active.csv"
     
-    print("[PyPI] Fetching master package list from Simple API (JSON)...")
+    print("\n🌐 [PyPI Simple API] Fetching master list of active packages...")
     try:
         req = urllib.request.Request(
             'https://pypi.org/simple/', 
-            headers={
-                'Accept': 'application/vnd.pypi.simple.v1+json',
-                'User-Agent': 'OSMA-Local-Extractor'
-            }
+            headers={'Accept': 'application/vnd.pypi.simple.v1+json'}
         )
         with urllib.request.urlopen(req) as response:
-            simple_data = json.loads(response.read().decode())
-            all_packages = [proj["name"] for proj in simple_data.get("projects", [])]
+            data = json.loads(response.read().decode())
+            
+            # Create a set of normalized active package names for O(1) instant lookup
+            print("⏳ Indexing active packages into memory...")
+            active_projects = {normalize_pypi_name(proj["name"]) for proj in data.get("projects", [])}
+            
+        print(f"✅ Found {len(active_projects):,} currently active packages on PyPI.")
+        
     except Exception as e:
-        print(f"[PyPI] Error getting package list: {e}")
+        print(f"❌ Failed to fetch PyPI active list: {e}")
         return
 
-    total_packages = len(all_packages)
-    print(f"[PyPI] Total packages found: {total_packages}. Extracting metadata... (STABLE MULTITHREADED)")
+    print(f"\n📖 Reading local database: {input_csv}")
+    print("⏳ Filtering out deleted packages...")
 
-    total_fetched = 0
-    counter_lock = threading.Lock()
-    file_lock = threading.Lock()
+    kept_count = 0
+    deleted_count = 0
 
-    with open(output_file, mode='w', encoding='utf-8') as f:
-        f.write('No.,Package Name,Version,Official Link\n')
-
-        def fetch_and_write(pkg_no, pkg_name):
-            nonlocal total_fetched
-            url = f"https://pypi.org/pypi/{pkg_name}/json"
+    try:
+        with open(input_csv, mode='r', encoding='utf-8') as infile, \
+             open(temp_output, mode='w', encoding='utf-8', newline='') as outfile:
             
-            # --- RETRY LOGIC ---
-            max_retries = 5
-            for attempt in range(max_retries):
-                try:
-                    req = urllib.request.Request(url, headers={'User-Agent': 'OSMA-Local-Extractor'})
-                    with urllib.request.urlopen(req, timeout=15) as response:
-                        data = json.loads(response.read().decode())
-                        
-                    info = data.get("info", {})
-                    version_raw = info.get("version")
-                    version = f"v{version_raw}" if version_raw else "vUnknown"
-                    official_link = info.get("package_url", f"https://pypi.org/project/{pkg_name}/")
-                    
-                    line = f'{pkg_no}, "{pkg_name}", {version}, {official_link}\n'
-                    
-                    with file_lock:
-                        f.write(line)
-                        f.flush()
-                        
-                    with counter_lock:
-                        total_fetched += 1
-                        if total_fetched % 200 == 0:
-                            print(f"[PyPI] Processed {total_fetched} / {total_packages}...")
-                    
-                    return # Success! Break the retry loop
-                        
-                except urllib.error.HTTPError as e:
-                    if e.code == 404: return # Deleted package, don't retry
-                    if e.code in [429, 403, 503]:
-                        time.sleep(2 * (attempt + 1)) # Wait longer if throttled
-                    continue # Retry for other HTTP errors
-                except Exception as e:
-                    if attempt == max_retries - 1:
-                        print(f"\n[PyPI] Failed '{pkg_name}' after {max_retries} attempts: {e}")
-                    time.sleep(1) # Wait before retry for socket/timeout errors
+            reader = csv.DictReader(infile)
+            writer = csv.writer(outfile)
+            
+            # Write headers
+            writer.writerow(['No.', 'Package Name', 'Version', 'Official Link'])
+            
+            for row in reader:
+                original_name = row.get('Package Name')
+                if not original_name:
                     continue
+                    
+                normalized = normalize_pypi_name(original_name)
+                
+                # Check if the package is in the active master list
+                if normalized in active_projects:
+                    kept_count += 1
+                    # Re-number the "No." column so it stays sequential
+                    writer.writerow([kept_count, original_name, row.get('Version', ''), row.get('Official Link', '')])
+                else:
+                    deleted_count += 1
+                    
+        # Replace the old file with the new cleaned file safely
+        os.replace(temp_output, input_csv)
+        
+        print(f"\n🎉 Deletion filter complete!")
+        print(f"   🟢 Kept (Active):   {kept_count:,}")
+        print(f"   🔴 Removed (Del):   {deleted_count:,}")
+        print(f"📂 Updated file saved at: {input_csv}")
 
-        # Using 200 workers is much more stable for Windows and avoids 10054 errors
-        with concurrent.futures.ThreadPoolExecutor(max_workers=200) as executor:
-            for i, pkg_name in enumerate(all_packages, 1):
-                executor.submit(fetch_and_write, i, pkg_name)
-
-    print(f"[PyPI] Successfully wrote {total_fetched} packages to {output_file}")
+    except Exception as e:
+        print(f"❌ Error during filtering: {e}")
+        # Clean up temp file if something goes wrong
+        if os.path.exists(temp_output):
+            os.remove(temp_output)
 
 if __name__ == "__main__":
-    os.makedirs("data", exist_ok=True)
-    extract_pypi()
-    print("\n✅ All extractions complete! Check the 'data' folder.")
+    # Ensure the script looks for the CSV in the 'data' folder
+    FORMATTED_CSV_PATH = "data/pypi.csv"
+    
+    if os.path.exists(FORMATTED_CSV_PATH):
+        filter_deleted_packages(FORMATTED_CSV_PATH)
+    else:
+        print(f"❌ Cannot filter: '{FORMATTED_CSV_PATH}' does not exist.")
+        print("Please ensure your CSV is located at data/pypi.csv relative to this script.")
