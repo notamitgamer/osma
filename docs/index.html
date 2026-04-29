@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OSMA | PyPI Package Explorer</title>
+    <!-- Purple Box Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='%236750a4' d='M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z'/></svg>">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -23,7 +26,6 @@
             --m3-error-container: #f9dedc;
         }
 
-        /* Global Typography Enforcement */
         * {
             font-family: 'Lexend', sans-serif !important;
             -webkit-font-smoothing: antialiased;
@@ -31,31 +33,13 @@
         }
 
         /* Custom Scrollbar Styles */
-        ::-webkit-scrollbar {
-            width: 10px;
-            height: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--m3-surface);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--m3-outline);
-            border-radius: 10px;
-            border: 3px solid var(--m3-surface);
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--m3-primary);
-        }
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: var(--m3-surface); }
+        ::-webkit-scrollbar-thumb { background: var(--m3-outline); border-radius: 10px; border: 3px solid var(--m3-surface); }
+        ::-webkit-scrollbar-thumb:hover { background: var(--m3-primary); }
+        * { scrollbar-width: thin; scrollbar-color: var(--m3-outline) var(--m3-surface); }
 
-        /* Firefox Scrollbar Support */
-        * {
-            scrollbar-width: thin;
-            scrollbar-color: var(--m3-outline) var(--m3-surface);
-        }
-
-        .font-mono-safe {
-            font-family: 'Roboto Mono', monospace !important;
-        }
+        .font-mono-safe { font-family: 'Roboto Mono', monospace !important; }
 
         body {
             background-color: var(--m3-surface);
@@ -119,7 +103,6 @@
 
         .btn-filled { background-color: var(--m3-primary); color: var(--m3-on-primary); }
         .btn-tonal { background-color: var(--m3-secondary-container); color: var(--m3-on-secondary-container); }
-        .btn-outlined { border: 1px solid var(--m3-outline); color: var(--m3-primary); }
 
         /* Modal Styles */
         .modal-overlay {
@@ -192,7 +175,12 @@
         .btn-list-trigger { background-color: var(--m3-primary-container); color: var(--m3-on-primary-container); }
         .btn-pypi-link { border: 1px solid var(--m3-outline); color: var(--m3-primary); }
 
-        @media (max-width: 640px) { .m3-card { border-radius: 0; } }
+        /* Mobile Keyboard Adjustments */
+        @media (max-width: 640px) { 
+            .m3-card { border-radius: 0; } 
+            .modal-overlay { align-items: flex-start; padding-top: 1rem; }
+            .modal-content { max-height: calc(100vh - 2rem); }
+        }
     </style>
 </head>
 <body class="pb-12">
@@ -223,9 +211,8 @@
 
         <!-- Dynamic Statistics -->
         <div id="statsBar" class="mb-6 flex flex-wrap items-center gap-3 text-sm">
-            <div class="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-gray-600 shadow-sm">
-                <i class="bi bi-database-fill-check mr-2 text-[#6750a4]"></i>
-                <span id="totalCount">Scanning...</span>
+            <div class="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-gray-600 shadow-sm transition-all" id="totalCountContainer">
+                <span id="totalCount"><i class="bi bi-cloud-arrow-down mr-2 text-[#6750a4]"></i>Initializing Stream...</span>
             </div>
             <div id="filteredCountWrapper" class="hidden px-4 py-1.5 bg-[#eaddff] text-[#21005d] rounded-full font-semibold animate-pulse">
                 <i class="bi bi-filter-circle-fill mr-2"></i>
@@ -235,7 +222,7 @@
 
         <!-- Main Data Container -->
         <div class="m3-card shadow-sm overflow-hidden border border-gray-200 bg-white">
-            <div class="overflow-x-auto max-h-[65vh] relative">
+            <div class="overflow-x-auto max-h-[65vh] relative" id="tableContainer">
                 <table class="w-full text-left border-collapse">
                     <thead class="m3-table-header">
                         <tr>
@@ -265,7 +252,7 @@
 
             <div id="loaderContainer" class="p-32 flex flex-col items-center justify-center">
                 <div class="loader"></div>
-                <p class="mt-6 text-gray-500 font-medium tracking-wide">Syncing with Remote CSV...</p>
+                <p class="mt-6 text-gray-500 font-medium tracking-wide">Streaming Data...</p>
             </div>
         </div>
 
@@ -286,7 +273,7 @@
     <!-- Package Submission Modal -->
     <div id="packageModal" class="modal-overlay" onclick="handleOverlayClick(event)">
         <div class="modal-content shadow-2xl">
-            <div class="p-6 border-b border-gray-100 flex justify-between items-start">
+            <div class="p-6 border-b border-gray-100 flex justify-between items-start sticky top-0 bg-[var(--m3-surface)] z-10 rounded-t-[28px]">
                 <div>
                     <h2 class="text-2xl font-bold text-gray-900" id="modalMainTitle">List Your Package</h2>
                     <p class="text-sm text-gray-500 mt-1" id="modalSubTitle">Submit your package for the OSMA audit list.</p>
@@ -296,7 +283,7 @@
                 </button>
             </div>
 
-            <div id="modalFormView" class="p-8">
+            <div id="modalFormView" class="p-8 pt-4">
                 <div class="mb-6 p-4 bg-[#fdf2f2] border border-[#f9dedc] rounded-xl text-xs text-[#b3261e]">
                     <i class="bi bi-info-circle-fill mr-2"></i> Note: Fields marked with <span class="important-marker">*</span> are important.
                 </div>
@@ -332,13 +319,10 @@
                 </div>
             </div>
 
-            <div id="modalSummaryView" class="hidden p-8">
+            <div id="modalSummaryView" class="hidden p-8 pt-4">
                 <div class="p-6 bg-gray-50 border border-gray-200 rounded-2xl mb-6">
                     <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Submission Content</h4>
                     <div id="summaryText" class="font-mono-safe text-sm bg-white p-4 border border-gray-200 rounded-lg whitespace-pre-wrap leading-relaxed"></div>
-                    <button onclick="copySubmissionText()" class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#6750a4]">
-                        <i id="copyIcon" class="bi bi-clipboard"></i> <span id="copyText">Copy Formatted Text</span>
-                    </button>
                 </div>
                 <div class="p-5 bg-[#f3edf7] rounded-2xl flex items-start gap-4 mb-8">
                     <div class="w-10 h-10 bg-white rounded-full flex-shrink-0 flex items-center justify-center text-[#6750a4]">
@@ -346,7 +330,7 @@
                     </div>
                     <div>
                         <p class="text-sm font-semibold text-[#21005d]">Final Step: Send Email</p>
-                        <p class="text-xs text-gray-600 mt-1">Click the button below to open your mail app, then paste the copied content without editing and send.</p>
+                        <p class="text-xs text-gray-600 mt-1">Click the button below to open your mail app. The content will be automatically pasted for you.</p>
                     </div>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-3">
@@ -381,6 +365,7 @@
         const externalCheckContainer = document.getElementById('externalCheckContainer');
         const notFoundTitle = document.getElementById('notFoundTitle');
         const noResultsIcon = document.getElementById('noResultsIcon');
+        const tableContainer = document.getElementById('tableContainer');
 
         const packageModal = document.getElementById('packageModal');
         const modalFormView = document.getElementById('modalFormView');
@@ -389,6 +374,15 @@
         const modalMainTitle = document.getElementById('modalMainTitle');
         const modalSubTitle = document.getElementById('modalSubTitle');
         const submitBtn = document.getElementById('submitBtn');
+
+        // Scroll fix for mobile keyboards
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', function() {
+                setTimeout(() => {
+                    this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 300);
+            });
+        });
 
         function parseCSVLine(line) {
             const result = [];
@@ -402,22 +396,86 @@
             return result;
         }
 
-        async function loadData() {
+        // 🌟 INSTA-LOAD STREAMING IMPLEMENTATION
+        async function streamData() {
             try {
                 const response = await fetch(CSV_URL);
-                const text = await response.text();
-                const lines = text.split('\n').filter(l => l.trim().length > 0);
-                allData = lines.slice(1).map(line => {
-                    const values = parseCSVLine(line);
-                    return { id: values[0] || '', name: values[1] || '', version: values[2] || '', link: values[3] || '' };
-                });
-                filteredData = [...allData];
-                loaderContainer.classList.add('hidden');
-                totalCountSpan.textContent = `${allData.length.toLocaleString()} Indexed Packages`;
-                renderTable();
+                if (!response.body) throw new Error("ReadableStream not supported");
+
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder('utf-8');
+                let buffer = '';
+                let isFirstLine = true;
+                let loadedFirstPage = false;
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+
+                    buffer += decoder.decode(value, { stream: true });
+                    let lines = buffer.split('\n');
+                    
+                    // Keep the last incomplete line in the buffer
+                    buffer = lines.pop(); 
+
+                    let newItems = [];
+                    for (let line of lines) {
+                        line = line.trim();
+                        if (!line) continue;
+                        if (isFirstLine) { isFirstLine = false; continue; }
+
+                        const values = parseCSVLine(line);
+                        newItems.push({ 
+                            id: values[0] || '', 
+                            name: values[1] || '', 
+                            version: values[2] || '', 
+                            link: values[3] || '' 
+                        });
+                    }
+
+                    allData.push(...newItems);
+                    
+                    // Only push to filteredData if the user hasn't started searching
+                    if (searchInput.value.trim() === '') {
+                        filteredData.push(...newItems);
+                    }
+
+                    // 👉 RENDER INSTANTLY once we have enough items for page 1
+                    if (!loadedFirstPage && filteredData.length >= ITEMS_PER_PAGE) {
+                        loaderContainer.classList.add('hidden');
+                        renderTable();
+                        loadedFirstPage = true;
+                    }
+
+                    // Update UI discreetly while downloading the rest
+                    if (allData.length % 50000 < 500) {
+                        totalCountSpan.innerHTML = `<i class="bi bi-cloud-arrow-down mr-2 text-[#6750a4]"></i>Streaming Data... (${Math.floor(allData.length/1000)}k)`;
+                    }
+                }
+
+                // Process the very last line if it exists
+                if (buffer.trim()) {
+                    const values = parseCSVLine(buffer.trim());
+                    const item = { id: values[0] || '', name: values[1] || '', version: values[2] || '', link: values[3] || '' };
+                    allData.push(item);
+                    if (searchInput.value.trim() === '') filteredData.push(item);
+                }
+
+                // Final Update
+                totalCountSpan.innerHTML = `<i class="bi bi-database-fill-check mr-2 text-[#6750a4]"></i>${allData.length.toLocaleString()} Indexed Packages`;
+                
+                // Fallback in case the file was smaller than ITEMS_PER_PAGE
+                if (!loadedFirstPage) {
+                    loaderContainer.classList.add('hidden');
+                    renderTable();
+                }
+
+                // If user was searching while it downloaded, re-run search on complete data
+                if (searchInput.value.trim() !== '') handleSearch();
+
             } catch (error) {
                 console.error(error);
-                loaderContainer.innerHTML = `<div class="p-8 text-red-500">Sync Error</div>`;
+                loaderContainer.innerHTML = `<div class="p-8 text-red-500 text-center"><i class="bi bi-exclamation-octagon text-4xl block mb-2"></i>Sync Error. Try disabling adblock or VPN.</div>`;
             }
         }
 
@@ -506,9 +564,6 @@
 
         function handleOverlayClick(e) { if (e.target === packageModal) toggleModal(false); }
 
-        /**
-         * Validates GitHub username against real GitHub API
-         */
         async function checkGitHubUser(username) {
             try {
                 const response = await fetch(`https://api.github.com/users/${username}`);
@@ -528,19 +583,16 @@
 
             let valid = true;
 
-            // Simple requirement check
             if (!name || !ver || !email || !githubUser || !pypiLink) {
                 alert("Please fill all required fields correctly.");
                 return false;
             }
 
-            // PyPI Link Validation
             if (!pypiLink.toLowerCase().includes('pypi.org/project/')) {
                 document.getElementById('pkg_link_error').classList.remove('hidden'); 
                 valid = false;
             } else document.getElementById('pkg_link_error').classList.add('hidden');
 
-            // Start GitHub Validation
             gitErr.classList.remove('hidden', 'text-red-500');
             gitErr.classList.add('text-gray-500');
             gitErr.textContent = "Verifying on GitHub...";
@@ -589,30 +641,37 @@
             submitBtn.textContent = "Confirm & Review";
         }
 
-        function copySubmissionText() {
-            const text = summaryText.textContent;
-            const dummy = document.createElement("textarea");
-            document.body.appendChild(dummy);
-            dummy.value = text;
-            dummy.select();
-            document.execCommand("copy");
-            document.body.removeChild(dummy);
-            document.getElementById('copyIcon').className = "bi bi-check-all text-green-500";
-            document.getElementById('copyText').textContent = "Copied!";
-            setTimeout(() => {
-                document.getElementById('copyIcon').className = "bi bi-clipboard";
-                document.getElementById('copyText').textContent = "Copy Formatted Text";
-            }, 2000);
-        }
-
+        // 🌟 Auto-Fill Email Body Implementation
         function openMail() {
-            window.location.href = `mailto:mail@amit.is-a.dev?subject=New OSMA Package Submission&body=[Paste details here]`;
+            const bodyText = summaryText.textContent;
+            const subject = "New OSMA Package Submission";
+            
+            // encodeURIComponent ensures spaces, newlines, and special characters format correctly in the mail app
+            const mailtoLink = `mailto:mail@amit.is-a.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+            
+            window.location.href = mailtoLink;
         }
 
         searchInput.addEventListener('input', handleSearch);
-        prevBtn.addEventListener('click', () => { if (currentPage > 0) { currentPage--; renderTable(); }});
-        nextBtn.addEventListener('click', () => { if ((currentPage + 1) * ITEMS_PER_PAGE < filteredData.length) { currentPage++; renderTable(); }});
-        window.addEventListener('DOMContentLoaded', loadData);
+        
+        prevBtn.addEventListener('click', () => { 
+            if (currentPage > 0) { 
+                currentPage--; 
+                renderTable(); 
+                tableContainer.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        });
+        
+        nextBtn.addEventListener('click', () => { 
+            if ((currentPage + 1) * ITEMS_PER_PAGE < filteredData.length) { 
+                currentPage++; 
+                renderTable(); 
+                tableContainer.scrollTo({top: 0, behavior: 'smooth'});
+            }
+        });
+        
+        // Start Streaming Data on Load
+        window.addEventListener('DOMContentLoaded', streamData);
     </script>
 </body>
 </html>
