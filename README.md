@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/notamitgamer/osma/raw/main/docs/assets/pypi.png" alt="OSMA Icon" width="120" />
+  <img src="https://github.com/notamitgamer/osma/raw/main/docs/assets/osma.png" alt="OSMA Icon" width="120" />
 
   # OSMA (Open Source Module Archive)
 
