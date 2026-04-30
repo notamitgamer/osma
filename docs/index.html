@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSMA | PyPI Package Explorer</title>
-    <link rel="icon" type="image/png" href="osma.png">
+    <title>OSMA | Package Repository Audit</title>
+    <link rel="icon" type="image/png" href="./assets/osma.png">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         :root {
+            /* M3 Purple Theme */
             --m3-surface: #fef7ff;
             --m3-surface-container: #f3edf7;
             --m3-surface-container-high: #ece6f0;
@@ -25,1025 +26,246 @@
             --m3-error-container: #f9dedc;
         }
 
-        * {
-            font-family: 'Lexend', sans-serif !important;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
+        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 10px; height: 10px; }
         ::-webkit-scrollbar-track { background: var(--m3-surface); }
         ::-webkit-scrollbar-thumb { background: var(--m3-outline); border-radius: 10px; border: 3px solid var(--m3-surface); }
         ::-webkit-scrollbar-thumb:hover { background: var(--m3-primary); }
         * { scrollbar-width: thin; scrollbar-color: var(--m3-outline) var(--m3-surface); }
 
-        .font-mono-safe { font-family: 'Roboto Mono', monospace !important; }
+        * {
+            font-family: 'Lexend', sans-serif !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
 
         body {
             background-color: var(--m3-surface);
             color: #1c1b1f;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         .m3-card {
             background-color: var(--m3-surface-container);
-            border-radius: 24px;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .search-container {
-            background-color: var(--m3-surface-container-high);
             border-radius: 28px;
-            padding: 4px 16px;
-            display: flex;
-            align-items: center;
-            transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
-            border: 1px solid transparent;
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+            text-decoration: none;
+            display: block;
         }
 
-        .search-container:focus-within {
-            background-color: #fff;
-            border-color: var(--m3-primary);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .search-input {
-            background: transparent;
-            border: none;
-            outline: none;
-            padding: 12px;
-            width: 100%;
-            font-size: 1rem;
-            color: #1d1b20;
-        }
-
-        .m3-table-header {
+        .m3-card:hover {
             background-color: var(--m3-surface-container-high);
-            position: sticky;
-            top: 0;
-            z-index: 10;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(103, 80, 164, 0.08);
+            border-color: var(--m3-primary-container);
         }
 
-        .m3-row:hover { background-color: var(--m3-secondary-container); }
-
-        /* Highlight exact match row */
-        .m3-row.exact-match {
-            background-color: var(--m3-primary-container);
+        .m3-icon-box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            margin-bottom: 20px;
         }
-        .m3-row.exact-match:hover {
-            background-color: #d8c8ff;
-        }
 
-        .pagination-btn {
-            padding: 12px 24px;
+        .btn-filled {
+            background-color: var(--m3-primary);
+            color: var(--m3-on-primary);
+            padding: 12px 32px;
             border-radius: 100px;
-            font-weight: 500;
+            font-weight: 600;
             letter-spacing: 0.1px;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
             transition: all 0.2s;
-        }
-
-        .btn-filled { background-color: var(--m3-primary); color: var(--m3-on-primary); }
-        .btn-tonal { background-color: var(--m3-secondary-container); color: var(--m3-on-secondary-container); }
-
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.4);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 50;
-            backdrop-filter: blur(4px);
-        }
-
-        .modal-content {
-            background: var(--m3-surface);
-            width: 95%;
-            max-width: 600px;
-            border-radius: 28px;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            animation: modalScale 0.3s cubic-bezier(0, 0, 0.2, 1);
-        }
-
-        @keyframes modalScale {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .form-field { margin-bottom: 20px; }
-        .form-label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 8px; color: #49454f; }
-        .form-input {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: 12px;
-            border: 1px solid var(--m3-outline);
-            background: transparent;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-        .form-input:focus { border-color: var(--m3-primary); border-width: 2px; }
-        .important-marker { color: var(--m3-error); }
-
-        .loader {
-            border: 3px solid var(--m3-secondary-container);
-            border-top: 3px solid var(--m3-primary);
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-            animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-        }
-
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-        .action-link {
-            font-weight: 600;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: 100px;
-            transition: all 0.2s;
-            font-size: 0.875rem;
         }
 
-        .btn-list-trigger { background-color: var(--m3-primary-container); color: var(--m3-on-primary-container); }
-        .btn-pypi-link { border: 1px solid var(--m3-outline); color: var(--m3-primary); }
-
-        /* Match rank badge */
-        .rank-badge {
-            display: inline-block;
-            font-size: 0.6rem;
-            font-weight: 700;
-            padding: 1px 6px;
-            border-radius: 4px;
-            margin-left: 6px;
-            vertical-align: middle;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .rank-exact  { background: var(--m3-primary); color: #fff; }
-        .rank-starts { background: var(--m3-secondary-container); color: var(--m3-on-secondary-container); }
-
-        /* ── Detail panel (slide-in from right) ── */
-        .detail-panel {
-            position: fixed;
-            top: 0; right: 0;
-            width: 100%; max-width: 480px;
-            height: 100%;
-            background: var(--m3-surface);
-            box-shadow: -4px 0 24px rgba(0,0,0,0.15);
-            z-index: 60;
-            transform: translateX(100%);
-            transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1);
-            display: flex;
-            flex-direction: column;
-        }
-        .detail-panel.open { transform: translateX(0); }
-        .detail-panel-header {
-            padding: 20px 24px;
-            border-bottom: 1px solid var(--m3-surface-container-high);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            position: sticky; top: 0;
-            background: var(--m3-surface);
-            z-index: 1;
-        }
-        .detail-panel-body {
-            padding: 24px;
-            overflow-y: auto;
-            flex: 1;
-        }
-        .detail-overlay {
-            position: fixed; inset: 0;
-            background: rgba(0,0,0,0.3);
-            backdrop-filter: blur(2px);
-            z-index: 59;
-            display: none;
-        }
-        .detail-chip {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-        .detail-section-title {
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #79747e;
-            margin: 20px 0 8px;
-        }
-        .detail-version-pill {
-            display: inline-block;
-            padding: 2px 10px;
-            border-radius: 6px;
-            background: var(--m3-secondary-container);
-            color: var(--m3-on-secondary-container);
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin: 2px;
-        }
-        .detail-dep-pill {
-            display: inline-block;
-            padding: 2px 10px;
-            border-radius: 6px;
-            background: var(--m3-surface-container-high);
-            color: #49454f;
-            font-size: 0.75rem;
-            font-weight: 500;
-            margin: 2px;
-            font-family: 'Roboto Mono', monospace !important;
-        }
-        .detail-loader {
-            border: 3px solid var(--m3-secondary-container);
-            border-top: 3px solid var(--m3-primary);
-            border-radius: 50%;
-            width: 32px; height: 32px;
-            animation: spin 0.8s linear infinite;
-            margin: 60px auto;
-        }
-        /* ── Search loading warning ── */
-        #search-warning {
-            display: none;
-            align-items: center;
-            gap: 8px;
-            padding: 7px 14px;
-            background: #fffbea;
-            border: 1px solid #f5d600;
-            border-radius: 100px;
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: #7a5c00;
+        .btn-filled:hover {
+            background-color: #554287;
+            box-shadow: 0 4px 12px rgba(103, 80, 164, 0.2);
         }
 
-        @media (max-width: 640px) { 
-            .m3-card { border-radius: 0; } 
-            .modal-overlay { align-items: flex-start; padding-top: 1rem; }
-            .modal-content { max-height: calc(100vh - 2rem); }
-            .detail-panel { max-width: 100%; }
-        }
+        /* Platform specific colors for the cards */
+        .npm-accent { color: #cb3837; background-color: #ffdad6; }
+        .pypi-accent { color: #3776ab; background-color: #d0e2f3; }
     </style>
 </head>
-<body class="pb-12">
+<body>
 
-    <div class="max-w-6xl mx-auto px-4 pt-8 md:pt-12">
-        <header class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
-            <div class="flex items-center gap-4">
-                <div class="w-12 h-12 bg-[#6750a4] rounded-xl flex items-center justify-center text-white shadow-lg">
+    <!-- Header -->
+    <header class="max-w-6xl mx-auto px-6 py-8 w-full flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-[var(--m3-primary)] rounded-xl flex items-center justify-center text-white shadow-sm">
+                <i class="bi bi-box-seam-fill text-2xl"></i>
+            </div>
+            <span class="text-xl font-bold text-[#1d1b20] tracking-tight">OSMA</span>
+        </div>
+        <a href="https://github.com/notamitgamer/osma" target="_blank" class="text-[var(--m3-primary)] font-semibold text-sm flex items-center gap-2 hover:bg-[var(--m3-primary-container)] px-4 py-2 rounded-full transition-colors">
+            <i class="bi bi-github"></i> GitHub
+        </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center justify-center px-4 py-12 md:py-20 max-w-5xl mx-auto w-full">
+        
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--m3-primary-container)] text-[var(--m3-on-primary-container)] text-xs font-bold uppercase tracking-widest mb-6">
+                <i class="bi bi-lightning-charge-fill"></i> Instant Static Archive
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-[#1d1b20] mb-6 leading-tight">
+                Registry lookups, <br class="hidden md:block">
+                <span class="text-[var(--m3-primary)]">without the wait.</span>
+            </h1>
+            <p class="text-lg text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
+                Built out of frustration with slow, multi-click searches on official registries. OSMA uses frozen snapshots to deliver instant version numbers and search results—no Fastly delays.
+            </p>
+
+            <!-- Snapshot Info Alert -->
+            <div class="bg-[var(--m3-surface-container)] border border-[var(--m3-outline)] border-opacity-20 rounded-2xl p-5 text-left flex gap-4 items-start shadow-sm mx-auto max-w-2xl">
+                <div class="text-[var(--m3-primary)] text-2xl mt-0.5">
+                    <i class="bi bi-info-circle-fill"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-[#1d1b20] mb-1">About this Snapshot</h3>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        This tool queries a static archive, saving you time by skipping live registry checks during search. <br>
+                        • <strong>PyPI</strong> snapshotted at <code class="bg-white px-1.5 py-0.5 rounded text-xs border border-gray-200">2026-04-29 • 08:45 (IST)</code><br>
+                        • <strong>NPM</strong> snapshotted at <code class="bg-white px-1.5 py-0.5 rounded text-xs border border-gray-200">2026-04-29 • 09:42 (IST)</code>
+                    </p>
+                    <p class="text-xs text-[var(--m3-primary)] font-semibold mt-3 pt-3 border-t border-[var(--m3-outline)] border-opacity-10">
+                        <i class="bi bi-broadcast mr-1"></i> <strong>Live Details:</strong> Clicking on any package opens a side panel that pulls its full details, dependencies, and history directly from the official registry in real-time.
+                    </p>
+                    <p class="text-xs text-[var(--m3-error)] font-semibold mt-2">
+                        <i class="bi bi-exclamation-triangle-fill mr-1"></i> <strong>Limitation:</strong> Any packages published or deleted after these exact timestamps are not reflected in the search list.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
+            
+            <!-- NPM Card -->
+            <a href="https://data.amit.is-a.dev/npm" class="m3-card p-8 group relative overflow-hidden">
+                <div class="m3-icon-box npm-accent group-hover:scale-110 transition-transform duration-300">
                     <i class="bi bi-box-seam-fill text-2xl"></i>
                 </div>
-                <div>
-                    <h1 class="text-3xl font-extrabold tracking-tight text-[#1d1b20]">OSMA <span class="font-light text-gray-400">Explorer</span></h1>
-                    <p class="text-sm text-gray-500 font-medium uppercase tracking-widest mt-0.5">Package Repository Audit</p>
-                </div>
-            </div>
-            
-            <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-                <div class="search-container flex-grow md:w-[400px]">
-                    <i class="bi bi-search text-gray-500 ml-2"></i>
-                    <input type="text" id="searchInput" class="search-input" placeholder="Search packages..." autocomplete="off">
-                    <button id="clearSearch" class="hidden p-2 hover:bg-gray-200 rounded-full transition-colors">
-                        <i class="bi bi-x-circle-fill text-gray-400"></i>
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- Search loading warning (item 10) -->
-        <div id="search-warning" class="mb-4">
-            <i class="bi bi-exclamation-triangle-fill text-yellow-500"></i>
-            Data is still loading — search results may be incomplete.
-        </div>
-
-        <div id="statsBar" class="mb-6 flex flex-wrap items-center gap-3 text-sm">
-            <div class="px-4 py-1.5 bg-white border border-gray-200 rounded-full text-gray-600 shadow-sm transition-all" id="totalCountContainer">
-                <span id="totalCount"><i class="bi bi-cloud-arrow-down mr-2 text-[#6750a4]"></i>Initializing Stream...</span>
-            </div>
-            <div id="filteredCountWrapper" class="hidden px-4 py-1.5 bg-[#eaddff] text-[#21005d] rounded-full font-semibold">
-                <i class="bi bi-filter-circle-fill mr-2"></i>
-                <span id="filteredCount"></span>
-            </div>
-        </div>
-
-        <div class="m3-card shadow-sm overflow-hidden border border-gray-200 bg-white">
-            <div class="overflow-x-auto max-h-[65vh] relative" id="tableContainer">
-                <table class="w-full text-left border-collapse">
-                    <thead class="m3-table-header">
-                        <tr>
-                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-gray-500 border-b border-gray-200 w-20">#</th>
-                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-gray-500 border-b border-gray-200">Package Identifier</th>
-                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-gray-500 border-b border-gray-200 text-center">Version</th>
-                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-gray-500 border-b border-gray-200 text-right">PyPI</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableBody" class="divide-y divide-gray-50"></tbody>
-                </table>
-            </div>
-
-            <div id="noResults" class="hidden p-12 text-center border-t border-gray-100 bg-gray-50/30">
-                <div id="noResultsIcon" class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
-                    <i class="bi bi-question-circle text-3xl text-gray-300"></i>
-                </div>
-                <h3 class="text-lg font-bold text-gray-800" id="notFoundTitle">No Matches Found</h3>
-                <!-- FIX 1: "local repository index" → "our package index" -->
-                <p class="mt-1 text-sm text-gray-500 max-w-md mx-auto leading-relaxed" id="notFoundDesc">
-                    The exact keyword you searched for is not currently in our package index.
+                <h2 class="text-2xl font-bold text-gray-900 mb-2 flex items-center justify-between">
+                    NPM Explorer
+                    <i class="bi bi-arrow-right text-[var(--m3-outline)] group-hover:text-[#cb3837] group-hover:translate-x-1 transition-all"></i>
+                </h2>
+                <p class="text-sm text-gray-600 mb-6 line-clamp-2">
+                    Search through millions of JavaScript packages, view live dependencies, installation commands, and version histories directly from the NPM registry.
                 </p>
-                <div id="externalCheckContainer" class="mt-6 flex flex-wrap justify-center gap-3"></div>
-            </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs font-semibold px-2.5 py-1 bg-white rounded-md text-gray-500 border border-gray-100">JavaScript</span>
+                    <span class="text-xs font-semibold px-2.5 py-1 bg-white rounded-md text-gray-500 border border-gray-100">Node.js</span>
+                </div>
+            </a>
 
-            <div id="loaderContainer" class="p-32 flex flex-col items-center justify-center">
-                <div class="loader"></div>
-                <p class="mt-6 text-gray-500 font-medium tracking-wide">Streaming Data...</p>
-            </div>
+            <!-- PyPI Card -->
+            <a href="https://data.amit.is-a.dev/pypi" class="m3-card p-8 group relative overflow-hidden">
+                <div class="m3-icon-box pypi-accent group-hover:scale-110 transition-transform duration-300">
+                    <i class="bi bi-box-seam-fill text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2 flex items-center justify-between">
+                    PyPI Explorer
+                    <i class="bi bi-arrow-right text-[var(--m3-outline)] group-hover:text-[#3776ab] group-hover:translate-x-1 transition-all"></i>
+                </h2>
+                <p class="text-sm text-gray-600 mb-6 line-clamp-2">
+                    Discover Python packages, audit their security, view project links, and check the latest PyPI releases in real-time.
+                </p>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs font-semibold px-2.5 py-1 bg-white rounded-md text-gray-500 border border-gray-100">Python</span>
+                    <span class="text-xs font-semibold px-2.5 py-1 bg-white rounded-md text-gray-500 border border-gray-100">Pip</span>
+                </div>
+            </a>
+
         </div>
+    </main>
 
-        <footer class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-6 px-2">
-            <div class="text-sm font-medium text-gray-500" id="pageInfo">Ready to explore</div>
-            <div class="flex items-center gap-3">
-                <button id="prevBtn" class="pagination-btn btn-tonal disabled:opacity-20 disabled:cursor-not-allowed">
-                    <i class="bi bi-arrow-left-short text-xl mr-1"></i> Prev
-                </button>
-                <button id="nextBtn" class="pagination-btn btn-filled disabled:opacity-20 disabled:cursor-not-allowed">
-                    Next <i class="bi bi-arrow-right-short text-xl ml-1"></i>
-                </button>
-            </div>
-        </footer>
-    </div>
-
-    <!-- Package Submission Modal -->
-    <div id="packageModal" class="modal-overlay" onclick="handleOverlayClick(event)">
-        <div class="modal-content shadow-2xl">
-            <div class="p-6 border-b border-gray-100 flex justify-between items-start sticky top-0 bg-[var(--m3-surface)] z-10 rounded-t-[28px]">
-                <div>
-                    <h2 class="text-2xl font-bold text-gray-900" id="modalMainTitle">List Your Package</h2>
-                    <p class="text-sm text-gray-500 mt-1" id="modalSubTitle">Submit your package for the OSMA audit list.</p>
-                </div>
-                <button onclick="toggleModal(false)" class="p-2 hover:bg-gray-100 rounded-full transition-colors">
-                    <i class="bi bi-x-lg"></i>
-                </button>
-            </div>
-
-            <div id="modalFormView" class="p-8 pt-4">
-                <div class="mb-6 p-4 bg-[#fdf2f2] border border-[#f9dedc] rounded-xl text-xs text-[#b3261e]">
-                    <i class="bi bi-info-circle-fill mr-2"></i> Note: Fields marked with <span class="important-marker">*</span> are important.
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="form-field">
-                        <label class="form-label">Package Name <span class="important-marker">*</span></label>
-                        <input type="text" id="pkg_name" class="form-input" placeholder="e.g. requests">
+    <!-- Professional Footer -->
+    <footer class="w-full border-t border-[var(--m3-surface-container-high)] bg-[var(--m3-surface-container)] mt-auto pt-12 pb-6">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+            <!-- Brand & License -->
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="w-8 h-8 bg-[var(--m3-primary)] rounded-lg flex items-center justify-center text-white">
+                        <i class="bi bi-box-seam-fill text-lg"></i>
                     </div>
-                    <div class="form-field">
-                        <label class="form-label">Version <span class="important-marker">*</span></label>
-                        <input type="text" id="pkg_version" class="form-input" placeholder="e.g. 2.31.0">
-                    </div>
+                    <span class="text-lg font-bold text-[#1d1b20] tracking-tight">OSMA</span>
                 </div>
-                <div class="form-field">
-                    <label class="form-label">PyPI Link <span class="important-marker">*</span></label>
-                    <input type="url" id="pkg_link" class="form-input" placeholder="https://pypi.org/project/name/">
-                    <p id="pkg_link_error" class="hidden text-[10px] text-red-500 mt-1">Please enter a valid pypi.org link.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="form-field">
-                        <label class="form-label">Email ID <span class="important-marker">*</span></label>
-                        <input type="email" id="user_email" class="form-input" placeholder="you@example.com">
-                    </div>
-                    <div class="form-field">
-                        <label class="form-label">GitHub Username <span class="important-marker">*</span></label>
-                        <input type="text" id="user_github" class="form-input" placeholder="octocat">
-                        <p id="user_github_error" class="hidden text-[10px] text-red-500 mt-1">Checking GitHub...</p>
-                    </div>
-                </div>
-                <div class="mt-8 flex justify-end gap-3">
-                    <button onclick="toggleModal(false)" class="pagination-btn btn-tonal">Cancel</button>
-                    <button id="submitBtn" onclick="handleSubmission()" class="pagination-btn btn-filled">Confirm & Review</button>
+                <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                    Instant Static Archive for Open Source Package Repository Audits. Bypassing live registry delays for faster lookups.
+                </p>
+                <div class="flex items-start gap-2 text-sm text-gray-600">
+                    <i class="bi bi-file-earmark-text mt-0.5 text-[var(--m3-primary)]"></i>
+                    <p>Open Source under the <br><a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" class="text-[var(--m3-primary)] font-semibold hover:underline">Apache License 2.0</a>.</p>
                 </div>
             </div>
 
-            <div id="modalSummaryView" class="hidden p-8 pt-4">
-                <div class="p-6 bg-gray-50 border border-gray-200 rounded-2xl mb-6">
-                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Submission Content</h4>
-                    <div id="summaryText" class="font-mono-safe text-sm bg-white p-4 border border-gray-200 rounded-lg whitespace-pre-wrap leading-relaxed"></div>
-                </div>
-                <div class="p-5 bg-[#f3edf7] rounded-2xl flex items-start gap-4 mb-8">
-                    <div class="w-10 h-10 bg-white rounded-full flex-shrink-0 flex items-center justify-center text-[#6750a4]">
-                        <i class="bi bi-envelope-check"></i>
-                    </div>
-                    <div>
-                        <p class="text-sm font-semibold text-[#21005d]">Final Step: Send Email</p>
-                        <p class="text-xs text-gray-600 mt-1">Click the button below to open your mail app. The content will be automatically pasted for you.</p>
-                    </div>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-3">
-                    <button onclick="openMail()" class="pagination-btn btn-filled w-full flex-grow">
-                        <i class="bi bi-send-fill mr-2"></i> Mail Details to Dev
-                    </button>
-                    <button onclick="backToForm()" class="pagination-btn btn-tonal">Edit Form</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const CSV_URL = 'https://raw.githubusercontent.com/notamitgamer/osma/refs/heads/main/data/pypi.csv';
-        const ITEMS_PER_PAGE = 50;
-
-        let allData = [];
-        let filteredData = [];
-        let currentPage = 0;
-
-        const tableBody           = document.getElementById('tableBody');
-        const searchInput         = document.getElementById('searchInput');
-        const clearSearch         = document.getElementById('clearSearch');
-        const totalCountSpan      = document.getElementById('totalCount');
-        const filteredCount       = document.getElementById('filteredCount');
-        const filteredCountWrapper= document.getElementById('filteredCountWrapper');
-        const loaderContainer     = document.getElementById('loaderContainer');
-        const pageInfo            = document.getElementById('pageInfo');
-        const prevBtn             = document.getElementById('prevBtn');
-        const nextBtn             = document.getElementById('nextBtn');
-        const noResults           = document.getElementById('noResults');
-        const externalCheckContainer = document.getElementById('externalCheckContainer');
-        const notFoundTitle       = document.getElementById('notFoundTitle');
-        const noResultsIcon       = document.getElementById('noResultsIcon');
-        const tableContainer      = document.getElementById('tableContainer');
-        const packageModal        = document.getElementById('packageModal');
-        const modalFormView       = document.getElementById('modalFormView');
-        const modalSummaryView    = document.getElementById('modalSummaryView');
-        const summaryText         = document.getElementById('summaryText');
-        const modalMainTitle      = document.getElementById('modalMainTitle');
-        const modalSubTitle       = document.getElementById('modalSubTitle');
-        const submitBtn           = document.getElementById('submitBtn');
-
-        document.querySelectorAll('.form-input').forEach(input => {
-            input.addEventListener('focus', function() {
-                setTimeout(() => { this.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 300);
-            });
-        });
-
-        function parseCSVLine(line) {
-            const result = [];
-            let curValue = "", inQuotes = false;
-            for (let i = 0; i < line.length; i++) {
-                if (line[i] === '"') inQuotes = !inQuotes;
-                else if (line[i] === ',' && !inQuotes) { result.push(curValue.trim()); curValue = ""; }
-                else curValue += line[i];
-            }
-            result.push(curValue.trim());
-            return result;
-        }
-
-        let isStreaming = false;
-        const searchWarning = document.getElementById('search-warning');
-
-        async function streamData() {
-            isStreaming = true;
-            searchWarning.style.display = 'flex';
-            try {
-                const response = await fetch(CSV_URL);
-                if (!response.body) throw new Error("ReadableStream not supported");
-
-                const reader  = response.body.getReader();
-                const decoder = new TextDecoder('utf-8');
-                let buffer = '';
-                let isFirstLine    = true;
-                let loadedFirstPage = false;
-
-                while (true) {
-                    const { done, value } = await reader.read();
-                    if (done) break;
-
-                    buffer += decoder.decode(value, { stream: true });
-                    let lines = buffer.split('\n');
-                    buffer = lines.pop();
-
-                    let newItems = [];
-                    for (let line of lines) {
-                        line = line.trim();
-                        if (!line) continue;
-                        if (isFirstLine) { isFirstLine = false; continue; }
-                        const values = parseCSVLine(line);
-                        newItems.push({
-                            id:      values[0] || '',
-                            name:    values[1] || '',
-                            version: values[2] || '',
-                            link:    values[3] || ''
-                        });
-                    }
-
-                    allData.push(...newItems);
-                    if (searchInput.value.trim() === '') filteredData.push(...newItems);
-
-                    if (!loadedFirstPage && filteredData.length >= ITEMS_PER_PAGE) {
-                        loaderContainer.classList.add('hidden');
-                        renderTable();
-                        loadedFirstPage = true;
-                    }
-
-                    if (allData.length % 50000 < 500) {
-                        totalCountSpan.innerHTML = `<i class="bi bi-cloud-arrow-down mr-2 text-[#6750a4]"></i>Streaming... (${Math.floor(allData.length / 1000)}k)`;
-                    }
-                }
-
-                if (buffer.trim()) {
-                    const values = parseCSVLine(buffer.trim());
-                    const item = { id: values[0] || '', name: values[1] || '', version: values[2] || '', link: values[3] || '' };
-                    allData.push(item);
-                    if (searchInput.value.trim() === '') filteredData.push(item);
-                }
-
-                totalCountSpan.innerHTML = `<i class="bi bi-database-fill-check mr-2 text-[#6750a4]"></i>${allData.length.toLocaleString()} Indexed Packages`;
-                isStreaming = false;
-                searchWarning.style.display = 'none';
-
-                if (!loadedFirstPage) {
-                    loaderContainer.classList.add('hidden');
-                    renderTable();
-                }
-
-                if (searchInput.value.trim() !== '') handleSearch();
-
-            } catch (error) {
-                console.error(error);
-                loaderContainer.innerHTML = `<div class="p-8 text-red-500 text-center"><i class="bi bi-exclamation-octagon text-4xl block mb-2"></i>Sync Error. Try disabling adblock or VPN.</div>`;
-            }
-        }
-
-        // ─── FIX 2: Ranked search ────────────────────────────────────────────────
-        // Returns a rank score for a package name against the query:
-        //   0 = exact match       → shown first, highlighted
-        //   1 = starts with query → shown second, subtle badge
-        //   2 = contains query    → shown last
-        function matchRank(name, query) {
-            if (name === query)            return 0;
-            if (name.startsWith(query))    return 1;
-            return 2;
-        }
-
-        function handleSearch() {
-            const query = searchInput.value.toLowerCase().trim();
-            clearSearch.style.display = query.length > 0 ? 'block' : 'none';
-
-            if (!query) {
-                filteredData = [...allData];
-                filteredCountWrapper.classList.add('hidden');
-            } else {
-                // Filter: name OR version contains query
-                const matched = allData.filter(i =>
-                    i.name.toLowerCase().includes(query) ||
-                    i.version.toLowerCase().includes(query)
-                );
-
-                // Sort by rank (exact → starts-with → contains), then alphabetically within each tier
-                matched.sort((a, b) => {
-                    const ra = matchRank(a.name.toLowerCase(), query);
-                    const rb = matchRank(b.name.toLowerCase(), query);
-                    if (ra !== rb) return ra - rb;
-                    return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
-                });
-
-                filteredData = matched;
-                filteredCountWrapper.classList.remove('hidden');
-                filteredCount.textContent = `${filteredData.length.toLocaleString()} matches`;
-            }
-
-            currentPage = 0;
-            renderTable();
-        }
-
-        function renderTable() {
-            const start     = currentPage * ITEMS_PER_PAGE;
-            const end       = start + ITEMS_PER_PAGE;
-            const pageItems = filteredData.slice(start, end);
-            const query     = searchInput.value.trim().toLowerCase();
-
-            tableBody.innerHTML = '';
-
-            const exactMatchExists = filteredData.some(i => i.name.toLowerCase() === query);
-            const showNotFound     = query !== '' && (!exactMatchExists || filteredData.length === 0);
-
-            if (pageItems.length > 0) {
-                pageItems.forEach(item => {
-                    const rank     = query ? matchRank(item.name.toLowerCase(), query) : -1;
-                    const isExact  = rank === 0;
-                    const isStarts = rank === 1;
-
-                    // Build optional rank badge
-                    let rankBadge = '';
-                    if (isExact)  rankBadge = `<span class="rank-badge rank-exact">Exact</span>`;
-                    if (isStarts) rankBadge = `<span class="rank-badge rank-starts">Best match</span>`;
-
-                    const row = document.createElement('tr');
-                    row.className = `m3-row group border-b border-gray-50 cursor-pointer${isExact ? ' exact-match' : ''}`;
-                    row.innerHTML = `
-                        <td class="px-6 py-4 text-sm text-gray-400 font-mono-safe">${item.id}</td>
-                        <td class="px-6 py-4 font-semibold text-gray-800">
-                            ${item.name}${rankBadge}
-                        </td>
-                        <td class="px-6 py-4 text-center">
-                            <span class="px-3 py-1 bg-[#e8def8] text-[#1d192b] text-xs rounded-lg font-bold">${item.version}</span>
-                        </td>
-                        <td class="px-6 py-4 text-right">
-                            <a href="${item.link}" target="_blank"
-                               onclick="event.stopPropagation()"
-                               class="inline-flex items-center gap-2 text-sm font-bold text-[#6750a4]">
-                                View <i class="bi bi-box-arrow-up-right"></i>
-                            </a>
-                        </td>
-                    `;
-                    row.addEventListener('click', () => openDetailPanel(item.name, item.link));
-                    tableBody.appendChild(row);
-                });
-            }
-
-            if (showNotFound) {
-                noResults.classList.remove('hidden');
-                if (filteredData.length > 0) {
-                    notFoundTitle.innerHTML = `Exact package <span class="text-[#6750a4]">"${query}"</span> not found`;
-                    noResultsIcon.classList.add('hidden');
-                } else {
-                    notFoundTitle.innerHTML = `<span class="text-[#b3261e]">"${query}"</span> not found`;
-                    noResultsIcon.classList.remove('hidden');
-                }
-                externalCheckContainer.innerHTML = `
-                    <div class="w-full text-gray-500 text-sm italic mb-4">Maybe it's not listed in OSMA yet?</div>
-                    <a href="https://pypi.org/search/?q=${encodeURIComponent(query)}" target="_blank" class="action-link btn-pypi-link">
-                        Search PyPI.org for "${query}" <i class="bi bi-search ml-1"></i>
-                    </a>
-                    <button onclick="toggleModal(true)" class="action-link btn-list-trigger shadow-sm">
-                        <i class="bi bi-plus-lg"></i> List Package
-                    </button>
-                `;
-            } else {
-                noResults.classList.add('hidden');
-            }
-
-            pageInfo.innerHTML = `Displaying <b>${filteredData.length === 0 ? 0 : start + 1}–${Math.min(end, filteredData.length)}</b> of ${filteredData.length.toLocaleString()}`;
-            prevBtn.disabled = currentPage === 0;
-            nextBtn.disabled = end >= filteredData.length;
-        }
-
-        clearSearch.addEventListener('click', () => {
-            searchInput.value = '';
-            handleSearch();
-            searchInput.focus();
-        });
-
-        function toggleModal(show) {
-            packageModal.style.display = show ? 'flex' : 'none';
-            if (show) {
-                backToForm();
-                const query = searchInput.value.trim();
-                if (query) document.getElementById('pkg_name').value = query;
-            }
-        }
-
-        function handleOverlayClick(e) { if (e.target === packageModal) toggleModal(false); }
-
-        async function checkGitHubUser(username) {
-            try {
-                const response = await fetch(`https://api.github.com/users/${username}`);
-                return response.status === 200;
-            } catch (e) { return false; }
-        }
-
-        async function validateForm() {
-            const pypiLink   = document.getElementById('pkg_link').value;
-            const githubUser = document.getElementById('user_github').value.trim();
-            const email      = document.getElementById('user_email').value;
-            const name       = document.getElementById('pkg_name').value;
-            const ver        = document.getElementById('pkg_version').value;
-            const gitErr     = document.getElementById('user_github_error');
-            let valid        = true;
-
-            if (!name || !ver || !email || !githubUser || !pypiLink) {
-                alert("Please fill all required fields correctly.");
-                return false;
-            }
-
-            if (!pypiLink.toLowerCase().includes('pypi.org/project/')) {
-                document.getElementById('pkg_link_error').classList.remove('hidden');
-                valid = false;
-            } else {
-                document.getElementById('pkg_link_error').classList.add('hidden');
-            }
-
-            gitErr.classList.remove('hidden', 'text-red-500');
-            gitErr.classList.add('text-gray-500');
-            gitErr.textContent = "Verifying on GitHub...";
-            submitBtn.disabled = true;
-            submitBtn.textContent = "Verifying...";
-
-            const userExists = await checkGitHubUser(githubUser);
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Confirm & Review";
-
-            if (!userExists) {
-                gitErr.textContent = "User not found on GitHub.";
-                gitErr.classList.remove('text-gray-500', 'hidden');
-                gitErr.classList.add('text-red-500');
-                valid = false;
-            } else {
-                gitErr.classList.add('hidden');
-            }
-
-            return valid;
-        }
-
-        async function handleSubmission() {
-            const isValid = await validateForm();
-            if (!isValid) return;
-
-            const data = {
-                package: document.getElementById('pkg_name').value,
-                version: document.getElementById('pkg_version').value,
-                link:    document.getElementById('pkg_link').value,
-                email:   document.getElementById('user_email').value,
-                github:  document.getElementById('user_github').value,
-            };
-            const formatted = `[OSMA SUBMISSION]\n------------------\nPackage: ${data.package}\nVersion: ${data.version}\nPyPI: ${data.link}\nAuthor: ${data.github}\nEmail: ${data.email}\n------------------\nID: OSMA-${Math.random().toString(36).substr(2, 9).toUpperCase()}`;
-            summaryText.textContent = formatted;
-            modalFormView.classList.add('hidden');
-            modalSummaryView.classList.remove('hidden');
-            modalMainTitle.textContent = "Confirm Submission";
-        }
-
-        function backToForm() {
-            modalFormView.classList.remove('hidden');
-            modalSummaryView.classList.add('hidden');
-            modalMainTitle.textContent = "List Your Package";
-            submitBtn.textContent = "Confirm & Review";
-        }
-
-        // ─── FIX 3: navigator.clipboard replaces deprecated execCommand ──────────
-        function copySubmissionText() {
-            const text = summaryText.textContent;
-            navigator.clipboard.writeText(text).then(() => {
-                const icon  = document.getElementById('copyIcon');
-                const ctext = document.getElementById('copyText');
-                if (icon)  icon.className  = "bi bi-check-all text-green-500";
-                if (ctext) ctext.textContent = "Copied to Clipboard!";
-                setTimeout(() => {
-                    if (icon)  icon.className  = "bi bi-clipboard";
-                    if (ctext) ctext.textContent = "Copy Formatted Text";
-                }, 2000);
-            }).catch(() => {
-                // Fallback for browsers that block clipboard in non-secure contexts
-                const dummy = document.createElement("textarea");
-                document.body.appendChild(dummy);
-                dummy.value = text;
-                dummy.select();
-                document.execCommand("copy");
-                document.body.removeChild(dummy);
-            });
-        }
-
-        function openMail() {
-            const bodyText = summaryText.textContent;
-            const subject  = "New OSMA Package Submission";
-            window.location.href = `mailto:mail@amit.is-a.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
-        }
-
-        // ─── Item 6: PyPI detail panel (expanded) ────────────────────────────────
-        async function openDetailPanel(name, registryUrl) {
-            const panel   = document.getElementById('detail-panel');
-            const body    = document.getElementById('detail-panel-body');
-            const overlay = document.getElementById('detail-overlay');
-            const title   = document.getElementById('detail-panel-title');
-
-            title.textContent = name;
-            body.innerHTML = '<div class="detail-loader"></div>';
-            panel.classList.add('open');
-            overlay.style.display = 'block';
-
-            try {
-                const resp = await fetch(`https://pypi.org/pypi/${encodeURIComponent(name)}/json`);
-                if (!resp.ok) throw new Error(resp.status);
-                const data = await resp.json();
-                const info = data.info || {};
-
-                // ── Basic fields ──────────────────────────────────────────────
-                const license     = info.license ? info.license.split('\n')[0].trim() : 'Not specified';
-                const desc        = info.summary || 'No description available.';
-                const author      = info.author || '';
-                const authorEmail = info.author_email || '';
-                const maintainer  = info.maintainer || '';
-                const maintainerEmail = info.maintainer_email || '';
-                const urls        = info.project_urls || {};
-                const homepage    = info.home_page || urls.Homepage || '';
-                const docs        = urls.Documentation || urls.Docs || '';
-                const bugTracker  = urls['Bug Tracker'] || urls['Issue Tracker'] || urls.Issues || urls.Bugs || '';
-                const repo        = urls.Source || urls.Repository || urls.Code || urls.Github || '';
-                const pyReq       = info.requires_python || '';
-                const keywords    = info.keywords ? info.keywords.split(/[,\s]+/).filter(Boolean).slice(0, 8) : [];
-
-                // ── Classifiers → extract useful ones ────────────────────────
-                const classifiers = info.classifiers || [];
-                const devStatus   = classifiers.find(c => c.startsWith('Development Status'))?.split(' :: ').pop() || '';
-                const frameworks  = classifiers.filter(c => c.startsWith('Framework ::')).map(c => c.split(' :: ').pop());
-                const topics      = classifiers.filter(c => c.startsWith('Topic ::')).map(c => c.split(' :: ').slice(-1)[0]).slice(0, 5);
-
-                // ── Versions + dates ─────────────────────────────────────────
-                const releases    = data.releases || {};
-                const allVersions = Object.keys(releases).reverse();
-
-                // First released: oldest version's upload_time
-                let firstRelease = '';
-                const oldestVer  = Object.keys(releases).sort()[0];
-                if (oldestVer && releases[oldestVer]?.length) {
-                    firstRelease = releases[oldestVer][0].upload_time?.split('T')[0] || '';
-                }
-                // Latest release date from current version files
-                const latestFiles  = releases[info.version] || [];
-                const latestDate   = latestFiles.length ? (latestFiles[latestFiles.length - 1].upload_time?.split('T')[0] || '') : '';
-
-                // Build version history: latest 15 versions with dates
-                const historyVers  = allVersions.slice(0, 15);
-                const extraVerCount = allVersions.length - historyVers.length;
-
-                const verHistory = historyVers.map(v => {
-                    const files = releases[v] || [];
-                    const date  = files.length ? (files[files.length - 1].upload_time?.split('T')[0] || '') : '';
-                    const isLatest = v === info.version;
-                    return `<div class="flex items-center justify-between py-1.5 border-b border-gray-50 last:border-0">
-                        <span class="font-mono-safe text-sm ${isLatest ? 'font-bold text-[#6750a4]' : 'text-gray-700'}">${v}${isLatest ? ' <span class="rank-badge rank-exact ml-1">latest</span>' : ''}</span>
-                        <span class="text-xs text-gray-400">${date}</span>
-                    </div>`;
-                }).join('');
-
-                // ── Dependencies ─────────────────────────────────────────────
-                const rawDeps   = (info.requires_dist || []).map(d => d.split(/[;\s>=<![\(]/)[0].trim()).filter(Boolean);
-                const uniqDeps  = [...new Set(rawDeps)];
-                const showDeps  = uniqDeps.slice(0, 20);
-                const extraDeps = uniqDeps.length - showDeps.length;
-
-                // ── pip install box ───────────────────────────────────────────
-                const pipCmd = `pip install ${name}`;
-
-                // ── Render ────────────────────────────────────────────────────
-                body.innerHTML = `
-                    <!-- Status chips -->
-                    <div class="flex flex-wrap gap-2 items-center mb-4">
-                        <span class="detail-chip" style="background:var(--m3-secondary-container);color:var(--m3-on-secondary-container)">v${info.version}</span>
-                        <span class="detail-chip" style="background:var(--m3-surface-container-high);color:#49454f">${license}</span>
-                        ${devStatus ? `<span class="detail-chip" style="background:#e8f5e9;color:#1b5e20">${devStatus}</span>` : ''}
-                        ${pyReq ? `<span class="detail-chip" style="background:#fff8e1;color:#6d4c00"><i class="bi bi-python mr-1"></i>Python ${pyReq}</span>` : ''}
-                    </div>
-
-                    <!-- Description -->
-                    <p class="text-sm text-gray-700 leading-relaxed mb-2">${desc}</p>
-                    ${keywords.length ? `<div class="flex flex-wrap gap-1 mt-2">${keywords.map(k => `<span class="text-xs px-2 py-0.5 bg-gray-100 text-gray-500 rounded-full">${k}</span>`).join('')}</div>` : ''}
-
-                    <!-- pip install -->
-                    <div class="detail-section-title">Install</div>
-                    <div class="flex items-center gap-2 bg-gray-950 text-green-400 rounded-xl px-4 py-3 font-mono-safe text-sm">
-                        <span class="select-all flex-1">${pipCmd}</span>
-                        <button onclick="navigator.clipboard.writeText('${pipCmd}').then(()=>{this.innerHTML='<i class=\\'bi bi-check2\\'></i>';setTimeout(()=>{this.innerHTML='<i class=\\'bi bi-clipboard\\'></i>'},1500)})"
-                                class="text-gray-400 hover:text-white transition-colors flex-shrink-0">
-                            <i class="bi bi-clipboard"></i>
-                        </button>
-                    </div>
-
-                    <!-- Release info -->
-                    <div class="grid grid-cols-2 gap-3 mt-4">
-                        ${firstRelease ? `<div class="p-3 bg-gray-50 rounded-xl"><div class="text-xs text-gray-400 mb-1">First Released</div><div class="text-sm font-semibold text-gray-800">${firstRelease}</div></div>` : ''}
-                        ${latestDate   ? `<div class="p-3 bg-gray-50 rounded-xl"><div class="text-xs text-gray-400 mb-1">Latest Release</div><div class="text-sm font-semibold text-gray-800">${latestDate}</div></div>` : ''}
-                    </div>
-
-                    <!-- Author / Maintainer -->
-                    ${author ? `
-                    <div class="detail-section-title">Author</div>
-                    <p class="text-sm font-semibold text-gray-800">${author}${authorEmail ? ` <span class="font-normal text-gray-400 text-xs">&lt;${authorEmail}&gt;</span>` : ''}</p>` : ''}
-
-                    ${maintainer ? `
-                    <div class="detail-section-title">Maintainer</div>
-                    <p class="text-sm font-semibold text-gray-800">${maintainer}${maintainerEmail ? ` <span class="font-normal text-gray-400 text-xs">&lt;${maintainerEmail}&gt;</span>` : ''}</p>` : ''}
-
-                    <!-- Links -->
-                    ${(homepage || repo || docs || bugTracker) ? `
-                    <div class="detail-section-title">Links</div>
-                    <div class="flex flex-col gap-1.5">
-                        ${homepage    ? `<a href="${homepage}"    target="_blank" class="text-sm text-[#6750a4] hover:underline flex items-center gap-2"><i class="bi bi-house-door w-4"></i>${homepage}</a>` : ''}
-                        ${repo        ? `<a href="${repo}"        target="_blank" class="text-sm text-[#6750a4] hover:underline flex items-center gap-2"><i class="bi bi-code-slash w-4"></i>${repo}</a>` : ''}
-                        ${docs        ? `<a href="${docs}"        target="_blank" class="text-sm text-[#6750a4] hover:underline flex items-center gap-2"><i class="bi bi-book w-4"></i>${docs}</a>` : ''}
-                        ${bugTracker  ? `<a href="${bugTracker}"  target="_blank" class="text-sm text-[#6750a4] hover:underline flex items-center gap-2"><i class="bi bi-bug w-4"></i>${bugTracker}</a>` : ''}
-                    </div>` : ''}
-
-                    <!-- Topics / Frameworks -->
-                    ${topics.length ? `
-                    <div class="detail-section-title">Topics</div>
-                    <div class="flex flex-wrap gap-1">${topics.map(t => `<span class="text-xs px-2 py-0.5 bg-[#eaddff] text-[#21005d] rounded-full">${t}</span>`).join('')}</div>` : ''}
-                    ${frameworks.length ? `
-                    <div class="detail-section-title">Frameworks</div>
-                    <div class="flex flex-wrap gap-1">${frameworks.map(f => `<span class="text-xs px-2 py-0.5 bg-[#e8f5e9] text-[#1b5e20] rounded-full">${f}</span>`).join('')}</div>` : ''}
-
-                    <!-- Release history -->
-                    <div class="detail-section-title">Release History (${allVersions.length} versions)</div>
-                    <div class="bg-gray-50 rounded-xl px-4 py-1 max-h-52 overflow-y-auto">
-                        ${verHistory}
-                        ${extraVerCount > 0 ? `<div class="text-xs text-gray-400 text-center py-2">+ ${extraVerCount} older versions on PyPI</div>` : ''}
-                    </div>
-
-                    <!-- Dependencies -->
-                    <div class="detail-section-title">Dependencies${uniqDeps.length ? ` (${uniqDeps.length})` : ''}</div>
-                    <div>
-                        ${showDeps.length
-                            ? showDeps.map(d => `<span class="detail-dep-pill">${d}</span>`).join('') + (extraDeps > 0 ? `<span class="detail-dep-pill" style="background:#f3edf7;color:#79747e">+${extraDeps} more</span>` : '')
-                            : '<span class="text-sm text-gray-400">No dependencies declared</span>'
-                        }
-                    </div>
-
-                    <!-- CTA -->
-                    <a href="${registryUrl}" target="_blank"
-                       class="mt-8 mb-2 w-full pagination-btn btn-filled flex items-center justify-center gap-2 no-underline">
-                        <i class="bi bi-box-arrow-up-right"></i> View on PyPI
-                    </a>
-                `;
-            } catch {
-                body.innerHTML = `
-                    <div class="text-center py-12">
-                        <i class="bi bi-wifi-off text-4xl text-gray-300 block mb-3"></i>
-                        <p class="text-sm text-gray-500 mb-4">Could not load package details.</p>
-                        <a href="${registryUrl}" target="_blank" class="action-link btn-pypi-link">
-                            View on PyPI.org <i class="bi bi-box-arrow-up-right"></i>
+            <!-- Connect Links -->
+            <div>
+                <h3 class="font-bold text-[#1d1b20] mb-4 text-sm uppercase tracking-wider">Developer</h3>
+                <ul class="text-sm text-gray-600 space-y-3">
+                    <li>
+                        <a href="https://github.com/notamitgamer" target="_blank" class="hover:text-[var(--m3-primary)] transition-colors flex items-center gap-2">
+                            <i class="bi bi-github text-lg"></i> @notamitgamer
                         </a>
-                    </div>
-                `;
-            }
-        }
+                    </li>
+                    <li>
+                        <a href="https://amit.is-a.dev" target="_blank" class="hover:text-[var(--m3-primary)] transition-colors flex items-center gap-2">
+                            <i class="bi bi-globe text-lg"></i> amit.is-a.dev
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.npmjs.com" target="_blank" class="hover:text-[var(--m3-primary)] transition-colors flex items-center gap-2">
+                            <i class="bi bi-globe text-lg"></i> www.npmjs.com
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://pypi.org" target="_blank" class="hover:text-[var(--m3-primary)] transition-colors flex items-center gap-2">
+                            <i class="bi bi-globe text-lg"></i> pypi.org
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-        function closeDetailPanel() {
-            document.getElementById('detail-panel').classList.remove('open');
-            document.getElementById('detail-overlay').style.display = 'none';
-        }
-
-        searchInput.addEventListener('input', handleSearch);
-
-        prevBtn.addEventListener('click', () => {
-            if (currentPage > 0) {
-                currentPage--;
-                renderTable();
-                tableContainer.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        });
-
-        nextBtn.addEventListener('click', () => {
-            if ((currentPage + 1) * ITEMS_PER_PAGE < filteredData.length) {
-                currentPage++;
-                renderTable();
-                tableContainer.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        });
-
-        window.addEventListener('DOMContentLoaded', streamData);
-    </script>
-    <!-- Detail overlay backdrop -->
-    <div id="detail-overlay" onclick="closeDetailPanel()"></div>
-
-    <!-- Item 6: PyPI detail panel -->
-    <aside id="detail-panel" class="detail-panel">
-        <div class="detail-panel-header">
-            <button onclick="closeDetailPanel()"
-                    class="p-2 hover:bg-gray-100 rounded-full transition-colors flex-shrink-0">
-                <i class="bi bi-arrow-left text-lg"></i>
-            </button>
-            <span id="detail-panel-title" class="font-bold text-gray-900 text-lg truncate"></span>
-            <span class="ml-auto flex-shrink-0 px-2 py-0.5 text-xs font-bold rounded-md"
-                  style="background:#e8f5e9;color:#1b5e20">PyPI</span>
+            <!-- Contact Information -->
+            <div>
+                <h3 class="font-bold text-[#1d1b20] mb-4 text-sm uppercase tracking-wider">Contact</h3>
+                <ul class="text-sm text-gray-600 space-y-3">
+                    <li>
+                        <a href="mailto:mail@amit.is-a.dev" class="hover:text-[var(--m3-primary)] transition-colors flex items-center gap-2 break-all">
+                            <i class="bi bi-envelope-fill text-lg"></i> mail@amit.is-a.dev
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:amitdutta4255@gmail.com" class="hover:text-[var(--m3-primary)] transition-colors flex items-center gap-2 break-all">
+                            <i class="bi bi-envelope-at-fill text-lg"></i> amitdutta4255@gmail.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div id="detail-panel-body" class="detail-panel-body"></div>
-    </aside>
 
-    <!-- Item 10: Footer -->
-    <footer class="max-w-6xl mx-auto px-4 mt-12 pb-6 text-center border-t border-gray-100 pt-6">
-        <div class="flex flex-col space-y-5 md:space-y-2"> 
-            <p class="text-xs text-gray-400">
-                This explorer uses a complete snapshot of the PyPI database from 
-                <span class="text-black font-medium">2026-04-29 • 08:45 (IST)</span>, 
-                capturing all packages and their versions at that moment.
+        <!-- Copyright Bottom -->
+        <div class="max-w-6xl mx-auto px-6 pt-6 border-t border-[var(--m3-outline)] border-opacity-10 text-center flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-[var(--m3-outline)] font-medium">
+                &copy; 2026 Amit Dutta. All rights reserved.
             </p>
-            
-            <p class="text-xs text-gray-500">
-                Snapshot taken by 
-                <a href="https://github.com/notamitgamer" class="text-black hover:underline font-medium">Amit Dutta (notamitgamer)</a> 
-                from Kolkata, IN. Data is available 
-                <a href="https://raw.githubusercontent.com/notamitgamer/osma/refs/heads/main/data/pypi.csv" class="text-blue-600 hover:underline">here</a>.
-                Visit Repository <a href="https://github.com/notamitgamer/osma" class="text-blue-600 hover:underline">here</a>.
-            </p>
+            <div class="flex gap-4">
+                <a href="https://data.amit.is-a.dev/npm" class="text-xs text-[var(--m3-primary)] hover:underline font-medium">NPM Explorer</a>
+                <a href="https://data.amit.is-a.dev/pypi" class="text-xs text-[var(--m3-primary)] hover:underline font-medium">PyPI Explorer</a>
+            </div>
         </div>
     </footer>
 

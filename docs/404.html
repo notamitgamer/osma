@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Page Not Found</title>
+    <link rel="icon" type="image/png" href="./assets/osma.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            /* M3 Purple Theme */
+            --m3-surface: #fef7ff;
+            --m3-surface-container: #f3edf7;
+            --m3-surface-container-high: #ece6f0;
+            --m3-primary: #6750a4;
+            --m3-on-primary: #ffffff;
+            --m3-primary-container: #eaddff;
+            --m3-on-primary-container: #21005d;
+            --m3-secondary-container: #e8def8;
+            --m3-on-secondary-container: #1d192b;
+            --m3-outline: #79747e;
+        }
+
+        * {
+            font-family: 'Lexend', sans-serif !important;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--m3-surface);
+            color: #1c1b1f;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-filled {
+            background-color: var(--m3-primary);
+            color: var(--m3-on-primary);
+            padding: 14px 32px;
+            border-radius: 100px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.2s;
+            text-decoration: none;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .btn-filled:hover {
+            background-color: #554287;
+            box-shadow: 0 4px 12px rgba(103, 80, 164, 0.25);
+            transform: translateY(-1px);
+        }
+
+        .error-code {
+            font-family: 'Roboto Mono', monospace !important;
+            background: linear-gradient(135deg, var(--m3-primary), #9c27b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="text-center px-6 max-w-lg">
+        <!-- Floating Icon -->
+        <div class="w-24 h-24 bg-[var(--m3-primary-container)] rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-sm">
+            <i class="bi bi-box-seam text-5xl text-[var(--m3-on-primary-container)]"></i>
+        </div>
+
+        <h1 class="text-7xl font-black error-code mb-4 tracking-tighter">404</h1>
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Package Not Found</h2>
+        
+        <p class="text-gray-600 mb-10 leading-relaxed">
+            Looks like you've wandered out of the repository. The page or package you are looking for doesn't exist or has been moved.
+        </p>
+
+        <a href="https://data.amit.is-a.dev/" class="btn-filled">
+            <i class="bi bi-house-door-fill mr-2"></i> Return Home
+        </a>
+    </div>
+
+</body>
+</html>
