@@ -3,11 +3,19 @@ import sqlite3
 import asyncio
 import csv
 import logging
+import hmac
+import hashlib
+import time
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, Query, HTTPException
+from fastapi import FastAPI, Query, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from huggingface_hub import hf_hub_download
+
+# ── slowapi imports ──────────────────────────────────────────────────────────
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 
 # ── Config ────────────────────────────────────────────────────────────────────
 # /data is the bucket mount path — persistent across restarts.
@@ -15,8 +23,14 @@ from huggingface_hub import hf_hub_download
 DATA_DIR    = "/data"
 DB_PATH     = os.path.join(DATA_DIR, "npm.db")
 HF_REPO_ID  = "notamitgamer/npm"          # your HuggingFace dataset repo
-HF_FILENAME = "npm.csv"                   # exact filename inside the repo — check your HF repo and update if different
+HF_FILENAME = "npm.csv"                   # exact filename inside the repo
 HF_TOKEN    = os.environ.get("HF_TOKEN", "")  # set in Space Secrets if dataset is private
+
+# ── Rate limit + bypass token config ──────────────────────────────────────────
+# Random string — set in HF Space Secrets. Used to sign bypass tokens.
+BYPASS_TOKEN_SECRET  = os.environ.get("BYPASS_TOKEN_SECRET", "change-me-in-secrets")
+# How long a bypass token is valid (seconds)
+BYPASS_TOKEN_TTL     = 3600  # 1 hour
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("osma")
@@ -141,13 +155,66 @@ async def lifespan(app: FastAPI):
 
 
 # ── App ───────────────────────────────────────────────────────────────────────
+
+# ── slowapi limiter ───────────────────────────────────────────────────────────
+# HF Spaces sits behind a proxy — real client IP is in X-Forwarded-For,
+# not the direct connection address which would be an internal proxy IP.
+def get_real_ip(request: Request) -> str:
+    forwarded = request.headers.get("X-Forwarded-For", "")
+    if forwarded:
+        return forwarded.split(",")[0].strip()
+    return request.client.host or "unknown"
+
+def rate_limit_key(request: Request) -> str:
+    """
+    If request carries a valid bypass token, return a unique key tied to their IP
+    so they get a fresh rate-limit bucket (e.g. another 60/min) instead of being unlimited.
+    """
+    bypass = request.headers.get("X-Bypass-Token", "")
+    if bypass and verify_bypass_token(bypass):
+        return f"bypass_{get_real_ip(request)}"
+    return get_real_ip(request)
+
+limiter = Limiter(key_func=rate_limit_key)
+
+# ── Bypass token helpers ──────────────────────────────────────────────────────
+# A bypass token is: "{expiry_timestamp}:{hmac_signature}"
+# Signed with BYPASS_TOKEN_SECRET so it cannot be forged client-side.
+
+def _sign(payload: str) -> str:
+    return hmac.new(
+        BYPASS_TOKEN_SECRET.encode(),
+        payload.encode(),
+        hashlib.sha256
+    ).hexdigest()
+
+def create_bypass_token() -> str:
+    expiry = int(time.time()) + BYPASS_TOKEN_TTL
+    payload = str(expiry)
+    return f"{payload}:{_sign(payload)}"
+
+def verify_bypass_token(token: str) -> bool:
+    """Returns True if token is valid and not expired."""
+    try:
+        payload, sig = token.rsplit(":", 1)
+        if not hmac.compare_digest(_sign(payload), sig):
+            return False
+        return int(time.time()) < int(payload)
+    except Exception:
+        return False
+
 app = FastAPI(title="OSMA NPM API", lifespan=lifespan)
+
+# ── attach limiter and register 429 handler ──────────────────────────────────
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],   # Tighten to your Firebase domain after testing
-    allow_methods=["GET"],
+    allow_origins=["*"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
+    expose_headers=["Retry-After"]
 )
 
 
@@ -166,9 +233,38 @@ def root():
     return {"name": "OSMA NPM API", "status": "ok", "docs": "/docs"}
 
 
-@app.get("/ping")
+@app.get("/debug-ip")
+def debug_ip(request: Request):
+    return {
+        "client_host":      request.client.host,
+        "x-forwarded-for":  request.headers.get("X-Forwarded-For"),
+        "x-real-ip":        request.headers.get("X-Real-IP"),
+        "cf-connecting-ip": request.headers.get("CF-Connecting-IP"),
+        "all_headers":      dict(request.headers),
+    }
+
+
+@app.api_route("/ping", methods=["GET", "HEAD"])
 def ping():
     return {"ping": "pong"}
+
+
+@app.get("/get-bypass")
+def get_bypass(secret: str = Query(...)):
+    """
+    Issue a bypass token directly using BYPASS_TOKEN_SECRET.
+    Call: GET /get-bypass?secret=your-secret-here
+    The returned bypass_token can be sent as X-Bypass-Token header
+    to skip rate limiting for BYPASS_TOKEN_TTL seconds.
+    """
+    expected = os.environ.get("BYPASS_TOKEN_SECRET", "")
+    if not expected or secret != expected:
+        raise HTTPException(status_code=403, detail="Invalid secret.")
+    return {
+        "bypass_token": create_bypass_token(),
+        "valid_for_seconds": BYPASS_TOKEN_TTL,
+        "usage": "Send as header: X-Bypass-Token: <token>"
+    }
 
 
 @app.get("/health")
@@ -196,7 +292,9 @@ def stats():
 
 
 @app.get("/browse")
+@limiter.limit("10/minute;100/hour")
 def browse(
+    request: Request,
     page:  int = Query(1, ge=1),
     limit: int = Query(200, ge=1, le=500)
 ):
@@ -218,7 +316,9 @@ def browse(
 
 
 @app.get("/search")
+@limiter.limit("10/minute;100/hour")
 def search(
+    request: Request,
     q:     str = Query(..., min_length=2, max_length=100),
     limit: int = Query(250, ge=1, le=500)
 ):
