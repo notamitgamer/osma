@@ -1,0 +1,38 @@
+name: Download NPM Dataset
+
+on:
+  workflow_dispatch: # Allows you to manually trigger the workflow from the GitHub UI
+  push:
+    branches:
+      - main # Or whichever branch you want to trigger this on
+
+jobs:
+  download-dataset:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Hugging Face Hub CLI
+        run: pip install huggingface_hub[cli]
+
+      - name: Download Dataset
+        # This downloads the dataset and places it directly into the "npm-dataset" folder
+        run: |
+          huggingface-cli download notamitgamer/npm \
+            --repo-type dataset \
+            --local-dir ./npm-dataset
+
+      - name: Verify Downloaded Files
+        run: |
+          echo "Files downloaded to ./npm-dataset:"
+          ls -lh ./npm-dataset
+          echo ""
+          echo "Detailed file tree:"
+          find ./npm-dataset -type f
