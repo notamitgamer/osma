@@ -9,30 +9,59 @@ on:
 jobs:
   download-dataset:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Grants the action permission to push back to your repo
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          lfs: true # Enables LFS for checkout
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: Install Hugging Face Hub CLI
-        run: pip install huggingface_hub[cli]
+      - name: Install Dependencies
+        run: pip install datasets pandas
 
-      - name: Download Dataset
-        # This downloads the dataset and places it directly into the "npm-dataset" folder
+      - name: Download and Save as CSV
         run: |
-          huggingface-cli download notamitgamer/npm \
-            --repo-type dataset \
-            --local-dir ./npm-dataset
+          mkdir -p data
+          python -c "
+          from datasets import load_dataset
+          print('Downloading dataset from Hugging Face...')
+          ds = load_dataset('notamitgamer/npm')
+          split = list(ds.keys())[0] # Grabs the default split (usually 'train')
+          print(f'Saving to data/npm.csv...')
+          ds[split].to_csv('data/npm.csv', index=False)
+          print('Successfully saved!')
+          "
 
-      - name: Verify Downloaded Files
+      - name: Verify Downloaded File
         run: |
-          echo "Files downloaded to ./npm-dataset:"
-          ls -lh ./npm-dataset
-          echo ""
-          echo "Detailed file tree:"
-          find ./npm-dataset -type f
+          echo "File downloaded to data/npm.csv:"
+          ls -lh data/npm.csv
+
+      - name: Commit and Push to Repository
+        run: |
+          # 1. Configure the git bot identity
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 2. Tell Git LFS to track the large CSV file
+          git lfs install
+          git lfs track "data/npm.csv"
+          git add .gitattributes
+          
+          # 3. Add the dataset
+          git add data/npm.csv
+          
+          # 4. Commit and push (only if there is a new dataset)
+          if git diff-index --quiet HEAD --; then
+            echo "No changes to commit. The dataset is already up to date."
+          else
+            git commit -m "Auto-download NPM dataset [skip ci]"
+            git push
+          fi
