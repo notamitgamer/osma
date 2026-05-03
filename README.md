@@ -16,7 +16,7 @@
 * **Home:** [data.amit.is-a.dev](https://data.amit.is-a.dev)
 * **NPM Explorer:** [data.amit.is-a.dev/npm](https://data.amit.is-a.dev/npm)
 * **PyPI Explorer:** [data.amit.is-a.dev/pypi](https://data.amit.is-a.dev/pypi)
-* **API Documentation:** [https://data.amit.is-a.dev/docs](https://data.amit.is-a.dev/docs)
+* **API Documentation:** [data.amit.is-a.dev/docs](https://data.amit.is-a.dev/docs)
 * **GitHub Repository:** [notamitgamer/osma](https://github.com/notamitgamer/osma)
 
 ---
