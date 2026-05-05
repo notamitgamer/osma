@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/notamitgamer/osma/raw/main/docs/assets/osma.png" alt="OSMA Icon" width="120" />
+  <img src="https://raw.usercontent.amit.is-not.cool/data.amit.is-a.dev/assets/osma.png" alt="OSMA Icon" width="120" />
 
   # OSMA (Open Source Module Archive)
 
