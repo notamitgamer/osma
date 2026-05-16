@@ -1,0 +1,16 @@
+﻿#  | OSMA Docs
+
+> Last updated: May 2, 2026
+
+- [OSMA API Reference](https://data.amit.is-a.dev/docs/index.md): OSMA API Reference
+- [Quick Start](https://data.amit.is-a.dev/docs/quickstart.md): Because OSMA provides completely open CORS policies and requires no authentication keys, you can start fetching package data immediately from any environment—whether that is a backend script, a CLI tool, or directly inside a browser application.
+- [ NPM API](https://data.amit.is-a.dev/docs/npm-api.md): Base URL: https://notamitgamer-osma-npm-api.hf.space
+- [ PyPI API](https://data.amit.is-a.dev/docs/pypi-api.md): Base URL: https://notamitgamer-osma-pypi-api.hf.space
+- [Utility Endpoints](https://data.amit.is-a.dev/docs/utility.md): These endpoints are available on both the NPM and PyPI APIs. Examples below use the NPM base URL.
+- [Notes & Reference](https://data.amit.is-a.dev/docs/notes.md): APIs are strictly rate-limited to 10 requests per minute and 100 requests per hour per IP to protect the free-tier infrastructure. Send the X-Bypass-Token header to override this.
+- [Changelog](https://data.amit.is-a.dev/docs/changelog.md): All notable changes to OSMA (Open Source Module Archive), its APIs, and its documentation will be documented in this file.
+- [Acknowledgements](https://data.amit.is-a.dev/docs/acknowledgements.md): OSMA is built on the shoulders of some truly generous platforms and communities. A huge thank you to everyone who makes this project possible for free.
+- [Contributing to OSMA](https://data.amit.is-a.dev/docs/contributing.md): First off, thank you for considering contributing to OSMA! It is people like you that make OSMA a great tool for the open-source community.
+- [Contributor Covenant Code of Conduct](https://data.amit.is-a.dev/docs/code_of_conduct.md): We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body
+- [LICENSE](https://data.amit.is-a.dev/docs/license.md): TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+- [Security Policy](https://data.amit.is-a.dev/docs/security.md): We take the security of this project seriously. If you believe you have found a security vulnerability, please do not open a public issue. Instead, please report it privately to the maintainer.
