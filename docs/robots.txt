@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://data.amit.is-a.dev/docs/sitemap.xml
